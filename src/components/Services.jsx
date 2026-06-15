@@ -1,78 +1,44 @@
-import { CheckCircle } from 'lucide-react'
-import { useIntersection } from '../hooks/useIntersection'
-
-const SERVICES = [
+const services = [
   {
     title: 'General Contracting',
-    color: 'from-blue-800 to-blue-600',
-    items: [
-      'New construction & ground-up builds',
-      'Commercial & industrial projects',
-      'Concrete, framing & structural work',
-      'Roofing, siding & exterior finishes',
-      'Permit management & inspections',
-    ],
+    bullets: ['Framing & foundation work','Roofing & siding','Permits & project management','Subcontractor coordination'],
   },
   {
     title: 'Custom Home Construction',
-    color: 'from-slate-700 to-slate-500',
-    items: [
-      'Custom floor plan design assistance',
-      'Site preparation & foundation',
-      'Full interior & exterior buildout',
-      'Energy-efficient construction',
-      'Move-in ready delivery',
-    ],
+    bullets: ['New home builds','Architectural planning','Material selection','Site preparation'],
   },
   {
     title: 'Special Projects & Renovations',
-    color: 'from-stone-700 to-stone-500',
-    items: [
-      'Kitchen & bathroom remodels',
-      'Room additions & ADUs',
-      'Garage builds & conversions',
-      'Decks, patios & outdoor structures',
-      'Storm damage repair & restoration',
-    ],
+    bullets: ['Kitchen & bath remodels','Room additions','Structural repairs','Commercial renovations'],
   },
 ]
 
 export default function Services() {
-  const { ref, isVisible } = useIntersection()
-
   return (
-    <section id="services" className="py-20 bg-dark-700">
-      <div className="container-max">
-        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <span className="section-label !text-accent">Our Services</span>
-          <h2 className="section-title !text-white mb-4">
+    <section id="services" style={{backgroundColor: '#2d3748', padding: '5rem 2rem'}}>
+      <div style={{maxWidth: '1280px', margin: '0 auto'}}>
+        <div style={{textAlign: 'center', marginBottom: '3rem'}}>
+          <p style={{color: '#4a9aba', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600, fontSize: '0.85rem', marginBottom: '0.75rem'}}>OUR SERVICES</p>
+          <h2 style={{fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.3}}>
             We Are a Full-Service General Contractor
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            From ground-up new construction to targeted renovations, Su Casa Builders
-            delivers expert craftsmanship on every project in Sierra Vista and
-            surrounding communities.
-          </p>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {SERVICES.map((svc, i) => (
-            <div key={svc.title} className="bg-dark-800 rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-              {/* Image placeholder */}
-              <div className={`h-44 bg-gradient-to-br ${svc.color} flex items-center justify-center`}>
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.2" opacity="0.5">
-                  <rect x="2" y="3" width="20" height="14" rx="2"/>
-                  <path d="M8 21h8M12 17v4"/>
-                  <path d="M7 8l5-3 5 3v6H7z"/>
-                </svg>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3rem'}}>
+          {services.map(s => (
+            <div key={s.title} style={{backgroundColor: '#374151', borderRadius: '10px', overflow: 'hidden'}}>
+              <div style={{
+                height: '180px',
+                background: 'linear-gradient(135deg, #2d6a9f44, #4a9aba33)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                <span style={{color: '#4a9aba', fontSize: '0.85rem', opacity: 0.8}}>Service Image</span>
               </div>
-              <div className="p-6">
-                <h3 className="font-bold text-white text-lg mb-4">{svc.title}</h3>
-                <ul className="flex flex-col gap-2.5">
-                  {svc.items.map(item => (
-                    <li key={item} className="flex items-start gap-2 text-gray-400 text-sm">
-                      <CheckCircle size={14} className="text-accent mt-0.5 flex-shrink-0" />
-                      {item}
+              <div style={{padding: '1.5rem'}}>
+                <h3 style={{color: '#ffffff', fontWeight: 700, fontSize: '1.15rem', marginBottom: '1rem'}}>{s.title}</h3>
+                <ul style={{listStyle: 'none', padding: 0}}>
+                  {s.bullets.map(b => (
+                    <li key={b} style={{color: '#d1d5db', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem'}}>
+                      <span style={{color: '#4a9aba', marginTop: '2px'}}>&#10003;</span>{b}
                     </li>
                   ))}
                 </ul>
@@ -80,11 +46,12 @@ export default function Services() {
             </div>
           ))}
         </div>
-
-        <div className="text-center">
-          <a href="#contact" className="btn-primary">
-            Request a Bid Online
-          </a>
+        <div style={{textAlign: 'center'}}>
+          <a href="#contact" style={{
+            display: 'inline-block', backgroundColor: '#2d6a9f', color: '#ffffff',
+            padding: '0.85rem 2rem', borderRadius: '6px', textDecoration: 'none',
+            fontWeight: 700, fontSize: '1rem'
+          }}>Request a Bid Online</a>
         </div>
       </div>
     </section>
