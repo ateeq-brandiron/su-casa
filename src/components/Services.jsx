@@ -1,97 +1,90 @@
+import { CheckCircle } from 'lucide-react'
 import { useIntersection } from '../hooks/useIntersection'
 
 const SERVICES = [
   {
-    icon: '🏠',
-    title: 'Residential Roofing',
-    desc: 'Tailored roofing solutions for homes of all sizes. From classic asphalt shingles to premium metal and tile systems built to last decades.',
-    features: ['Asphalt Shingles', 'Metal Roofing', 'Clay & Concrete Tile'],
+    title: 'General Contracting',
+    color: 'from-blue-800 to-blue-600',
+    items: [
+      'New construction & ground-up builds',
+      'Commercial & industrial projects',
+      'Concrete, framing & structural work',
+      'Roofing, siding & exterior finishes',
+      'Permit management & inspections',
+    ],
   },
   {
-    icon: '🏗️',
-    title: 'Commercial Roofing',
-    desc: 'Durable flat and low-slope roofing systems for commercial buildings, with minimal disruption to your operations.',
-    features: ['TPO & EPDM', 'Built-Up Roofing', 'Modified Bitumen'],
+    title: 'Custom Home Construction',
+    color: 'from-slate-700 to-slate-500',
+    items: [
+      'Custom floor plan design assistance',
+      'Site preparation & foundation',
+      'Full interior & exterior buildout',
+      'Energy-efficient construction',
+      'Move-in ready delivery',
+    ],
   },
   {
-    icon: '🔧',
-    title: 'Roof Repair',
-    desc: 'Fast, precise repairs for leaks, storm damage, and aging roofs. We diagnose the root cause, not just the symptom.',
-    features: ['Leak Detection', 'Storm Damage', 'Emergency Repairs'],
-  },
-  {
-    icon: '✨',
-    title: 'Artistic Finishes',
-    desc: 'Our signature specialty — custom decorative roofing that transforms your home\'s silhouette into a landmark of your neighborhood.',
-    features: ['Copper Accents', 'Slate Artistry', 'Custom Patterns'],
-  },
-  {
-    icon: '🌿',
-    title: 'Eco Roofing',
-    desc: 'Cool roofs, solar-ready installations, and sustainable materials that reduce energy bills and environmental impact.',
-    features: ['Solar Integration', 'Cool Roofs', 'Recycled Materials'],
-  },
-  {
-    icon: '🔍',
-    title: 'Inspections',
-    desc: 'Thorough drone-assisted roof inspections with detailed photographic reports — before buying, selling, or after a storm.',
-    features: ['Drone Survey', 'Insurance Reports', 'Pre-Purchase Checks'],
+    title: 'Special Projects & Renovations',
+    color: 'from-stone-700 to-stone-500',
+    items: [
+      'Kitchen & bathroom remodels',
+      'Room additions & ADUs',
+      'Garage builds & conversions',
+      'Decks, patios & outdoor structures',
+      'Storm damage repair & restoration',
+    ],
   },
 ]
-
-function ServiceCard({ service, index }) {
-  const { ref, isVisible } = useIntersection()
-
-  return (
-    <div
-      ref={ref}
-      style={{ animationDelay: `${index * 100}ms` }}
-      className={`group bg-white border border-gray-100 hover:border-primary-300 p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
-        isVisible ? 'animate-fade-up' : 'opacity-0'
-      }`}
-    >
-      <div className="text-4xl mb-5">{service.icon}</div>
-      <h3 className="font-heading text-xl font-semibold text-dark-800 mb-3 group-hover:text-primary-600 transition-colors">
-        {service.title}
-      </h3>
-      <p className="text-gray-500 text-sm leading-relaxed mb-5">{service.desc}</p>
-      <ul className="flex flex-col gap-1.5">
-        {service.features.map(f => (
-          <li key={f} className="flex items-center gap-2 text-xs text-gray-400 font-medium tracking-wide uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0" />
-            {f}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 export default function Services() {
   const { ref, isVisible } = useIntersection()
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-cream-50">
-      <div className="container-max section-padding">
-        {/* Header */}
-        <div ref={ref} className={`text-center mb-16 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <p className="section-label mb-3">What We Offer</p>
-          <h2 className="section-title mb-5">
-            Roofing Services
-            <br />
-            <em className="not-italic text-primary-600">Built Around You</em>
+    <section id="services" className="py-20 bg-dark-700">
+      <div className="container-max">
+        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
+          <span className="section-label !text-accent">Our Services</span>
+          <h2 className="section-title !text-white mb-4">
+            We Are a Full-Service General Contractor
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            From a simple repair to a complete artistic transformation, Su Casa
-            delivers excellence at every step of the roofing process.
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            From ground-up new construction to targeted renovations, Su Casa Builders
+            delivers expert craftsmanship on every project in Sierra Vista and
+            surrounding communities.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((service, i) => (
-            <ServiceCard key={service.title} service={service} index={i} />
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+          {SERVICES.map((svc, i) => (
+            <div key={svc.title} className="bg-dark-800 rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+              {/* Image placeholder */}
+              <div className={`h-44 bg-gradient-to-br ${svc.color} flex items-center justify-center`}>
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.2" opacity="0.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                  <path d="M7 8l5-3 5 3v6H7z"/>
+                </svg>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-white text-lg mb-4">{svc.title}</h3>
+                <ul className="flex flex-col gap-2.5">
+                  {svc.items.map(item => (
+                    <li key={item} className="flex items-start gap-2 text-gray-400 text-sm">
+                      <CheckCircle size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <a href="#contact" className="btn-primary">
+            Request a Bid Online
+          </a>
         </div>
       </div>
     </section>

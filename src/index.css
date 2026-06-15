@@ -1,65 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #fdfbf7;
-    color: #1a1814;
+    background-color: #ffffff;
+    color: #374151;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-
-  #root {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@layer components {
-  .section-padding {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-
-  .container-max {
-    @apply max-w-7xl mx-auto;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-none transition-all duration-300 tracking-wide uppercase text-sm;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-dark-800 font-semibold px-8 py-4 rounded-none transition-all duration-300 tracking-wide uppercase text-sm;
-  }
-
-  .section-label {
-    @apply text-primary-500 font-accent italic text-xl tracking-wide;
-  }
-
-  .section-title {
-    @apply font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-dark-800 leading-tight;
-  }
-
-  .section-title-light {
-    @apply font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-cream-100 leading-tight;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  #root { width: 100%; max-width: 100%; }
 }

@@ -1,195 +1,109 @@
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Send, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react'
 import { useIntersection } from '../hooks/useIntersection'
 
-const SERVICE_TYPES = [
-  'Residential Roofing',
-  'Commercial Roofing',
-  'Roof Repair',
-  'Artistic Finish',
-  'Eco Roofing',
-  'Inspection',
-  'Other',
-]
-
 export default function Contact() {
-  const [form,       setForm]       = useState({ name: '', email: '', phone: '', service: '', message: '' })
-  const [submitted,  setSubmitted]  = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const { ref, isVisible }          = useIntersection()
+  const [form, setForm]           = useState({ name: '', email: '', phone: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading]     = useState(false)
+  const { ref, isVisible }        = useIntersection()
 
-  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
-
-  const handleSubmit = e => {
+  const handle = e => setForm({ ...form, [e.target.name]: e.target.value })
+  const submit = e => {
     e.preventDefault()
-    setSubmitting(true)
-    setTimeout(() => {
-      setSubmitting(false)
-      setSubmitted(true)
-    }, 1200)
+    setLoading(true)
+    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1000)
   }
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-dark-800 relative overflow-hidden">
-      {/* Warm glow */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-900/20 blur-[200px] pointer-events-none" />
-
-      <div className="container-max section-padding relative">
-        {/* Header */}
-        <div ref={ref} className={`text-center mb-16 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <p className="section-label mb-3">Get In Touch</p>
-          <h2 className="section-title-light mb-5">
-            Start Your Project Today
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Free estimates. No pressure. Just honest advice from the region's
-            most trusted roofing team.
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="container-max">
+        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
+          <span className="section-label">Get In Touch</span>
+          <h2 className="section-title mb-4">Contact Su Casa Builders in Sierra Vista AZ</h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Ready to start your project? Have questions? Reach out — we respond within one business day.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Info panel */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-            <div className="flex flex-col gap-6">
-              {[
-                { icon: Phone, label: 'Call Us', value: '(555) 123-4567', sub: 'Mon–Sat, 7am–7pm' },
-                { icon: Mail,  label: 'Email Us', value: 'hello@sucasaroofing.com', sub: 'Reply within 24 hours' },
-                { icon: MapPin, label: 'Our Office', value: '1234 Rooftop Blvd, San Antonio, TX 78201', sub: 'Licensed across Texas' },
-              ].map(({ icon: Icon, label, value, sub }) => (
-                <div key={label} className="flex gap-4">
-                  <div className="w-10 h-10 bg-primary-600/20 border border-primary-600/30 flex items-center justify-center flex-shrink-0">
-                    <Icon size={18} className="text-primary-400" />
+        <div className="grid lg:grid-cols-2 gap-10">
+          {/* Info + Map */}
+          <div className="flex flex-col gap-6">
+            <div className="bg-white rounded-xl p-7 shadow-sm border border-gray-100">
+              <h3 className="font-bold text-gray-800 mb-6">Our Information</h3>
+              <div className="flex flex-col gap-5">
+                {[
+                  { icon: MapPin,  label: 'Address',  val: '1234 Construction Way\nSierra Vista, AZ 85635' },
+                  { icon: Phone,   label: 'Phone',    val: '(520) 555-0192' },
+                  { icon: Mail,    label: 'Email',    val: 'info@sucasabuilders.com' },
+                  { icon: Clock,   label: 'Hours',    val: 'Mon–Fri 7am–5pm\nSat 8am–2pm' },
+                ].map(({ icon: Icon, label, val }) => (
+                  <div key={label} className="flex gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-primary-50 flex items-center justify-center flex-shrink-0">
+                      <Icon size={16} className="text-primary-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{label}</p>
+                      <p className="text-gray-700 text-sm whitespace-pre-line mt-0.5">{val}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-0.5">{label}</p>
-                    <p className="text-cream-100 font-medium text-sm">{value}</p>
-                    <p className="text-gray-500 text-xs">{sub}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* Hours */}
-            <div className="border border-dark-600 p-6">
-              <h4 className="font-heading text-cream-100 font-semibold mb-4">Business Hours</h4>
-              {[
-                ['Monday – Friday', '7:00am – 7:00pm'],
-                ['Saturday',        '8:00am – 5:00pm'],
-                ['Sunday',          'Emergency only'],
-              ].map(([day, time]) => (
-                <div key={day} className="flex justify-between text-sm py-2 border-b border-dark-600 last:border-0">
-                  <span className="text-gray-400">{day}</span>
-                  <span className="text-cream-200">{time}</span>
-                </div>
-              ))}
+            {/* Map placeholder */}
+            <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl h-52 flex flex-col items-center justify-center gap-2 shadow-sm">
+              <MapPin size={32} className="text-gray-500" />
+              <p className="text-gray-500 font-medium text-sm">Sierra Vista, AZ 85635</p>
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-primary-600 text-xs font-semibold hover:underline">
+                Open in Google Maps →
+              </a>
             </div>
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-dark-700 border border-dark-600 p-8">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center">
-                <CheckCircle size={56} className="text-primary-400" />
-                <h3 className="font-heading text-2xl font-semibold text-cream-100">
-                  We'll Be In Touch!
-                </h3>
-                <p className="text-gray-400 max-w-sm">
-                  Thanks for reaching out. A Su Casa specialist will contact you
-                  within one business day to schedule your free estimate.
+              <div className="flex flex-col items-center justify-center h-full text-center py-16 gap-4">
+                <CheckCircle size={52} className="text-green-500" />
+                <h3 className="font-bold text-gray-800 text-xl">Message Received!</h3>
+                <p className="text-gray-500 text-sm max-w-xs">
+                  Thanks for reaching out. A member of our team will contact you within one business day.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form onSubmit={submit} className="flex flex-col gap-5">
+                <h3 className="font-bold text-gray-800 text-lg mb-1">Send Us a Message</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      name="name"
-                      required
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Jane Smith"
-                      className="w-full bg-dark-800 border border-dark-500 focus:border-primary-500 text-cream-100 placeholder-gray-600 px-4 py-3 text-sm outline-none transition-colors"
-                    />
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Full Name *</label>
+                    <input name="name" required value={form.name} onChange={handle} placeholder="Jane Smith"
+                      className="w-full border border-gray-200 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary-500 transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="(555) 000-0000"
-                      className="w-full bg-dark-800 border border-dark-500 focus:border-primary-500 text-cream-100 placeholder-gray-600 px-4 py-3 text-sm outline-none transition-colors"
-                    />
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Phone</label>
+                    <input name="phone" value={form.phone} onChange={handle} placeholder="(520) 555-0000"
+                      className="w-full border border-gray-200 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary-500 transition-colors" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="jane@example.com"
-                    className="w-full bg-dark-800 border border-dark-500 focus:border-primary-500 text-cream-100 placeholder-gray-600 px-4 py-3 text-sm outline-none transition-colors"
-                  />
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Email *</label>
+                  <input name="email" type="email" required value={form.email} onChange={handle} placeholder="jane@example.com"
+                    className="w-full border border-gray-200 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary-500 transition-colors" />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2">
-                    Service Needed
-                  </label>
-                  <select
-                    name="service"
-                    value={form.service}
-                    onChange={handleChange}
-                    className="w-full bg-dark-800 border border-dark-500 focus:border-primary-500 text-cream-100 px-4 py-3 text-sm outline-none transition-colors appearance-none"
-                  >
-                    <option value="">Select a service…</option>
-                    {SERVICE_TYPES.map(s => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Project Description</label>
+                  <textarea name="message" rows={4} value={form.message} onChange={handle} placeholder="Tell us about your project…"
+                    className="w-full border border-gray-200 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary-500 transition-colors resize-none" />
                 </div>
-                <div>
-                  <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2">
-                    Tell Us About Your Project
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Describe your roof type, size, any concerns…"
-                    className="w-full bg-dark-800 border border-dark-500 focus:border-primary-500 text-cream-100 placeholder-gray-600 px-4 py-3 text-sm outline-none transition-colors resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-500 disabled:opacity-60 text-white font-semibold py-4 tracking-wide uppercase text-sm transition-colors duration-200"
-                >
-                  {submitting ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Sending…
-                    </>
+                <button type="submit" disabled={loading}
+                  className="btn-primary justify-center py-3 disabled:opacity-60">
+                  {loading ? (
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
-                    <>
-                      Get My Free Estimate
-                      <Send size={16} />
-                    </>
+                    <><Send size={15} /> Send Message</>
                   )}
                 </button>
-                <p className="text-gray-500 text-xs text-center">
-                  No obligation. No spam. Just honest roofing advice.
-                </p>
               </form>
             )}
           </div>
