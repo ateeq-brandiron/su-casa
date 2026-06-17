@@ -1,51 +1,74 @@
 import { useState, useEffect } from 'react'
 
+const LINKS = [
+  { label: 'Home',     href: '#home' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact',  href: '#contact' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [open, setOpen]         = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    const fn = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', fn)
+    return () => window.removeEventListener('scroll', fn)
   }, [])
 
   return (
     <nav style={{
-      position: 'sticky', top: 0, zIndex: 50,
-      backgroundColor: '#ffffff',
-      boxShadow: scrolled ? '0 2px 12px rgba(0,0,0,0.08)' : 'none',
-      borderBottom: '1px solid #e5e7eb',
-      transition: 'box-shadow 0.3s'
+      position: 'fixed', top: 0, insetInline: 0, zIndex: 100,
+      background: '#fff',
+      boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.10)' : '0 1px 0 #e5e7eb',
+      transition: 'box-shadow 0.3s',
     }}>
-      <div style={{maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px'}}>
-        <a href="#" style={{display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none'}}>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <path d="M14 4L2 14h4v10h6v-6h4v6h6V14h4L14 4z" fill="#2d6a9f"/>
-          </svg>
-          <span style={{fontWeight: 700, fontSize: '1.1rem', color: '#1f2937'}}>Su Casa Builders</span>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        {/* Logo */}
+        <a href="#home" style={{ textDecoration: 'none' }}>
+          <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: '1.7rem', fontWeight: 700, color: '#111827', lineHeight: 1 }}>Su Casa Builders</span>
+          <span style={{ display: 'block', fontSize: '0.6rem', fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em', color: '#6b7280', textTransform: 'uppercase', textAlign: 'center' }}>Inc.</span>
         </a>
-        <div style={{display: 'flex', alignItems: 'center', gap: '2rem'}}>
-          <div style={{display: 'flex', gap: '1.5rem', listStyle: 'none'}}>
-            {['Services','About Us','Projects','Contact'].map(link => (
-              <a key={link} href={`#${link.toLowerCase().replace(' ','-')}`} style={{color: '#374151', textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem', transition: 'color 0.2s'}}
-                onMouseEnter={e => e.target.style.color='#2d6a9f'}
-                onMouseLeave={e => e.target.style.color='#374151'}>
-                {link}
-              </a>
-            ))}
-          </div>
-          <a href="#contact" style={{
-            backgroundColor: '#2d6a9f', color: '#ffffff', padding: '0.6rem 1.4rem',
-            borderRadius: '6px', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem',
-            transition: 'background-color 0.2s'
-          }}
-            onMouseEnter={e => e.target.style.backgroundColor='#245a8a'}
-            onMouseLeave={e => e.target.style.backgroundColor='#2d6a9f'}>
-            Get a Free Quote
-          </a>
+
+        {/* Desktop links */}
+        <div style={{ display: 'flex', gap: '2.25rem', alignItems: 'center' }} className="hidden-mobile">
+          {LINKS.map(l => (
+            <a key={l.href} href={l.href} style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#374151', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => e.target.style.color = '#111827'}
+              onMouseLeave={e => e.target.style.color = '#374151'}>
+              {l.label}
+            </a>
+          ))}
         </div>
+
+        {/* Mobile hamburger */}
+        <button onClick={() => setOpen(!open)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 8 }} className="show-mobile">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#374151" strokeWidth="2">
+            {open ? <><line x1="3" y1="3" x2="19" y2="19"/><line x1="19" y1="3" x2="3" y2="19"/></> : <><line x1="2" y1="5" x2="20" y2="5"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="17" x2="20" y2="17"/></>}
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div style={{ background: '#fff', borderTop: '1px solid #e5e7eb', padding: '1rem 2rem 1.5rem' }}>
+          {LINKS.map(l => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+              style={{ display: 'block', padding: '0.65rem 0', fontSize: '0.95rem', fontWeight: 500, color: '#374151', textDecoration: 'none', borderBottom: '1px solid #f3f4f6' }}>
+              {l.label}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hidden-mobile { display: none !important; }
+          .show-mobile   { display: flex !important; }
+        }
+      `}</style>
     </nav>
   )
 }

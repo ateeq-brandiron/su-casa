@@ -1,66 +1,80 @@
-import { Star, Quote } from 'lucide-react'
-import { useIntersection } from '../hooks/useIntersection'
+import { useState } from 'react'
+
+function SectionLabel({ text }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#6b7280', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
+    </div>
+  )
+}
 
 const REVIEWS = [
   {
-    name: 'Robert & Maria T.',
-    location: 'Sierra Vista, AZ',
-    stars: 5,
-    text: "Highly Recommended! Su Casa built our custom home from the ground up and we couldn't be happier. They were transparent about every cost, finished on schedule, and the quality is outstanding.",
+    title: 'Highly Recommended',
+    name: 'Bernard Barrowclough',
+    text: 'Harley Aldridge and his team have been the guiding force behind 2 custom homes I built in the Sierra Vista area and both times I was more than happy with the total experience. I would highly recommend that if you are interested in the new construction/remodeling of your home or business that you contact Su Casa Builders.',
   },
   {
-    name: 'James Whitfield',
-    location: 'Bisbee, AZ',
-    stars: 5,
-    text: "Highly Recommended! We hired Su Casa for a full kitchen remodel and garage addition. Professional crew, clean jobsite every day, and the final result exceeded our expectations.",
+    title: 'Quality Work',
+    name: 'Bill Buhs',
+    text: 'Need a framer? Quality work, great prices, efficient and clean!',
   },
   {
-    name: 'Priya & Daniel S.',
-    location: 'Huachuca City, AZ',
-    stars: 5,
-    text: "Highly Recommended! As a veteran-owned business they understood our needs immediately. Fair pricing, honest communication, and top-notch work. We'll use them again for our next project.",
+    title: 'Exceptional Craftsmanship',
+    name: 'Sarah Johnson',
+    text: 'Aliquam in risus lacinia libero in nibh. Euismod amet augue cursus enim massa. Magna consectetur sed amet blandit suspendisse commodo. Nisl ut egestas felis purus risus. Viverra duis blandit ac magna pellentesque sit augtre. Facilisis nunc risus fringilla purus blandit diam turpis. Ipsum turpis.',
   },
 ]
 
-function Stars({ n }) {
+function Stars() {
   return (
-    <div className="flex gap-0.5">
-      {[...Array(n)].map((_, i) => (
-        <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
+    <div style={{ display: 'flex', gap: 2, marginBottom: '0.75rem' }}>
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" strokeWidth="1">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+        </svg>
       ))}
     </div>
   )
 }
 
 export default function Testimonials() {
-  const { ref, isVisible } = useIntersection()
+  const [idx, setIdx] = useState(0)
+  const visible = [REVIEWS[idx % REVIEWS.length], REVIEWS[(idx + 1) % REVIEWS.length], REVIEWS[(idx + 2) % REVIEWS.length]]
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container-max">
-        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <span className="section-label">Testimonials</span>
-          <h2 className="section-title mb-4">What Our Clients Say</h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Our clients say it best. Here are a few words from families and business
-            owners across Cochise County.
-          </p>
-        </div>
+    <section style={{ background: '#f9fafb', padding: '5rem 2rem' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <SectionLabel text="Testimonials" />
+        <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#111827', marginBottom: '0.75rem' }}>
+          What Our Clients Say
+        </h2>
+        <p style={{ color: '#6b7280', fontSize: '0.95rem', lineHeight: 1.75, maxWidth: 600, marginBottom: '3rem' }}>
+          Our greatest measure of success is the trust we've earned from homeowners and partners across Cochise County. These testimonials highlight the professionalism, skill, and integrity that guide every Su Casa Builders project.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {REVIEWS.map(r => (
-            <div key={r.name} className="bg-white rounded-xl p-7 shadow-sm border border-gray-100">
-              <Stars n={r.stars} />
-              <p className="text-xs font-bold text-primary-600 tracking-wider mt-2 mb-4">{r.text.split('!')[0]}!</p>
-              <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                "{r.text.substring(r.text.indexOf('!') + 2)}"
-              </p>
-              <div className="border-t border-gray-100 pt-4">
-                <p className="font-semibold text-gray-800 text-sm">{r.name}</p>
-                <p className="text-gray-400 text-xs">{r.location}</p>
-              </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+          {visible.map((r, i) => (
+            <div key={r.name + i} style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, padding: '1.75rem' }}>
+              <Stars />
+              <p style={{ fontWeight: 700, fontSize: '0.9rem', color: '#111827', marginBottom: '0.75rem' }}>{r.title}</p>
+              <p style={{ color: '#6b7280', fontSize: '0.85rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>{r.text}</p>
+              <p style={{ fontWeight: 600, fontSize: '0.85rem', color: '#374151' }}>{r.name}</p>
             </div>
           ))}
+        </div>
+
+        {/* Navigation */}
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <button onClick={() => setIdx(i => (i - 1 + REVIEWS.length) % REVIEWS.length)}
+            style={{ width: 36, height: 36, borderRadius: '50%', border: '1.5px solid #d1d5db', background: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#374151" strokeWidth="2"><polyline points="9,2 4,7 9,12"/></svg>
+          </button>
+          <button onClick={() => setIdx(i => (i + 1) % REVIEWS.length)}
+            style={{ width: 36, height: 36, borderRadius: '50%', border: '1.5px solid #d1d5db', background: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#374151" strokeWidth="2"><polyline points="5,2 10,7 5,12"/></svg>
+          </button>
         </div>
       </div>
     </section>

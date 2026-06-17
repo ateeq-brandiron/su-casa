@@ -1,86 +1,82 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
-import { useIntersection } from '../hooks/useIntersection'
+
+function SectionLabel({ text }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#6b7280', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
+    </div>
+  )
+}
 
 const FAQS = [
+  { q: 'Do you work with both homeowners and general contractors?', a: null },
   {
-    q: 'Are you licensed and insured in Arizona?',
-    a: "Yes. Su Casa Builders LLC holds an active Arizona contractor's license and carries full general liability and workers' compensation insurance. We're happy to provide certificates of insurance upon request.",
+    q: 'What areas of Southeast Arizona do you serve?',
+    a: 'We serve Sierra Vista, Hereford, and surrounding Cochise County communities. Our crews live and work in this region, giving us firsthand knowledge of the local climate, building codes, and construction standards. From framing and roofing to exterior painting and custom builds, our team uses proven methods and durable materials suited to the Arizona sun and seasonal monsoons.',
   },
-  {
-    q: 'What areas do you serve?',
-    a: 'We primarily serve Sierra Vista, Bisbee, Huachuca City, Tombstone, Sonoita, and surrounding Cochise County communities. Contact us for projects outside this area.',
-  },
-  {
-    q: 'How do I get a quote for my project?',
-    a: "Simply fill out our contact form or give us a call. We'll schedule a free on-site consultation, evaluate your project, and provide a detailed written estimate within a few business days.",
-  },
-  {
-    q: 'How long does a typical project take?',
-    a: 'Timelines vary by project scope. A bathroom remodel may take 2–3 weeks, while a custom home build typically runs 6–12 months. We provide a detailed schedule in every proposal and keep you updated throughout.',
-  },
-  {
-    q: 'Do you handle permits?',
-    a: 'Yes. We manage all required permits and inspections through the City of Sierra Vista and Cochise County. You never have to navigate the permitting process alone.',
-  },
-  {
-    q: 'Is Su Casa Builders veteran-owned?',
-    a: "Absolutely. Our founder served in the U.S. Army and built this company on the values learned in service — discipline, integrity, and dedication to getting the job done right.",
-  },
+  { q: 'Why should I hire a contractor with local roots?', a: 'Choosing a general contractor with local roots ensures your project is completed by people who understand the environment and take pride in building within their own community.' },
+  { q: 'Can you handle both framing and window installation in the same project?', a: null },
+  { q: 'How soon can you start my project?', a: null },
 ]
 
-function FAQItem({ q, a }) {
-  const [open, setOpen] = useState(false)
+function FAQItem({ q, a, defaultOpen }) {
+  const [open, setOpen] = useState(defaultOpen || false)
   return (
-    <div className="border-b border-gray-100 last:border-0">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left gap-4 hover:text-primary-600 transition-colors"
-      >
-        <span className="font-semibold text-gray-800 text-sm">{q}</span>
-        <ChevronDown size={18} className={`text-gray-400 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+    <div style={{ marginBottom: '0.5rem' }}>
+      <button onClick={() => setOpen(!open)} style={{
+        width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
+        background: open ? '#374151' : '#f3f4f6', border: 'none', borderRadius: 6,
+        padding: '1rem 1.25rem', cursor: 'pointer', textAlign: 'left', transition: 'background 0.2s'
+      }}>
+        <span style={{ fontWeight: 500, fontSize: '0.9rem', color: open ? '#fff' : '#111827', lineHeight: 1.5 }}>{q}</span>
+        <div style={{ width: 28, height: 28, borderRadius: '50%', border: `1.5px solid ${open ? 'rgba(255,255,255,0.4)' : '#d1d5db'}`, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke={open ? 'white' : '#6b7280'} strokeWidth="2">
+            {open ? <><line x1="2" y1="6" x2="10" y2="6"/></> : <><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></>}
+          </svg>
+        </div>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? 'max-h-48 pb-5' : 'max-h-0'}`}>
-        <p className="text-gray-500 text-sm leading-relaxed">{a}</p>
-      </div>
+      {open && a && (
+        <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderTop: 'none', borderRadius: '0 0 6px 6px', padding: '1rem 1.25rem' }}>
+          <p style={{ color: '#6b7280', fontSize: '0.875rem', lineHeight: 1.75 }}>{a}</p>
+        </div>
+      )}
     </div>
   )
 }
 
 export default function FAQ() {
-  const { ref, isVisible } = useIntersection()
-
   return (
-    <section className="py-20 bg-white">
-      <div className="container-max">
-        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <span className="section-label">FAQ</span>
-          <h2 className="section-title mb-4">
-            Frequently Asked Questions About Our Work as General Contractors in Sierra Vista AZ
-          </h2>
-        </div>
+    <section style={{ background: '#fff', padding: '5rem 2rem' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <SectionLabel text="Frequently Asked Questions" />
+        <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', fontWeight: 700, color: '#111827', marginBottom: '3rem', maxWidth: 640, lineHeight: 1.3 }}>
+          Frequently Asked Questions About Our Work as General Contractors in Sierra Vista AZ
+        </h2>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
-          <div className="lg:col-span-3 bg-gray-50 rounded-xl p-6">
-            {FAQS.map(f => <FAQItem key={f.q} q={f.q} a={f.a} />)}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
+          {/* Left image */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ height: 280, borderRadius: 8, overflow: 'hidden', background: 'linear-gradient(160deg, #4a6a5a 0%, #2a4a3a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.85rem' }}>Project Photo</span>
+            </div>
+            <p style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+              Any question? <a href="mailto:support@sucasabuilders.com" style={{ color: '#374151', fontWeight: 500 }}>support@sucasabuilders.com</a>
+            </p>
           </div>
 
-          <div className="lg:col-span-2 flex flex-col gap-5">
-            <div className="img-placeholder aspect-[4/3] rounded-xl bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" opacity="0.5">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <div className="img-placeholder aspect-[4/3] rounded-xl bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" opacity="0.5">
-                <rect x="2" y="7" width="20" height="14" rx="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-              </svg>
-            </div>
+          {/* Right accordion */}
+          <div>
+            {FAQS.map((f, i) => <FAQItem key={f.q} q={f.q} a={f.a} defaultOpen={i === 1} />)}
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          #faq-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }

@@ -1,52 +1,43 @@
-import { useIntersection } from '../hooks/useIntersection'
-
-const PROJECTS = [
-  { title: 'Custom Home — Fort Huachuca Area', tag: 'New Construction', color: 'from-slate-600 to-slate-800' },
-  { title: 'Commercial Warehouse Build', tag: 'Commercial', color: 'from-stone-500 to-stone-700' },
-  { title: 'Residential Addition & Remodel', tag: 'Renovation', color: 'from-blue-700 to-blue-900' },
-  { title: 'Garage & Workshop Build', tag: 'Special Project', color: 'from-gray-500 to-gray-700' },
-  { title: 'Kitchen & Bath Full Renovation', tag: 'Interior', color: 'from-zinc-600 to-zinc-800' },
-  { title: 'Duplex New Construction', tag: 'Multi-Family', color: 'from-slate-700 to-slate-900' },
-]
-
-function ProjectCard({ p }) {
+function SectionLabel({ text }) {
   return (
-    <div className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
-      <div className={`h-52 bg-gradient-to-br ${p.color} flex items-center justify-center`}>
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.2" opacity="0.4">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-        <span className="text-white font-semibold text-sm border-b border-white pb-0.5">View Project</span>
-      </div>
-      {/* Label */}
-      <div className="absolute bottom-0 inset-x-0 bg-white p-4">
-        <p className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-0.5">{p.tag}</p>
-        <p className="font-semibold text-gray-800 text-sm leading-snug">{p.title}</p>
-      </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#6b7280', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
     </div>
   )
 }
 
-export default function Projects() {
-  const { ref, isVisible } = useIntersection()
+const PHOTOS = [
+  { label: 'Custom Home — Sierra Vista', color: 'linear-gradient(135deg, #8a7060, #6a5040)' },
+  { label: 'Spec Home — Cochise County', color: 'linear-gradient(135deg, #7a8a9a, #5a6a7a)' },
+  { label: 'Metal Roof — Hereford AZ', color: 'linear-gradient(135deg, #6a7a5a, #4a5a3a)' },
+  { label: 'Custom Build — Fort Huachuca', color: 'linear-gradient(135deg, #9a8a7a, #7a6a5a)' },
+  { label: 'Home Renovation — Bisbee', color: 'linear-gradient(135deg, #7a6a8a, #5a4a6a)' },
+  { label: 'Commercial Project — Sierra Vista', color: 'linear-gradient(135deg, #6a8a7a, #4a6a5a)' },
+]
 
+export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="container-max">
-        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <span className="section-label">Featured Projects</span>
-          <h2 className="section-title mb-4">Featured Projects</h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            See what Su Casa Builders has delivered for families and businesses across
-            Sierra Vista and Cochise County.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PROJECTS.map(p => <ProjectCard key={p.title} p={p} />)}
+    <section id="projects" style={{ background: '#fff', padding: '5rem 2rem' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <SectionLabel text="Projects" />
+        <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#111827', marginBottom: '0.75rem' }}>
+          Featured Projects
+        </h2>
+        <p style={{ color: '#6b7280', fontSize: '0.95rem', lineHeight: 1.75, maxWidth: 620, marginBottom: '3rem' }}>
+          See the craftsmanship and care that define every Su Casa Builders project. Our portfolio includes custom homes, additions, and specialty work completed across Southeast Arizona. Each project reflects our attention to detail, quality materials, and commitment to lasting construction.
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
+          {PHOTOS.map(p => (
+            <div key={p.label} style={{ position: 'relative', height: 220, borderRadius: 6, overflow: 'hidden', cursor: 'pointer', background: p.color }}
+              onMouseEnter={e => e.currentTarget.querySelector('.overlay').style.opacity = '1'}
+              onMouseLeave={e => e.currentTarget.querySelector('.overlay').style.opacity = '0'}>
+              <div className="overlay" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0, transition: 'opacity 0.3s' }}>
+                <span style={{ color: '#fff', fontWeight: 600, fontSize: '0.9rem', borderBottom: '1px solid white', paddingBottom: 2 }}>{p.label}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,74 +1,77 @@
 const year = new Date().getFullYear()
 
-const COLS = [
-  {
-    heading: 'Services',
-    links: ['General Contracting', 'Custom Home Construction', 'Renovations & Remodels', 'Commercial Projects', 'Special Projects'],
-  },
-  {
-    heading: 'Service Areas',
-    links: ['Sierra Vista, AZ', 'Bisbee, AZ', 'Huachuca City, AZ', 'Tombstone, AZ', 'Sonoita, AZ'],
-  },
-  {
-    heading: 'Company',
-    links: ['About Us', 'Our Projects', 'Testimonials', 'FAQ', 'Contact'],
-  },
-]
-
 export default function Footer() {
   return (
-    <footer style={{backgroundColor: '#1e2433', color: '#9ca3af', fontFamily: 'Inter, system-ui, sans-serif'}}>
-      <div style={{maxWidth: '1280px', margin: '0 auto', padding: '4rem 2rem 2rem'}}>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem'}}>
+    <footer style={{ background: '#1c1f2e', color: '#9ca3af', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '4rem 2rem 2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
           {/* Brand */}
           <div>
-            <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem'}}>
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M14 4L2 14h4v10h6v-6h4v6h6V14h4L14 4z" fill="#2d6a9f"/>
-              </svg>
-              <span style={{fontWeight: 700, fontSize: '1.05rem', color: '#ffffff'}}>Su Casa Builders</span>
+            <div style={{ fontFamily: '"Dancing Script", cursive', fontSize: '1.8rem', fontWeight: 700, color: '#fff', lineHeight: 1, marginBottom: '0.25rem' }}>
+              Su Casa Builders
             </div>
-            <p style={{fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '1.25rem'}}>
-              Veteran-owned general contractor serving Sierra Vista, AZ and Cochise County since 2015.
-              Quality construction with honesty and integrity.
-            </p>
-            <p style={{fontSize: '0.85rem'}}>
-              <span style={{color: '#4a9aba', fontWeight: 600}}>Phone: </span>
-              (520) 555-0192
-            </p>
-            <p style={{fontSize: '0.85rem', marginTop: '0.35rem'}}>
-              <span style={{color: '#4a9aba', fontWeight: 600}}>Email: </span>
-              info@sucasabuilders.com
+            <p style={{ fontSize: '0.75rem', letterSpacing: '0.12em', color: '#6b7280', textTransform: 'uppercase', marginBottom: '1rem' }}>Inc.</p>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.75, color: '#6b7280', maxWidth: 220 }}>
+              Quality construction services rooted in integrity and craftsmanship. Serving our community one project at a time.
             </p>
           </div>
 
-          {/* Link columns */}
-          {COLS.map(col => (
-            <div key={col.heading}>
-              <h4 style={{color: '#ffffff', fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem'}}>
-                {col.heading}
-              </h4>
-              <ul style={{listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem'}}>
-                {col.links.map(link => (
-                  <li key={link}>
-                    <a href="#" style={{color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s'}}
-                      onMouseEnter={e => e.target.style.color='#4a9aba'}
-                      onMouseLeave={e => e.target.style.color='#9ca3af'}>
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Services */}
+          <div>
+            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Services</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              {['Custom Home Design', 'Home Construction', 'Renovations and Additions'].map(s => (
+                <li key={s}><a href="#services" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
+                  onMouseEnter={e => e.target.style.color = '#d1d5db'}
+                  onMouseLeave={e => e.target.style.color = '#6b7280'}>{s}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Projects */}
+          <div>
+            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Projects</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              {['Custom Homes', 'Renovations', 'Testimonials', 'Contact'].map(s => (
+                <li key={s}><a href="#projects" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
+                  onMouseEnter={e => e.target.style.color = '#d1d5db'}
+                  onMouseLeave={e => e.target.style.color = '#6b7280'}>{s}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Service Areas</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              {['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochise County'].map(s => (
+                <li key={s}><span style={{ color: '#6b7280', fontSize: '0.85rem' }}>{s}</span></li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div style={{borderTop: '1px solid #374151', paddingTop: '1.5rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '1rem'}}>
-          <p style={{fontSize: '0.8rem'}}>© {year} Su Casa Builders LLC. All rights reserved.</p>
-          <p style={{fontSize: '0.8rem'}}>AZ Contractor License · Fully Insured · Veteran-Owned</p>
+        <div style={{ borderTop: '1px solid #2d3148', paddingTop: '1.5rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.75rem' }}>
+          <p style={{ fontSize: '0.8rem', color: '#4b5563' }}>© {year} Su Casa Builders. All rights reserved.</p>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            {['Privacy Policy', 'Terms of Service'].map(l => (
+              <a key={l} href="#" style={{ color: '#4b5563', textDecoration: 'none', fontSize: '0.8rem' }}
+                onMouseEnter={e => e.target.style.color = '#9ca3af'}
+                onMouseLeave={e => e.target.style.color = '#4b5563'}>{l}</a>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          footer > div > div:first-of-type { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          footer > div > div:first-of-type { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   )
 }
