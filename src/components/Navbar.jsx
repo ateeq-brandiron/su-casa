@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logoSrc from '../assets/icons/Logo.svg'
 
 const LINKS = [
   { label: 'Home',     href: '#home' },
@@ -27,9 +28,8 @@ export default function Navbar() {
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#home" style={{ textDecoration: 'none' }}>
-          <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: '1.7rem', fontWeight: 700, color: '#111827', lineHeight: 1 }}>Su Casa Builders</span>
-          <span style={{ display: 'block', fontSize: '0.6rem', fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em', color: '#6b7280', textTransform: 'uppercase', textAlign: 'center' }}>Inc.</span>
+        <a href="#home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <img src={logoSrc} alt="Su Casa Builders" style={{ height: 38, width: 'auto' }} />
         </a>
 
         {/* Desktop links */}

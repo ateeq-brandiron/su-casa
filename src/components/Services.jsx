@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import frame1 from '../assets/images/Frame1.png'
+import frame1b from '../assets/images/Frame1-1.png'
+import frame1c from '../assets/images/Frame1-2.png'
 
 function SectionLabel({ text }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2"><g clipPath="url(#cs)"><path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/></g><defs><clipPath id="cs"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
       <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
     </div>
   )
@@ -13,19 +16,19 @@ const SERVICES = [
   {
     title: 'General Contracting',
     desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
-    color: 'linear-gradient(135deg, #5a7a6a, #3a5a4a)',
+    img: frame1,
     items: ['Spec Homes', 'Custom Homes', 'Light Commercial Projects'],
   },
   {
     title: 'Subcontracting',
     desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
-    color: 'linear-gradient(135deg, #6a7a8a, #4a5a6a)',
+    img: frame1b,
     items: ['Framing', 'Roofing', 'Painting'],
   },
   {
     title: 'Special Projects and Products',
     desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
-    color: 'linear-gradient(135deg, #8a7a6a, #6a5a4a)',
+    img: frame1c,
     items: ['Screened Porches and Additions', 'Pergolas and Covered Patios', 'Pella Windows'],
   },
 ]
@@ -59,9 +62,8 @@ export default function Services() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
           {SERVICES.map(svc => (
             <div key={svc.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, overflow: 'hidden' }}>
-              {/* Photo placeholder */}
-              <div style={{ height: 180, background: svc.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem' }}>Project Photo</span>
+              <div style={{ height: 180, overflow: 'hidden' }}>
+                <img src={svc.img} alt={svc.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ padding: '1.5rem' }}>
                 <h3 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#fff', marginBottom: '0.75rem' }}>{svc.title}</h3>

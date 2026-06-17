@@ -1,12 +1,13 @@
+import heroImg from '../assets/images/Hero.png'
+
 export default function Hero() {
   return (
     <section id="home">
       {/* Full-width hero image with text overlay */}
-      <div style={{ position: 'relative', width: '100%', height: 520, background: 'linear-gradient(to bottom right, #5a6a7a, #7a8a9a)', overflow: 'hidden', marginTop: 72 }}>
-        {/* Sky gradient background simulating the house photo */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, #6b8cba 0%, #8faabf 40%, #a0856a 70%, #7a6a55 100%)' }} />
+      <div style={{ position: 'relative', width: '100%', height: 520, overflow: 'hidden', marginTop: 72 }}>
+        <img src={heroImg} alt="Su Casa Builders project" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
         {/* Dark overlay for text legibility */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.40)' }} />
 
         {/* Text overlay */}
         <div style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '4rem 2rem', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

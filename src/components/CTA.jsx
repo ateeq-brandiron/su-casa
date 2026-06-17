@@ -1,9 +1,10 @@
+import ctaBg from '../assets/images/CTA.png'
+
 export default function CTA() {
   return (
     <section style={{ position: 'relative', padding: '5rem 2rem', overflow: 'hidden' }}>
-      {/* Background: house photo simulation */}
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, #2a3a2a 0%, #1a2510 40%, #3a4530 100%)' }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)' }} />
+      <img src={ctaBg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} aria-hidden="true" />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, color: '#fff', lineHeight: 1.3, marginBottom: '1rem' }}>

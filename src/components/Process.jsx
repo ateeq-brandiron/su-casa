@@ -1,8 +1,10 @@
-function SectionLabel({ text, light }) {
+import processBg from '../assets/images/Process.png'
+
+function SectionLabel({ text }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={light ? 'rgba(255,255,255,0.4)' : '#6b7280'} strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: light ? 'rgba(255,255,255,0.5)' : '#6b7280', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#6b7280" strokeWidth="2"><g clipPath="url(#cp)"><path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/></g><defs><clipPath id="cp"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
+      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#6b7280', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
     </div>
   )
 }
@@ -32,11 +34,11 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section style={{ background: '#f0ece4', padding: '5rem 2rem', position: 'relative', overflow: 'hidden' }}>
-      {/* Blueprint overlay */}
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.06, backgroundImage: 'repeating-linear-gradient(0deg, #374151 0px, #374151 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #374151 0px, #374151 1px, transparent 1px, transparent 40px)' }} />
+    <section style={{ position: 'relative', padding: '5rem 2rem', overflow: 'hidden' }}>
+      {/* Background image */}
+      <img src={processBg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} aria-hidden="true" />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <SectionLabel text="Our Process" />
         <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#111827', marginBottom: '0.75rem' }}>
           Our Process
@@ -47,8 +49,8 @@ export default function Process() {
 
         {/* Steps grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', position: 'relative' }}>
-          {STEPS.map((step, i) => (
-            <div key={step.num} style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 8, padding: '1.5rem', backdropFilter: 'blur(4px)' }}>
+          {STEPS.map(step => (
+            <div key={step.num} style={{ background: 'rgba(255,255,255,0.85)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 8, padding: '1.5rem', backdropFilter: 'blur(4px)' }}>
               <p style={{ fontSize: '0.65rem', fontWeight: 700, color: '#6b7280', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{step.num}</p>
               <h3 style={{ fontWeight: 700, fontSize: '1rem', color: '#111827', marginBottom: '0.75rem' }}>{step.title}</h3>
               <p style={{ color: '#6b7280', fontSize: '0.82rem', lineHeight: 1.75 }}>{step.desc}</p>
@@ -59,7 +61,7 @@ export default function Process() {
         {/* Arrow connectors */}
         <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '1.5rem', paddingInline: '12.5%' }}>
           {[0,1,2,3].map(i => (
-            <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', border: '1.5px solid #9ca3af', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', border: '1.5px solid #9ca3af', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.7)' }}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#6b7280" strokeWidth="2"><line x1="2" y1="7" x2="12" y2="7"/><polyline points="8,3 12,7 8,11"/></svg>
             </div>
           ))}
