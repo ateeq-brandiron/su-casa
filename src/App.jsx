@@ -19,8 +19,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Services />
+        <About />
         <WhyUs />
         <CoreValues />
         <Process />
