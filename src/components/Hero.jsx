@@ -2,14 +2,16 @@ import heroImg from '../assets/images/Hero.png'
 
 export default function Hero() {
   return (
-    <section id="home">
+    <section id="home" style={{ margin: 0, padding: 0 }}>
       {/* ── Hero ── */}
       <div style={{
         position: 'relative',
         width: '100%',
-        height: 720,
-        marginTop: 72,
+        height: 792,
+        marginTop: 0,
+        paddingTop: 72,
         overflow: 'hidden',
+        background: '#111',
       }}>
         <img src={heroImg} alt="" aria-hidden="true" style={{
           position: 'absolute', inset: 0,
