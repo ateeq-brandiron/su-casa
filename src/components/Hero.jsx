@@ -62,41 +62,26 @@ export default function Hero() {
       </div>
 
       {/* ── Info section ── */}
-      <div id="info" style={{ background: '#f9fafb', padding: '3.5rem 2rem' }}>
-        <div style={{
-          maxWidth: 1280, margin: '0 auto',
-          display: 'grid', gridTemplateColumns: '1fr auto',
-          gap: '3rem', alignItems: 'center',
+      <div id="info" style={{
+        background: '#E8F8FF',
+        display: 'flex', flexDirection: 'column',
+        justifyContent: 'center', alignItems: 'center',
+        padding: '75px 76px', minHeight: 258,
+      }}>
+        <p style={{
+          maxWidth: 1038,
+          fontFamily: 'Manrope, sans-serif',
+          fontStyle: 'normal',
+          fontWeight: 500,
+          fontSize: 'clamp(1rem, 1.67vw, 24px)',
+          lineHeight: '150%',
+          textAlign: 'center',
+          color: '#000000',
+          margin: 0,
         }}>
-          <p style={{
-            color: '#111827',
-            fontFamily: 'Manrope, sans-serif',
-            fontSize: 'clamp(0.9rem, 1.1vw, 1rem)',
-            fontWeight: 400,
-            lineHeight: 1.85,
-          }}>
-            Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, <strong>roofing</strong>, <strong>painting</strong>, and custom home projects. Since 2003, our team has delivered <strong>quality craftsmanship</strong> and <strong>honest service</strong> across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job.
-          </p>
-          <a href="#contact" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '0.6rem', whiteSpace: 'nowrap',
-            border: '1.5px solid #374151', color: '#374151', background: 'transparent',
-            padding: '0.75rem 1.5rem', borderRadius: 4, textDecoration: 'none',
-            fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: '0.9rem',
-            transition: 'all 0.2s',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#374151'; e.currentTarget.style.color = '#fff' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#374151' }}>
-            Start Your Project Today
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2"><line x1="2" y1="7" x2="12" y2="7"/><polyline points="8,3 12,7 8,11"/></svg>
-          </a>
-        </div>
+          Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, roofing, painting, and custom home projects. Since 2003, our team has delivered quality craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job.
+        </p>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          #info > div { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   )
 }
