@@ -112,7 +112,7 @@ export default function Hero() {
             height: 66, padding: '20px 30px',
             textDecoration: 'none',
             fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.95rem',
-            marginBottom: '3.5rem',
+            marginBottom: 50,
             transition: 'background 0.2s',
           }}
             onMouseEnter={e => { e.currentTarget.style.background = '#1b3d5e' }}
