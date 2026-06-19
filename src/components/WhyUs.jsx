@@ -57,7 +57,7 @@ export default function WhyUs() {
         display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 60,
       }}>
         {/* Header block */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Why Choose Us" />
           <h2 style={{
             fontFamily: 'Manrope, sans-serif',
