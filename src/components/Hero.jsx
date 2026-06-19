@@ -1,9 +1,10 @@
 import heroImg from '../assets/images/Hero.png'
+import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 1.png'
 
 export default function Hero() {
   return (
     <section id="home">
-      {/* ── Hero ── */}
+      {/* ── Hero image ── */}
       <div style={{
         position: 'relative',
         width: '100%',
@@ -15,25 +16,26 @@ export default function Hero() {
           width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center 30%',
         }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.42)' }} />
+        {/* Light overlay so text stays readable without killing the photo */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.20)' }} />
 
-        {/* Text — left-aligned, lower portion */}
+        {/* Text — left-aligned, lower-middle portion */}
         <div style={{
-          position: 'absolute', bottom: '14%', left: '50%',
+          position: 'absolute', bottom: '32%', left: '50%',
           transform: 'translateX(-50%)',
           width: '100%', maxWidth: 1280,
           padding: '0 2rem',
         }}>
-          <div style={{ maxWidth: 560 }}>
+          <div style={{ maxWidth: 600 }}>
             <h1 style={{
               color: '#FFF',
               fontFamily: '"DM Sans", sans-serif',
               fontSize: 'clamp(2rem, 4.5vw, 64px)',
               fontWeight: 400,
-              lineHeight: '130%',
-              marginBottom: '0.75rem',
+              lineHeight: '120%',
+              marginBottom: '1rem',
             }}>
-              Su Casa Builders –<br />General Contractor in<br />Sierra Vista AZ
+              Su Casa Builders – General Contractor in Sierra Vista AZ
             </h1>
             <p style={{
               color: 'rgba(255,255,255,0.92)',
@@ -62,24 +64,97 @@ export default function Hero() {
 
       {/* ── Info section ── */}
       <div id="info" style={{
-        background: '#E8F8FF',
-        display: 'flex', flexDirection: 'column',
-        justifyContent: 'center', alignItems: 'center',
-        padding: '75px 76px', minHeight: 258,
+        position: 'relative',
+        background: '#EDE5D0',
+        overflow: 'hidden',
       }}>
-        <p style={{
-          maxWidth: 1038,
-          fontFamily: 'Manrope, sans-serif',
-          fontStyle: 'normal',
-          fontWeight: 500,
-          fontSize: 'clamp(1rem, 1.67vw, 24px)',
-          lineHeight: '150%',
+        {/* Geometric background pattern — right side */}
+        <img
+          src={patternImg}
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            height: '140%',
+            width: 'auto',
+            opacity: 0.35,
+            pointerEvents: 'none',
+            userSelect: 'none',
+          }}
+        />
+
+        <div style={{
+          position: 'relative',
+          zIndex: 1,
+          maxWidth: 900,
+          margin: '0 auto',
+          padding: '80px 2rem',
           textAlign: 'center',
-          color: '#000000',
-          margin: 0,
         }}>
-          Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, roofing, painting, and custom home projects. Since 2003, our team has delivered quality craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job.
-        </p>
+          <p style={{
+            fontFamily: 'Manrope, sans-serif',
+            fontWeight: 400,
+            fontSize: 'clamp(1rem, 1.4vw, 20px)',
+            lineHeight: '170%',
+            color: '#2c2c2c',
+            marginBottom: '2.5rem',
+          }}>
+            Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting,
+            custom home construction, and outdoor living projects. Since 2003, our team has delivered quality
+            craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new
+            construction, a home addition, or light commercial work, we bring integrity, experience, and precision to
+            every job. We also build custom features such as pergolas, metal awnings, and install Pella windows, helping
+            homeowners enhance both function and curb appeal.
+          </p>
+
+          {/* CTA button */}
+          <a href="#contact" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
+            background: '#1D3F6B', color: '#fff',
+            padding: '0.9rem 2.25rem', borderRadius: 4,
+            textDecoration: 'none',
+            fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.95rem',
+            marginBottom: '3.5rem',
+            transition: 'background 0.2s',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#163258' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#1D3F6B' }}>
+            Start Your Project Today
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
+            </svg>
+          </a>
+
+          {/* YouTube Video embed */}
+          <div style={{
+            width: '100%',
+            maxWidth: 1038,
+            margin: '0 auto',
+            borderRadius: 10,
+            overflow: 'hidden',
+            border: '3px solid #8B1A1A',
+            position: 'relative',
+            paddingBottom: '56.25%',
+            height: 0,
+          }}>
+            {/* Replace VIDEO_ID with the actual YouTube video ID */}
+            <iframe
+              style={{
+                position: 'absolute', top: 0, left: 0,
+                width: '100%', height: '100%',
+                display: 'block',
+              }}
+              src="https://www.youtube.com/embed/VIDEO_ID_HERE?rel=0"
+              title="Company Overview Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
