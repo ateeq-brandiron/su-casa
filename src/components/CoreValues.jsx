@@ -33,7 +33,7 @@ export default function CoreValues() {
         display: 'flex', alignItems: 'flex-start', gap: 96,
       }}>
         {/* Left: text content */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 44 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 50 }}>
           {/* Header block */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
             <SectionLabel text="Our Core Values" />
