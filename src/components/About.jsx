@@ -18,8 +18,8 @@ function SectionLabel({ text }) {
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: '5rem 2rem', background: '#fff' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+    <section id="about" style={{ background: '#fff' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={{ height: 260, borderRadius: 8, overflow: 'hidden' }}>
@@ -63,7 +63,7 @@ export default function About() {
 
       <style>{`
         @media (max-width: 768px) {
-          #about > div { grid-template-columns: 1fr !important; }
+          #about > div { flex-direction: column !important; padding: 60px 24px !important; }
         }
       `}</style>
     </section>
