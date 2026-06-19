@@ -14,7 +14,7 @@ export default function Navbar() {
   const [open, setOpen]         = useState(false)
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 10)
+    const fn = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
   }, [])
@@ -27,7 +27,7 @@ export default function Navbar() {
       boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.10)' : 'none',
       transition: 'box-shadow 0.3s',
     }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px', height: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
         <a href="#home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <img src={logoSrc} alt="Su Casa Builders" style={{ height: 38, width: 'auto' }} />
