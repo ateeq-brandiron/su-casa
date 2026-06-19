@@ -57,7 +57,7 @@ export default function CoreValues() {
               <div key={v.title} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <h4 style={{
                   fontFamily: 'Manrope, sans-serif',
-                  fontWeight: 700, fontSize: 20, color: '#000', lineHeight: '130%',
+                  fontWeight: 600, fontSize: 22, color: '#000', lineHeight: '140%',
                 }}>{v.title}</h4>
                 <p style={{
                   fontFamily: 'Manrope, sans-serif',
