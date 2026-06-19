@@ -1,4 +1,4 @@
-import frame2 from '../assets/images/Frame2.png'
+import frame2 from '../assets/images/ImageBox.png'
 
 function SectionLabel({ text }) {
   return (
