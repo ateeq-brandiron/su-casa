@@ -23,7 +23,8 @@ export default function Navbar() {
     <nav style={{
       position: 'fixed', top: 0, insetInline: 0, zIndex: 100,
       background: '#fff',
-      boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.10)' : '0 1px 0 #e5e7eb',
+      borderBottom: scrolled ? 'none' : '1px solid #e5e7eb',
+      boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.10)' : 'none',
       transition: 'box-shadow 0.3s',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
