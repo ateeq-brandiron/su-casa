@@ -21,38 +21,44 @@ export default function About() {
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignSelf: 'stretch' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 44 }}>
           <div style={{ width: 485, height: 275, backgroundImage: `url(${imageBox})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
           <div style={{ width: 484, height: 275, backgroundImage: `url(${imageBox1})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
         </div>
 
         {/* Text */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 44 }}>
-          <SectionLabel text="About Su Casa Builders" />
-          <h2 style={{
-            fontFamily: 'Manrope, sans-serif',
-            fontSize: 48,
-            fontWeight: 500,
-            color: '#245079',
-            lineHeight: '130%',
-          }}>
-            About Su Casa Builders
-          </h2>
-          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
-            Founded in 2003, Su Casa Builders LLC is a locally owned and operated general contractor serving Sierra Vista and surrounding Cochise County communities. Our team focuses on high-quality residential and light commercial construction, including framing, roofing, painting, and custom home projects built with care and precision.
-          </p>
-          <p style={{
-            fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '149%',
-            borderLeft: '2px solid #d1d5db', paddingLeft: '1.25rem',
-          }}>
-            At Su Casa Builders, we believe every structure deserves attention to detail and a solid foundation. Whether we are building a new home, expanding an existing property, or supporting a commercial project, our focus is on craftsmanship and honest communication from start to finish.
-          </p>
-          <p style={{
-            fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '149%',
-            borderLeft: '2px solid #d1d5db', paddingLeft: '1.25rem',
-          }}>
-            From our roots in Southeast Arizona, Su Casa has grown alongside the communities we serve. Many of our long-term team members live right here in Sierra Vista, bringing local experience and pride to every project. We don't just build structures — we build trust, lasting relationships, and spaces that stand the test of time.
-          </p>
+          {/* Top block: label + heading + first paragraph */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
+            <SectionLabel text="About Su Casa Builders" />
+            <h2 style={{
+              fontFamily: 'Manrope, sans-serif',
+              fontSize: 48,
+              fontWeight: 500,
+              color: '#245079',
+              lineHeight: '130%',
+            }}>
+              About Su Casa Builders
+            </h2>
+            <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
+              Founded in 2003, Su Casa Builders LLC is a locally owned and operated general contractor serving Sierra Vista and surrounding Cochise County communities. Our team focuses on high-quality residential and light commercial construction, including framing, roofing, painting, and custom home projects built with care and precision.
+            </p>
+          </div>
+          {/* Bottom block: two blockquotes */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 24 }}>
+            <p style={{
+              fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '149%',
+              borderLeft: '2px solid #d1d5db', paddingLeft: '1.25rem',
+            }}>
+              At Su Casa Builders, we believe every structure deserves attention to detail and a solid foundation. Whether we are building a new home, expanding an existing property, or supporting a commercial project, our focus is on craftsmanship and honest communication from start to finish.
+            </p>
+            <p style={{
+              fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '149%',
+              borderLeft: '2px solid #d1d5db', paddingLeft: '1.25rem',
+            }}>
+              From our roots in Southeast Arizona, Su Casa has grown alongside the communities we serve. Many of our long-term team members live right here in Sierra Vista, bringing local experience and pride to every project. We don't just build structures — we build trust, lasting relationships, and spaces that stand the test of time.
+            </p>
+          </div>
         </div>
       </div>
 
