@@ -165,12 +165,12 @@ export default function Hero() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               <div style={{
-                width: 68, height: 48, borderRadius: 10,
+                width: 68, height: 68, borderRadius: '50%',
                 background: '#FF0000',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 boxShadow: '0 2px 12px rgba(0,0,0,0.5)',
               }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
                   <polygon points="9,6 20,12 9,18"/>
                 </svg>
               </div>
