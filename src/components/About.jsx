@@ -29,7 +29,7 @@ export default function About() {
         {/* Text */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 44 }}>
           {/* Top block: label + heading + first paragraph */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
             <SectionLabel text="About Su Casa Builders" />
             <h2 style={{
               fontFamily: 'Manrope, sans-serif',
