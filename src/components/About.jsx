@@ -21,7 +21,7 @@ export default function About() {
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignSelf: 'stretch' }}>
           <div style={{ width: 485, height: 275, backgroundImage: `url(${imageBox})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
           <div style={{ width: 484, height: 275, backgroundImage: `url(${imageBox1})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
         </div>
