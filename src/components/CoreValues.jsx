@@ -52,7 +52,7 @@ export default function CoreValues() {
           </div>
 
           {/* Values list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 40, width: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 30, width: '100%' }}>
             {VALUES.map(v => (
               <div key={v.title} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <h4 style={{
