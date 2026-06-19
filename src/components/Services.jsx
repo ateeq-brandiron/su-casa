@@ -127,16 +127,17 @@ export default function Services() {
             Every project, no matter the size, is managed with the same attention to detail and commitment to long-term quality that defines our work.
           </p>
           <a href="#contact" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-            border: '1.5px solid rgba(255,255,255,0.6)', color: '#fff', background: 'transparent',
-            padding: '0.8rem 2rem', borderRadius: 4, textDecoration: 'none',
-            fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+            background: '#fff', color: '#245079',
+            height: 66, padding: '20px 30px',
+            textDecoration: 'none',
+            fontWeight: 600, fontSize: '0.9rem', transition: 'background 0.2s',
           }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.10)' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}>
+            onMouseEnter={e => { e.currentTarget.style.background = '#f0f0f0' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff' }}>
             Request Your Construction Estimate
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="2" y1="7" x2="12" y2="7"/><polyline points="8,3 12,7 8,11"/>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
             </svg>
           </a>
         </div>
