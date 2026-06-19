@@ -1,77 +1,80 @@
+import logo from '../assets/icons/Logo.svg'
+
 const year = new Date().getFullYear()
+
+const NAV_LINKS = [
+  { label: 'Home', href: '#' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+]
+
+const SERVICE_LINKS = [
+  'Custom Home Design',
+  'Home Construction',
+  'Renovations and Additions',
+  'Roofing & Framing',
+  'Window Installation',
+]
+
+const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochise County']
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#1c1f2e', color: '#9ca3af', fontFamily: 'Inter, sans-serif' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '4rem 2rem 2rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+    <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '80px 75px 40px' }}>
+        {/* Top grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
           {/* Brand */}
-          <div>
-            <div style={{ fontFamily: '"Dancing Script", cursive', fontSize: '1.8rem', fontWeight: 700, color: '#fff', lineHeight: 1, marginBottom: '0.25rem' }}>
-              Su Casa Builders
-            </div>
-            <p style={{ fontSize: '0.75rem', letterSpacing: '0.12em', color: '#6b7280', textTransform: 'uppercase', marginBottom: '1rem' }}>Inc.</p>
-            <p style={{ fontSize: '0.85rem', lineHeight: 1.75, color: '#6b7280', maxWidth: 220 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <img src={logo} alt="Su Casa Builders" style={{ height: 60, width: 'auto', objectFit: 'contain', objectPosition: 'left' }} />
+            <p style={{ fontSize: 14, lineHeight: '160%', color: '#374151', maxWidth: 240 }}>
               Quality construction services rooted in integrity and craftsmanship. Serving our community one project at a time.
             </p>
           </div>
 
-          {/* Services */}
+          {/* Navigation */}
           <div>
-            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Services</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {['Custom Home Design', 'Home Construction', 'Renovations and Additions'].map(s => (
-                <li key={s}><a href="#services" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
-                  onMouseEnter={e => e.target.style.color = '#d1d5db'}
-                  onMouseLeave={e => e.target.style.color = '#6b7280'}>{s}</a></li>
+            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Navigation</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {NAV_LINKS.map(l => (
+                <li key={l.label}><a href={l.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{l.label}</a></li>
               ))}
             </ul>
           </div>
 
-          {/* Projects */}
+          {/* Services */}
           <div>
-            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Projects</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {['Custom Homes', 'Renovations', 'Testimonials', 'Contact'].map(s => (
-                <li key={s}><a href="#projects" style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
-                  onMouseEnter={e => e.target.style.color = '#d1d5db'}
-                  onMouseLeave={e => e.target.style.color = '#6b7280'}>{s}</a></li>
+            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Services</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {SERVICE_LINKS.map(s => (
+                <li key={s}><a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{s}</a></li>
               ))}
             </ul>
           </div>
 
           {/* Service Areas */}
           <div>
-            <h4 style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.25rem' }}>Service Areas</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochise County'].map(s => (
-                <li key={s}><span style={{ color: '#6b7280', fontSize: '0.85rem' }}>{s}</span></li>
+            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Service Areas</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {AREAS.map(a => (
+                <li key={a}><span style={{ color: '#374151', fontSize: 14 }}>{a}</span></li>
               ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div style={{ borderTop: '1px solid #2d3148', paddingTop: '1.5rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.75rem' }}>
-          <p style={{ fontSize: '0.8rem', color: '#4b5563' }}>© {year} Su Casa Builders. All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
+        {/* Divider */}
+        <div style={{ borderTop: '1px solid rgba(0,0,0,0.15)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+          <p style={{ fontSize: 13, color: '#6b7280' }}>© {year} Su Casa Builders. All rights reserved.</p>
+          <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy Policy', 'Terms of Service'].map(l => (
-              <a key={l} href="#" style={{ color: '#4b5563', textDecoration: 'none', fontSize: '0.8rem' }}
-                onMouseEnter={e => e.target.style.color = '#9ca3af'}
-                onMouseLeave={e => e.target.style.color = '#4b5563'}>{l}</a>
+              <a key={l} href="#" style={{ color: '#6b7280', textDecoration: 'none', fontSize: 13 }}>{l}</a>
             ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          footer > div > div:first-of-type { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 480px) {
-          footer > div > div:first-of-type { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </footer>
   )
 }
