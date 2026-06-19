@@ -69,9 +69,15 @@ export default function CoreValues() {
         </div>
 
         {/* Right: image */}
-        <div style={{ flex: 1, alignSelf: 'stretch', borderRadius: 8, overflow: 'hidden', minHeight: 580 }}>
-          <img src={frame2} alt="Su Casa Builders construction project" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </div>
+        <div style={{
+          width: 478, height: 588, flexShrink: 0,
+          border: '2px solid #245079',
+          backgroundImage: `url(${frame2})`,
+          backgroundColor: 'lightgray',
+          backgroundSize: 'cover',
+          backgroundPosition: '50%',
+          backgroundRepeat: 'no-repeat',
+        }} />
       </div>
 
       <style>{`
