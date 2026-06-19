@@ -21,17 +21,17 @@ export default function About() {
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div style={{ height: 260, borderRadius: 8, overflow: 'hidden' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ height: 290, borderRadius: 8, overflow: 'hidden' }}>
             <img src={imageBox} alt="Su Casa Builders construction project" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <div style={{ height: 260, borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ height: 290, borderRadius: 8, overflow: 'hidden' }}>
             <img src={imageBox1} alt="Su Casa Builders completed home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
 
         {/* Text */}
-        <div>
+        <div style={{ flex: 1 }}>
           <SectionLabel text="About Su Casa Builders" />
           <h2 style={{
             fontFamily: 'Manrope, sans-serif',
