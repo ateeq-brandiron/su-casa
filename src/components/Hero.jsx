@@ -90,10 +90,11 @@ export default function Hero() {
         }}>
           <p style={{
             fontFamily: 'Manrope, sans-serif',
-            fontWeight: 400,
-            fontSize: 'clamp(1rem, 1.4vw, 20px)',
-            lineHeight: '170%',
-            color: '#2c2c2c',
+            fontWeight: 500,
+            fontSize: 24,
+            lineHeight: '150%',
+            color: '#000',
+            textAlign: 'center',
             marginBottom: '2.5rem',
           }}>
             Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting,
