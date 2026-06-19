@@ -107,7 +107,7 @@ export default function Hero() {
 
           {/* CTA button */}
           <a href="#contact" style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
             background: '#245079', color: '#fff',
             height: 66, padding: '20px 30px',
             textDecoration: 'none',
