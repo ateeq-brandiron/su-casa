@@ -61,7 +61,7 @@ export default function WhyUs() {
           <SectionLabel text="Why Choose Us" />
           <h2 style={{
             fontFamily: 'Manrope, sans-serif',
-            fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%',
+            fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%',
           }}>
             Why Choose Su Casa Builders
           </h2>
