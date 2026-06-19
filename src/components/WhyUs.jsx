@@ -73,7 +73,7 @@ export default function WhyUs() {
               }}>
                 <img src={r.icon} alt="" style={{ width: 28, height: 28, objectFit: 'contain' }} />
               </div>
-              <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#111827', lineHeight: '130%' }}>{r.title}</h3>
+              <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%' }}>{r.title}</h3>
               <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '149%' }}>{r.desc}</p>
             </div>
           ))}
