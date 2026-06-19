@@ -32,7 +32,7 @@ export default function Hero() {
           width: '100%', maxWidth: 1280,
           padding: '0 2rem',
         }}>
-          <div style={{ maxWidth: 600 }}>
+          <div style={{ maxWidth: 900 }}>
             <h1 style={{
               color: '#FFF',
               fontFamily: '"DM Sans", sans-serif',
