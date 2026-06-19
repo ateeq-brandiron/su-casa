@@ -1,6 +1,6 @@
 import heroImg from '../assets/images/Hero.png'
 import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 1.png'
-import videoThumb from '../assets/images/image19.png'
+import videoThumb from '../assets/images/Frame 2147223472.png'
 import icoPlay from '../assets/icons/ico-play.svg'
 import icoNext from '../assets/icons/ico-next.svg'
 import icoSound from '../assets/icons/ico-sound.svg'
@@ -165,13 +165,13 @@ export default function Hero() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               <div style={{
-                width: 68, height: 68, borderRadius: '50%',
+                width: 80, height: 56, borderRadius: 14,
                 background: '#FF0000',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.5)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
               }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-                  <polygon points="9,6 20,12 9,18"/>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                  <polygon points="9.5,7 19,12 9.5,17"/>
                 </svg>
               </div>
             </div>
