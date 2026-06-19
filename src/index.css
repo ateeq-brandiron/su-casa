@@ -13,4 +13,5 @@
     -webkit-font-smoothing: antialiased;
   }
   #root { width: 100%; max-width: 100%; }
+  section[id], div[id] { scroll-margin-top: 72px; }
 }
