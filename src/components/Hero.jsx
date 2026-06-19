@@ -107,16 +107,16 @@ export default function Hero() {
 
           {/* CTA button */}
           <a href="#contact" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-            background: '#1D3F6B', color: '#fff',
-            padding: '0.9rem 2.25rem', borderRadius: 4,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+            background: '#245079', color: '#fff',
+            height: 66, padding: '20px 30px',
             textDecoration: 'none',
             fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.95rem',
             marginBottom: '3.5rem',
             transition: 'background 0.2s',
           }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#163258' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#1D3F6B' }}>
+            onMouseEnter={e => { e.currentTarget.style.background = '#1b3d5e' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#245079' }}>
             Start Your Project Today
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
