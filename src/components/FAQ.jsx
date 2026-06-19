@@ -55,7 +55,7 @@ export default function FAQ() {
           Frequently Asked Questions About Our Work as General Contractors in Sierra Vista AZ
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
+        <div id="faq-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
           {/* Left image */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ height: 280, borderRadius: 8, overflow: 'hidden' }}>

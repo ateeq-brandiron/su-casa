@@ -27,7 +27,7 @@ const VALUES = [
 export default function CoreValues() {
   return (
     <section style={{ background: '#fff', padding: '5rem 2rem' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+      <div id="core-values-grid" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
         {/* Left text */}
         <div>
           <SectionLabel text="Our Core Values" />
