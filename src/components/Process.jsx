@@ -54,7 +54,7 @@ export default function Process() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 32 }}>
           {STEPS.map(step => (
             <div key={step.num} style={{
-              background: '#fff',
+              background: 'transparent',
               border: '1px solid #245079',
               padding: '24px 20px',
               display: 'flex', flexDirection: 'column', gap: 16,
