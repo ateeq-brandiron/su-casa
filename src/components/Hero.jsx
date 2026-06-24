@@ -88,8 +88,8 @@ export default function Hero() {
           style={{
             position: 'fixed', right: '2rem', bottom: '2rem', zIndex: 200,
             width: 44, height: 44, borderRadius: '50%',
-            background: btnHovered ? '#1a3d5c' : '#245079',
-            border: '2px solid #fff',
+            background: btnHovered ? '#f0f4f8' : '#fff',
+            border: '2px solid #245079',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', outline: 'none',
             transform: btnHovered ? 'scale(1.1)' : 'scale(1)',
@@ -98,7 +98,7 @@ export default function Hero() {
           }}
         >
           <svg
-            width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="2"
+            width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#245079" strokeWidth="2"
             style={{ transform: scrolledPast ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.4s ease' }}
           >
             <line x1="8" y1="2" x2="8" y2="14"/><polyline points="4,10 8,14 12,10"/>
