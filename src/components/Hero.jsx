@@ -111,12 +111,13 @@ export default function Hero() {
             background: '#245079', color: '#fff',
             height: 66, padding: '20px 30px',
             textDecoration: 'none',
-            fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.95rem',
+            fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
             marginBottom: 50,
-            transition: 'background 0.2s',
+            border: '1.5px solid #245079',
+            transition: 'background 0.2s, color 0.2s',
           }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#1b3d5e' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#245079' }}>
+            onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#245079' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}>
             Start Your Project Today
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
