@@ -99,8 +99,8 @@ export default function Hero() {
 
         <div style={{
           position: 'relative', zIndex: 1,
-          maxWidth: 900, margin: '0 auto',
-          padding: '80px 2rem', textAlign: 'center',
+          maxWidth: 1440, margin: '0 auto',
+          padding: '100px 75px', textAlign: 'center',
         }}>
           <p style={{
             fontFamily: 'Manrope, sans-serif',
@@ -109,7 +109,8 @@ export default function Hero() {
             lineHeight: '150%',
             color: '#000',
             textAlign: 'center',
-            marginBottom: '2.5rem',
+            maxWidth: 1100,
+            margin: '0 auto 2.5rem',
           }}>
             Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting,
             custom home construction, and outdoor living projects. Since 2003, our team has delivered quality
