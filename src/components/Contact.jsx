@@ -22,7 +22,7 @@ function IconCircle({ src, alt }) {
 export default function Contact() {
   return (
     <section id="contact" style={{ background: '#fff' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 96, alignItems: 'start' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 96, alignItems: 'stretch' }}>
 
         {/* Left: two frames */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
@@ -72,12 +72,13 @@ export default function Contact() {
         </div>
 
         {/* Right: map */}
-        <div style={{ height: 520, overflow: 'hidden', borderRadius: 4 }}>
+        <div style={{ overflow: 'hidden', borderRadius: 4, alignSelf: 'stretch', minHeight: 480 }}>
           <iframe
             title="Su Casa Builders location"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-110.3336%2C31.5289%2C-110.2836%2C31.5689&layer=mapnik&marker=31.5489%2C-110.3086"
-            style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+            src="https://maps.google.com/maps?q=5362+S+Santa+Elena+Ave,+Sierra+Vista,+AZ+85650&output=embed&z=15"
+            style={{ width: '100%', height: '100%', minHeight: 480, border: 'none', display: 'block' }}
             loading="lazy"
+            allowFullScreen
           />
         </div>
       </div>
