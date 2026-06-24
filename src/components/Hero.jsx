@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import heroImg from '../assets/images/Hero.png'
 import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 1.png'
 import infoBg from '../assets/images/73069d5eafa2e8bc3e43fc71671cee11d32ec65f (2).png'
@@ -10,6 +11,28 @@ import icoFullscreen from '../assets/icons/ico-fullscreen.svg'
 import icoInfo from '../assets/icons/ico-info.svg'
 
 export default function Hero() {
+  const [scrolledPast, setScrolledPast] = useState(false)
+  const [btnHovered, setBtnHovered] = useState(false)
+
+  useEffect(() => {
+    const heroEl = document.getElementById('home')
+    const fn = () => {
+      const heroH = heroEl ? heroEl.offsetHeight : 600
+      setScrolledPast(window.scrollY > heroH * 0.5)
+    }
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
+
+  const handleArrow = (e) => {
+    e.preventDefault()
+    if (scrolledPast) {
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth' })
+    } else {
+      document.getElementById('info').scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="home">
       {/* ── Hero image ── */}
@@ -57,16 +80,30 @@ export default function Hero() {
         </div>
 
         {/* Scroll arrow — bottom right */}
-        <a href="#info" style={{
-          position: 'absolute', right: '2rem', bottom: '2rem', zIndex: 2,
-          width: 44, height: 44, borderRadius: '50%',
-          background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.5)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none',
-        }}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="2">
+        <button
+          onClick={handleArrow}
+          onMouseEnter={() => setBtnHovered(true)}
+          onMouseLeave={() => setBtnHovered(false)}
+          aria-label={scrolledPast ? 'Scroll to top' : 'Scroll down'}
+          style={{
+            position: 'fixed', right: '2rem', bottom: '2rem', zIndex: 200,
+            width: 44, height: 44, borderRadius: '50%',
+            background: btnHovered ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.2)',
+            border: '1px solid rgba(255,255,255,0.5)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', outline: 'none',
+            transform: btnHovered ? 'scale(1.1)' : 'scale(1)',
+            transition: 'transform 0.2s, background 0.2s',
+            boxShadow: btnHovered ? '0 4px 16px rgba(0,0,0,0.25)' : 'none',
+          }}
+        >
+          <svg
+            width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="2"
+            style={{ transform: scrolledPast ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.4s ease' }}
+          >
             <line x1="8" y1="2" x2="8" y2="14"/><polyline points="4,10 8,14 12,10"/>
           </svg>
-        </a>
+        </button>
       </div>
 
       {/* ── Info section ── */}
