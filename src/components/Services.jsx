@@ -34,24 +34,36 @@ const SERVICES = [
     title: 'General Contracting',
     desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
     img: frame1,
-    items: ['Spec Homes', 'Custom Homes', 'Light Commercial Projects'],
+    items: [
+      { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
+      { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
+      { label: 'Light Commercial Projects', detail: 'Light Commercial Projects – Commercial properties such as warehouses and office spaces.' },
+    ],
   },
   {
     title: 'Subcontracting',
     desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
     img: frame1b,
-    items: ['Framing', 'Roofing', 'Painting'],
+    items: [
+      { label: 'Framing', detail: 'Structural framing for new construction, additions, and expansions.' },
+      { label: 'Roofing', detail: 'Professional roofing installation and repair that ensures long-term protection.' },
+      { label: 'Painting', detail: 'Exterior painting for residential and light commercial properties, as well as painting services for new construction projects.' },
+    ],
   },
   {
     title: 'Special Projects and Products',
     desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
     img: frame1c,
-    items: ['Screened Porches and Additions', 'Pergolas and Covered Patios', 'Pella Windows'],
+    items: [
+      { label: 'Screened Porches and Additions', detail: 'Seamlessly extend your living space with screened or enclosed rooms that match your home\'s original design.' },
+      { label: 'Pergolas and Covered Patios', detail: 'Add shade and structure with custom-built pergolas, patio covers, or carports designed for durability and style.' },
+      { label: 'Pella Windows', detail: 'We proudly install Pella windows, offering energy efficiency, quality materials, and timeless design that enhances comfort and value.' },
+    ],
   },
 ]
 
-function AccordionItem({ label }) {
-  const [open, setOpen] = useState(false)
+function AccordionItem({ label, detail }) {
+  const [open, setOpen] = useState(true)
   return (
     <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
       <button
@@ -76,6 +88,11 @@ function AccordionItem({ label }) {
           <polyline points="2,4 7,10 12,4"/>
         </svg>
       </button>
+      {open && detail && (
+        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: 14, lineHeight: '160%', paddingBottom: '0.75rem', margin: 0 }}>
+          {detail}
+        </p>
+      )}
     </div>
   )
 }
@@ -101,7 +118,7 @@ function ServiceCard({ svc }) {
         <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>{svc.title}</h3>
         <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.65)', fontSize: 16, lineHeight: '140%', marginBottom: '1rem' }}>{svc.desc}</p>
         <div>
-          {svc.items.map(item => <AccordionItem key={item} label={item} />)}
+          {svc.items.map(item => <AccordionItem key={item.label} label={item.label} detail={item.detail} />)}
         </div>
       </div>
     </div>
