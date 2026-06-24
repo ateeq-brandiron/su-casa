@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import faqImg from '../assets/images/image20.png'
+import faqImg from '../assets/images/source_20260507_094702.jpg'
 import arrowUp from '../assets/icons/faq-arrow-up.svg'
 import arrowDown from '../assets/icons/faq-arrow-down.svg'
 import homeIcon from '../assets/icons/faq-home.svg'
