@@ -39,6 +39,29 @@ function Stars() {
   )
 }
 
+function ReviewCard({ r }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'flex', flexDirection: 'column', gap: 16,
+        padding: '32px 24px',
+        background: hovered ? '#245079' : '#fff',
+        border: `1px solid ${hovered ? '#245079' : '#e5e7eb'}`,
+        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        transition: 'all 0.25s ease',
+      }}
+    >
+      <Stars />
+      <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 18, color: hovered ? '#fff' : '#111827', lineHeight: '130%', transition: 'color 0.25s' }}>{r.title}</p>
+      <p style={{ fontFamily: 'Manrope, sans-serif', color: hovered ? 'rgba(255,255,255,0.8)' : '#3C3C3C', fontSize: 14, fontWeight: 400, lineHeight: '160%', whiteSpace: 'pre-line', transition: 'color 0.25s' }}>{r.text}</p>
+      <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 16, color: hovered ? 'rgba(255,255,255,0.7)' : '#374151', marginTop: 'auto', transition: 'color 0.25s' }}>{r.name}</p>
+    </div>
+  )
+}
+
 export default function Testimonials() {
   const [idx, setIdx] = useState(0)
   const visible = [
@@ -62,14 +85,9 @@ export default function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'start' }}>
           {visible.map((r, i) => (
-            <div key={r.name + i} style={{ display: 'flex', flexDirection: 'column', gap: 16, padding: '32px 24px', background: '#fff' }}>
-              <Stars />
-              <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 18, color: '#111827', lineHeight: '130%' }}>{r.title}</p>
-              <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 14, fontWeight: 400, lineHeight: '160%', whiteSpace: 'pre-line' }}>{r.text}</p>
-              <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 16, color: '#374151', marginTop: 'auto' }}>{r.name}</p>
-            </div>
+            <ReviewCard key={r.name + i} r={r} />
           ))}
         </div>
 

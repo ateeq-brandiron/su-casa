@@ -1,6 +1,21 @@
+import { useState } from 'react'
 import logo from '../assets/icons/Logo.svg'
 
 const year = new Date().getFullYear()
+
+function FooterLink({ href, children }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <a
+      href={href}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ fontFamily: 'Manrope, sans-serif', color: hovered ? '#245079' : '#3C3C3C', textDecoration: 'none', fontSize: 18, fontWeight: 400, lineHeight: '140%', transition: 'color 0.2s' }}
+    >
+      {children}
+    </a>
+  )
+}
 
 const SERVICE_LINKS = [
   { label: 'Custom Home Design', href: '#services' },
@@ -40,7 +55,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%', margin: 0 }}>Services</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0 }}>
               {SERVICE_LINKS.map(s => (
-                <li key={s.label}><a href={s.href} style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 18, fontWeight: 400, lineHeight: '140%' }}>{s.label}</a></li>
+                <li key={s.label}><FooterLink href={s.href}>{s.label}</FooterLink></li>
               ))}
             </ul>
           </div>
@@ -52,7 +67,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%', margin: 0 }}>Projects</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0 }}>
               {PROJECT_LINKS.map(p => (
-                <li key={p.label}><a href={p.href} style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 18, fontWeight: 400, lineHeight: '140%' }}>{p.label}</a></li>
+                <li key={p.label}><FooterLink href={p.href}>{p.label}</FooterLink></li>
               ))}
             </ul>
           </div>
