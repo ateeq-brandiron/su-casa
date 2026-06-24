@@ -14,4 +14,6 @@
   }
   #root { width: 100%; max-width: 100%; }
   section[id], div[id] { scroll-margin-top: 100px; }
+  main { display: block; }
+  footer { display: block; margin-top: 0; }
 }

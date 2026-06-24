@@ -21,7 +21,7 @@ function IconCircle({ src, alt }) {
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ background: '#fff' }}>
+    <section id="contact" style={{ background: '#EDE5D0' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 96, alignItems: 'stretch' }}>
 
         {/* Left: two frames */}
