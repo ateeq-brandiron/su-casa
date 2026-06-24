@@ -9,6 +9,29 @@ const LINKS = [
   { label: 'Contact',  href: '#contact' },
 ]
 
+function NavLink({ label, href }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <a
+      href={href}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        fontFamily: 'Manrope, sans-serif',
+        fontSize: '0.9rem',
+        fontWeight: 500,
+        color: hovered ? '#245079' : '#374151',
+        textDecoration: 'none',
+        transition: 'color 0.2s',
+        paddingBottom: 4,
+        borderBottom: hovered ? '2px solid #245079' : '2px solid transparent',
+      }}
+    >
+      {label}
+    </a>
+  )
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
@@ -35,13 +58,7 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div style={{ display: 'flex', gap: '2.25rem', alignItems: 'center' }} className="hidden-mobile">
-          {LINKS.map(l => (
-            <a key={l.href} href={l.href} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#374151', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#111827'}
-              onMouseLeave={e => e.target.style.color = '#374151'}>
-              {l.label}
-            </a>
-          ))}
+          {LINKS.map(l => <NavLink key={l.href} label={l.label} href={l.href} />)}
         </div>
 
         {/* Mobile hamburger */}
