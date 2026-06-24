@@ -63,7 +63,7 @@ const SERVICES = [
 ]
 
 function AccordionItem({ label, detail }) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   return (
     <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
       <button
