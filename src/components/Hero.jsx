@@ -88,8 +88,8 @@ export default function Hero() {
           style={{
             position: 'fixed', right: '2rem', bottom: '2rem', zIndex: 200,
             width: 44, height: 44, borderRadius: '50%',
-            background: btnHovered ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.2)',
-            border: '1px solid rgba(255,255,255,0.5)',
+            background: btnHovered ? '#1a3d5c' : '#245079',
+            border: '2px solid #fff',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', outline: 'none',
             transform: btnHovered ? 'scale(1.1)' : 'scale(1)',
