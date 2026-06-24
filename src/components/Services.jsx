@@ -141,7 +141,7 @@ export default function Services() {
           At Su Casa Builders LLC, we provide dependable construction services across Sierra Vista and Cochise County. Whether we serve as your general contractor or subcontractor, every project reflects our commitment to craftsmanship, honesty, and lasting value.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '3rem', alignItems: 'start' }}>
           {SERVICES.map(svc => <ServiceCard key={svc.title} svc={svc} />)}
         </div>
 
