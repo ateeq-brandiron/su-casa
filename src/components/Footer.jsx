@@ -23,9 +23,9 @@ export default function Footer() {
     <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10 }}>
         {/* Top grid */}
-        <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', width: '100%', marginBottom: '3rem' }}>
           {/* Brand */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, flex: 1 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: 340, flexShrink: 0 }}>
             <img src={logo} alt="Su Casa Builders" style={{ height: 60, width: 'auto', objectFit: 'contain', objectPosition: 'left' }} />
             <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 18, fontWeight: 400, lineHeight: '140%', color: '#3C3C3C', alignSelf: 'stretch' }}>
               Quality construction services rooted in integrity and craftsmanship. Serving our community one project at a time.
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div style={{ borderTop: '1px solid rgba(0,0,0,0.15)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+        <div style={{ borderTop: '1px solid rgba(0,0,0,0.15)', paddingTop: 24, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ fontSize: 13, color: '#6b7280' }}>© {year} Su Casa Builders. All rights reserved.</p>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy Policy', 'Terms of Service'].map(l => (
