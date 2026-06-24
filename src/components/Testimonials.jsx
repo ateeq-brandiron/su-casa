@@ -47,7 +47,7 @@ function ReviewCard({ r }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         display: 'flex', flexDirection: 'column', gap: 16,
-        padding: '32px 24px',
+        padding: '32px 24px', height: '100%', boxSizing: 'border-box',
         background: hovered ? '#245079' : '#fff',
         border: `1px solid ${hovered ? '#245079' : '#e5e7eb'}`,
         transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
@@ -85,7 +85,7 @@ export default function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {visible.map((r, i) => (
             <ReviewCard key={r.name + i} r={r} />
           ))}
