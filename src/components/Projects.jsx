@@ -58,14 +58,14 @@ export default function Projects() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Row 1: 2 large images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img1} hoverSrc={hover1} alt="Custom Home — Sierra Vista" height={300} />
-            <ProjectImage src={img2} hoverSrc={hover2} alt="Spec Home — Cochise County" height={300} />
+            <ProjectImage src={hover1} hoverSrc={img1} alt="Custom Home — Sierra Vista" height={300} />
+            <ProjectImage src={hover2} hoverSrc={img2} alt="Spec Home — Cochise County" height={300} />
           </div>
           {/* Row 2: 3 smaller images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img3} hoverSrc={hover3} alt="Metal Roof — Hereford AZ" height={300} />
-            <ProjectImage src={img4} hoverSrc={hover4} alt="Custom Build — Fort Huachuca" height={300} />
-            <ProjectImage src={img5} hoverSrc={hover5} alt="Home Renovation — Bisbee" height={300} />
+            <ProjectImage src={hover3} hoverSrc={img3} alt="Metal Roof — Hereford AZ" height={300} />
+            <ProjectImage src={hover4} hoverSrc={img4} alt="Custom Build — Fort Huachuca" height={300} />
+            <ProjectImage src={hover5} hoverSrc={img5} alt="Home Renovation — Bisbee" height={300} />
           </div>
         </div>
       </div>
