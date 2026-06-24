@@ -2,16 +2,11 @@ import ctaBg from '../assets/images/CTA.png'
 
 export default function CTA() {
   return (
-    <section style={{
-      background: `url(${ctaBg}) lightgray 50% / cover no-repeat, #000`,
-      backgroundBlendMode: 'lighten, normal',
-    }}>
-      <div style={{
-        maxWidth: 1440, margin: '0 auto',
-        padding: '100px 0',
-        display: 'flex', flexDirection: 'column', alignItems: 'center',
-        gap: 7.073, textAlign: 'center',
-      }}>
+    <section style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
+      <img src={ctaBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
+
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 56, fontWeight: 400, color: '#fff', lineHeight: '130%', maxWidth: 860, margin: 0 }}>
           Let's bring your vision to life with skill, quality, and integrity.
         </h2>
