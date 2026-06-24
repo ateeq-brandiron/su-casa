@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import faqImg from '../assets/images/source_20260507_094702.jpg'
+import faqHoverImg from '../assets/images/Image box (3).png'
 import arrowUp from '../assets/icons/faq-arrow-up.svg'
 import arrowDown from '../assets/icons/faq-arrow-down.svg'
 import homeIcon from '../assets/icons/faq-home.svg'
@@ -59,6 +60,26 @@ function FAQItem({ q, a, defaultOpen }) {
   )
 }
 
+function FaqImage() {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ position: 'relative', width: '100%', aspectRatio: '3/4', overflow: 'hidden' }}
+    >
+      <img src={faqImg} alt="Construction site" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
+        opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
+      }} />
+      <img src={faqHoverImg} alt="" aria-hidden="true" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+      }} />
+    </div>
+  )
+}
+
 export default function FAQ() {
   return (
     <section id="faq" style={{ background: '#fff' }}>
@@ -75,7 +96,7 @@ export default function FAQ() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 96, alignItems: 'start' }}>
           {/* Left: image + contact */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <img src={faqImg} alt="Construction site" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+            <FaqImage />
             <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 14, color: '#374151', margin: 0 }}>
               Any question? <a href="mailto:support@sucasabuilders.com" style={{ color: '#245079', fontWeight: 600, textDecoration: 'underline' }}>support@sucasabuilders.com</a>
             </p>
