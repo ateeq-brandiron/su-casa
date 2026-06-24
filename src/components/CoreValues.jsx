@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import frame2 from '../assets/images/ImageBox.png'
 
 function SectionLabel({ text }) {
@@ -23,6 +24,61 @@ const VALUES = [
     desc: 'Southeast Arizona is home. We hire local talent, support our neighbors, and stay humble enough to keep learning and improving with every project.',
   },
 ]
+
+function ValueCard({ v }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      key={v.title}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'flex', flexDirection: 'column', gap: 12,
+        padding: '20px 24px',
+        border: `1px solid ${hovered ? '#245079' : 'transparent'}`,
+        transform: hovered ? 'translateX(6px)' : 'translateX(0)',
+        transition: 'all 0.25s ease',
+        cursor: 'default',
+      }}
+    >
+      <h4 style={{
+        fontFamily: 'Manrope, sans-serif',
+        fontWeight: 600, fontSize: 22, lineHeight: '140%',
+        color: hovered ? '#245079' : '#000',
+        transition: 'color 0.25s',
+      }}>{v.title}</h4>
+      <p style={{
+        fontFamily: 'Manrope, sans-serif',
+        color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%',
+      }}>{v.desc}</p>
+    </div>
+  )
+}
+
+function CoreImage() {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        width: 478, height: 588, flexShrink: 0,
+        border: '2px solid #245079',
+        overflow: 'hidden',
+      }}
+    >
+      <img
+        src={frame2}
+        alt=""
+        style={{
+          width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%',
+          transform: hovered ? 'scale(1.05)' : 'scale(1)',
+          transition: 'transform 0.4s ease',
+        }}
+      />
+    </div>
+  )
+}
 
 export default function CoreValues() {
   return (
@@ -52,32 +108,13 @@ export default function CoreValues() {
           </div>
 
           {/* Values list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 30, width: '100%' }}>
-            {VALUES.map(v => (
-              <div key={v.title} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <h4 style={{
-                  fontFamily: 'Manrope, sans-serif',
-                  fontWeight: 600, fontSize: 22, color: '#000', lineHeight: '140%',
-                }}>{v.title}</h4>
-                <p style={{
-                  fontFamily: 'Manrope, sans-serif',
-                  color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%',
-                }}>{v.desc}</p>
-              </div>
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: '100%' }}>
+            {VALUES.map(v => <ValueCard key={v.title} v={v} />)}
           </div>
         </div>
 
         {/* Right: image */}
-        <div style={{
-          width: 478, height: 588, flexShrink: 0,
-          border: '2px solid #245079',
-          backgroundImage: `url(${frame2})`,
-          backgroundColor: 'lightgray',
-          backgroundSize: 'cover',
-          backgroundPosition: '50%',
-          backgroundRepeat: 'no-repeat',
-        }} />
+        <CoreImage />
       </div>
 
       <style>{`
