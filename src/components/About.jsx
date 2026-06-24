@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import imageBox from '../assets/images/Image Box 1.png'
 import imageBox1 from '../assets/images/Image Box 2.png'
+import imageBoxHover from '../assets/images/Image Box 1 (1).png'
 
 function SectionLabel({ text }) {
   return (
@@ -16,13 +18,27 @@ function SectionLabel({ text }) {
   )
 }
 
+function SwapImage({ src, hoverSrc, width, height }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ position: 'relative', width, height, overflow: 'hidden' }}
+    >
+      <img src={src} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
+      <img src={hoverSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
+    </div>
+  )
+}
+
 export default function About() {
   return (
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 44 }}>
-          <div style={{ width: 485, height: 275, backgroundImage: `url(${imageBox})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
+          <SwapImage src={imageBox} hoverSrc={imageBoxHover} width={485} height={275} />
           <div style={{ width: 484, height: 275, backgroundImage: `url(${imageBox1})`, backgroundSize: 'cover', backgroundPosition: '50%', backgroundColor: 'lightgray' }} />
         </div>
 

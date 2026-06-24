@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import frame2 from '../assets/images/ImageBox.png'
+import frame2Hover from '../assets/images/Image Box (4).png'
 
 function SectionLabel({ text }) {
   return (
@@ -64,18 +65,11 @@ function CoreImage() {
       style={{
         width: 478, height: 588, flexShrink: 0,
         border: '2px solid #245079',
-        overflow: 'hidden',
+        overflow: 'hidden', position: 'relative',
       }}
     >
-      <img
-        src={frame2}
-        alt=""
-        style={{
-          width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%',
-          transform: hovered ? 'scale(1.05)' : 'scale(1)',
-          transition: 'transform 0.4s ease',
-        }}
-      />
+      <img src={frame2} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
+      <img src={frame2Hover} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
     </div>
   )
 }
