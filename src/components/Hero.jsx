@@ -143,7 +143,7 @@ export default function Hero() {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: 1038,
+            maxWidth: '100%',
             margin: '0 auto',
             borderRadius: 10,
             overflow: 'hidden',
