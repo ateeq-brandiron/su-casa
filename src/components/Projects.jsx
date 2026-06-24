@@ -44,11 +44,11 @@ function ProjectImage({ src, hoverSrc, alt, label, height }) {
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 34.62%, rgba(0,0,0,0.75) 100%)',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
-        display: 'flex', alignItems: 'flex-end', padding: '20px 24px',
+        display: 'flex', justifyContent: 'center', alignItems: 'flex-end', padding: '0 0 24px 0',
       }}>
         <span style={{
           fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18,
-          color: '#fff', lineHeight: '130%',
+          color: '#fff', lineHeight: '130%', textAlign: 'center',
         }}>{label}</span>
       </div>
     </div>
