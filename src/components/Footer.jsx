@@ -23,41 +23,48 @@ export default function Footer() {
     <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '80px 75px 40px' }}>
         {/* Top grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', marginBottom: '3rem' }}>
           {/* Brand */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, flex: 1 }}>
             <img src={logo} alt="Su Casa Builders" style={{ height: 60, width: 'auto', objectFit: 'contain', objectPosition: 'left' }} />
-            <p style={{ fontSize: 14, lineHeight: '160%', color: '#374151', maxWidth: 240 }}>
+            <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 18, fontWeight: 400, lineHeight: '140%', color: '#3C3C3C', alignSelf: 'stretch' }}>
               Quality construction services rooted in integrity and craftsmanship. Serving our community one project at a time.
             </p>
           </div>
 
+          {/* Gap between brand and first services block */}
+          <div style={{ width: 131, flexShrink: 0 }} />
+
           {/* Services */}
-          <div>
-            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Services</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <h4 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%', margin: 0 }}>Services</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0 }}>
               {SERVICE_LINKS.map(s => (
-                <li key={s.label}><a href={s.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{s.label}</a></li>
+                <li key={s.label}><a href={s.href} style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 18, fontWeight: 400, lineHeight: '140%' }}>{s.label}</a></li>
               ))}
             </ul>
           </div>
+
+          <div style={{ width: 41, flexShrink: 0 }} />
 
           {/* Projects */}
-          <div>
-            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Projects</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <h4 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%', margin: 0 }}>Projects</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0 }}>
               {PROJECT_LINKS.map(p => (
-                <li key={p.label}><a href={p.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{p.label}</a></li>
+                <li key={p.label}><a href={p.href} style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 18, fontWeight: 400, lineHeight: '140%' }}>{p.label}</a></li>
               ))}
             </ul>
           </div>
 
+          <div style={{ width: 41, flexShrink: 0 }} />
+
           {/* Service Areas */}
-          <div>
-            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Service Areas</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <h4 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%', margin: 0 }}>Service Areas</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0 }}>
               {AREAS.map(a => (
-                <li key={a}><span style={{ color: '#374151', fontSize: 14 }}>{a}</span></li>
+                <li key={a}><span style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 18, fontWeight: 400, lineHeight: '140%' }}>{a}</span></li>
               ))}
             </ul>
           </div>
