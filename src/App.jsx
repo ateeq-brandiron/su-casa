@@ -15,7 +15,7 @@ import Footer       from './components/Footer'
 
 export default function App() {
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ fontFamily: 'Manrope, sans-serif' }}>
       <Navbar />
       <main>
         <Hero />

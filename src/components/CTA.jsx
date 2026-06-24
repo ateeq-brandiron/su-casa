@@ -13,12 +13,17 @@ export default function CTA() {
         <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.85)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 640, margin: 0 }}>
           Your home deserves a builder who values craftsmanship and clear communication.
         </p>
-        <a href="#contact" style={{
-          display: 'inline-flex', alignItems: 'center', gap: 16,
-          background: '#fff', color: '#245079', border: 'none',
-          height: 66, padding: '20px 30px', textDecoration: 'none',
-          fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
-        }}>
+        <a href="#contact"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 16,
+            background: '#fff', color: '#245079', border: 'none',
+            height: 66, padding: '20px 30px', textDecoration: 'none',
+            fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
+            transition: 'background 0.2s, color 0.2s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#245079' }}
+        >
           Contact Su Casa Builders Today
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
         </a>

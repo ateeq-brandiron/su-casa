@@ -36,11 +36,15 @@ function FAQItem({ q, a, defaultOpen }) {
   const [open, setOpen] = useState(defaultOpen || false)
   return (
     <div>
-      <button onClick={() => setOpen(!open)} style={{
-        width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
-        background: open ? '#4B5563' : '#6B7280', border: 'none',
-        padding: '20px 24px', cursor: 'pointer', textAlign: 'left',
-      }}>
+      <button onClick={() => setOpen(!open)}
+        onMouseEnter={e => { if (!open) e.currentTarget.style.background = '#5B6470' }}
+        onMouseLeave={e => { if (!open) e.currentTarget.style.background = '#6B7280' }}
+        style={{
+          width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
+          background: open ? '#4B5563' : '#6B7280', border: 'none',
+          padding: '20px 24px', cursor: 'pointer', textAlign: 'left',
+          transition: 'background 0.2s',
+        }}>
         <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: open ? 700 : 400, fontSize: 16, color: open ? '#fff' : 'rgba(255,255,255,0.75)', lineHeight: '150%' }}>{q}</span>
         <div style={{ width: 36, height: 36, borderRadius: '50%', border: '1.5px solid rgba(193,192,192,0.6)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src={open ? arrowUp : arrowDown} alt={open ? 'collapse' : 'expand'} width="14" height="18" />

@@ -19,7 +19,6 @@ function SectionLabel({ text }) {
   )
 }
 
-/* Circle-arrow icon matching Figma */
 function CircleArrow() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -61,7 +60,8 @@ function AccordionItem({ label }) {
           width: '100%', display: 'flex', alignItems: 'center',
           justifyContent: 'space-between', padding: '0.7rem 0',
           background: 'none', border: 'none', cursor: 'pointer',
-          color: 'rgba(255,255,255,0.85)', fontSize: '0.875rem', textAlign: 'left', gap: '0.75rem',
+          color: 'rgba(255,255,255,0.85)', fontFamily: 'Manrope, sans-serif',
+          fontSize: 16, textAlign: 'left', gap: '0.75rem',
         }}
       >
         <span style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
@@ -80,61 +80,69 @@ function AccordionItem({ label }) {
   )
 }
 
+function ServiceCard({ svc }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.05)',
+        border: `1px solid ${hovered ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.10)'}`,
+        borderRadius: 8, overflow: 'hidden',
+        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        transition: 'all 0.25s ease',
+      }}
+    >
+      <div style={{ height: 200, overflow: 'hidden' }}>
+        <img src={svc.img} alt={svc.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transform: hovered ? 'scale(1.04)' : 'scale(1)', transition: 'transform 0.4s ease' }} />
+      </div>
+      <div style={{ padding: '1.5rem' }}>
+        <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>{svc.title}</h3>
+        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.65)', fontSize: 16, lineHeight: '140%', marginBottom: '1rem' }}>{svc.desc}</p>
+        <div>
+          {svc.items.map(item => <AccordionItem key={item} label={item} />)}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Services() {
   return (
-    <section id="services" style={{ position: 'relative', background: '#2a2d3e', padding: '5rem 2rem', overflow: 'hidden' }}>
-      {/* Geometric pattern — right side */}
+    <section id="services" style={{ position: 'relative', background: '#2a2d3e', overflow: 'hidden' }}>
       <img
-        src={patternImg}
-        alt=""
-        aria-hidden="true"
-        style={{
-          position: 'absolute', right: 0, top: '50%',
-          transform: 'translateY(-50%)',
-          height: '120%', width: 'auto',
-          opacity: 0.18, pointerEvents: 'none', userSelect: 'none',
-        }}
+        src={patternImg} alt="" aria-hidden="true"
+        style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', height: '120%', width: 'auto', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}
       />
-
-      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <SectionLabel text="Our Services" />
-        <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
+        <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>
           Our Services
         </h2>
-        <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.75, maxWidth: 620, marginBottom: '3rem' }}>
+        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 680, marginBottom: '3rem' }}>
           At Su Casa Builders LLC, we provide dependable construction services across Sierra Vista and Cochise County. Whether we serve as your general contractor or subcontractor, every project reflects our commitment to craftsmanship, honesty, and lasting value.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-          {SERVICES.map(svc => (
-            <div key={svc.title} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 8, overflow: 'hidden' }}>
-              <div style={{ height: 200, overflow: 'hidden' }}>
-                <img src={svc.img} alt={svc.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-              <div style={{ padding: '1.5rem' }}>
-                <h3 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#fff', marginBottom: '0.75rem' }}>{svc.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.82rem', lineHeight: 1.7, marginBottom: '1rem' }}>{svc.desc}</p>
-                <div>
-                  {svc.items.map(item => <AccordionItem key={item} label={item} />)}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '3rem' }}>
+          {SERVICES.map(svc => <ServiceCard key={svc.title} svc={svc} />)}
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', fontStyle: 'italic', marginBottom: '1.5rem' }}>
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.55)', fontSize: 16, fontStyle: 'italic', marginBottom: '1.5rem' }}>
             Every project, no matter the size, is managed with the same attention to detail and commitment to long-term quality that defines our work.
           </p>
-          <a href="#contact" style={{
-            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
-            background: '#fff', color: '#245079',
-            height: 66, padding: '20px 30px',
-            textDecoration: 'none',
-            fontWeight: 600, fontSize: '0.9rem', transition: 'background 0.2s',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#f0f0f0' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#fff' }}>
+          <a href="#contact"
+            style={{
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+              background: '#fff', color: '#245079',
+              height: 66, padding: '20px 30px',
+              textDecoration: 'none',
+              fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
+              transition: 'background 0.2s, color 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#245079' }}>
             Request Your Construction Estimate
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
