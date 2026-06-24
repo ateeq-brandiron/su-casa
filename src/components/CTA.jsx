@@ -1,9 +1,26 @@
+import { useState } from 'react'
 import ctaBg from '../assets/images/CTA.png'
+import ctaHover from '../assets/images/Frame1618868878-1.png'
 
 export default function CTA() {
+  const [hovered, setHovered] = useState(false)
+
   return (
-    <section style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
-      <img src={ctaBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+    <section
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}
+    >
+      {/* Base image */}
+      <img src={ctaBg} alt="" aria-hidden="true" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+        opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
+      }} />
+      {/* Hover image */}
+      <img src={ctaHover} alt="" aria-hidden="true" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+      }} />
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, textAlign: 'center' }}>
