@@ -21,7 +21,7 @@ const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochis
 export default function Footer() {
   return (
     <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '80px 75px 40px' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10 }}>
         {/* Top grid */}
         <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', marginBottom: '3rem' }}>
           {/* Brand */}
