@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from '../assets/icons/Logo.svg'
+import footerBg from '../assets/images/Footer.png'
 
 const year = new Date().getFullYear()
 
@@ -35,8 +36,9 @@ const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochis
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10 }}>
+    <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif', position: 'relative', overflow: 'hidden' }}>
+      <img src={footerBg} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'bottom', pointerEvents: 'none', userSelect: 'none' }} />
+      <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10, position: 'relative', zIndex: 1 }}>
         {/* Top grid */}
         <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', width: '100%', marginBottom: '3rem' }}>
           {/* Brand */}
