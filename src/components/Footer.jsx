@@ -2,20 +2,18 @@ import logo from '../assets/icons/Logo.svg'
 
 const year = new Date().getFullYear()
 
-const NAV_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+const SERVICE_LINKS = [
+  { label: 'Custom Home Design', href: '#services' },
+  { label: 'Home Construction', href: '#services' },
+  { label: 'Renovations and Additions', href: '#services' },
+  { label: 'Kitchen Remodeling', href: '#services' },
 ]
 
-const SERVICE_LINKS = [
-  'Custom Home Design',
-  'Home Construction',
-  'Renovations and Additions',
-  'Roofing & Framing',
-  'Window Installation',
+const PROJECT_LINKS = [
+  { label: 'Custom Homes', href: '#projects' },
+  { label: 'Renovations', href: '#projects' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochise County']
@@ -34,22 +32,22 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Navigation</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {NAV_LINKS.map(l => (
-                <li key={l.label}><a href={l.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{l.label}</a></li>
-              ))}
-            </ul>
-          </div>
-
           {/* Services */}
           <div>
             <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Services</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
               {SERVICE_LINKS.map(s => (
-                <li key={s}><a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{s}</a></li>
+                <li key={s.label}><a href={s.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{s.label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Projects */}
+          <div>
+            <h4 style={{ fontWeight: 700, fontSize: 16, color: '#111827', marginBottom: 20 }}>Projects</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {PROJECT_LINKS.map(p => (
+                <li key={p.label}><a href={p.href} style={{ color: '#374151', textDecoration: 'none', fontSize: 14 }}>{p.label}</a></li>
               ))}
             </ul>
           </div>
