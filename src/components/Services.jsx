@@ -9,7 +9,7 @@ import patternImg from '../assets/images/abstract-architectural-backgroundtechno
 
 function SectionLabel({ text }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
       <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2">
         <g clipPath="url(#cs)">
           <path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -137,15 +137,17 @@ export default function Services() {
         style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', height: '120%', width: 'auto', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}
       />
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
-        <SectionLabel text="Our Services" />
-        <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>
-          Our Services
-        </h2>
-        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 680, marginBottom: '3rem' }}>
-          At Su Casa Builders LLC, we provide dependable construction services across Sierra Vista and Cochise County. Whether we serve as your general contractor or subcontractor, every project reflects our commitment to craftsmanship, honesty, and lasting value.
-        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: '3rem' }}>
+          <SectionLabel text="Our Services" />
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', lineHeight: '130%', margin: 0 }}>
+            Our Services
+          </h2>
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 680, margin: 0 }}>
+            At Su Casa Builders LLC, we provide dependable construction services across Sierra Vista and Cochise County. Whether we serve as your general contractor or subcontractor, every project reflects our commitment to craftsmanship, honesty, and lasting value.
+          </p>
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '3rem', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '4rem', alignItems: 'start' }}>
           {SERVICES.map(svc => <ServiceCard key={svc.title} svc={svc} />)}
         </div>
 
