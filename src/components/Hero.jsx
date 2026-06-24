@@ -1,5 +1,6 @@
 import heroImg from '../assets/images/Hero.png'
 import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 1.png'
+import infoBg from '../assets/images/73069d5eafa2e8bc3e43fc71671cee11d32ec65f (2).png'
 import videoThumb from '../assets/images/Frame 2147223472.png'
 import icoPlay from '../assets/icons/ico-play.svg'
 import icoNext from '../assets/icons/ico-next.svg'
@@ -69,7 +70,18 @@ export default function Hero() {
       </div>
 
       {/* ── Info section ── */}
-      <div id="info" style={{ position: 'relative', background: '#EDE5D0', overflow: 'hidden' }}>
+      <div id="info" style={{ position: 'relative', background: '#E1DBD0', overflow: 'hidden' }}>
+        {/* Architectural background image */}
+        <img
+          src={infoBg}
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%', objectFit: 'cover',
+            opacity: 1, pointerEvents: 'none', userSelect: 'none',
+          }}
+        />
         {/* Geometric background pattern — right side */}
         <img
           src={patternImg}
