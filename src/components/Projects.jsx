@@ -19,7 +19,7 @@ function SectionLabel({ text }) {
   )
 }
 
-function ProjectImage({ src, hoverSrc, alt, height }) {
+function ProjectImage({ src, hoverSrc, alt, label, height }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div
@@ -27,14 +27,30 @@ function ProjectImage({ src, hoverSrc, alt, height }) {
       onMouseLeave={() => setHovered(false)}
       style={{ overflow: 'hidden', position: 'relative', height }}
     >
+      {/* Default image */}
       <img src={src} alt={alt} style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
       }} />
+
+      {/* Hover image */}
       <img src={hoverSrc} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
       }} />
+
+      {/* Gradient overlay + label — visible on hover */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 34.62%, rgba(0,0,0,0.75) 100%)',
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+        display: 'flex', alignItems: 'flex-end', padding: '20px 24px',
+      }}>
+        <span style={{
+          fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18,
+          color: '#fff', lineHeight: '130%',
+        }}>{label}</span>
+      </div>
     </div>
   )
 }
@@ -58,14 +74,14 @@ export default function Projects() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Row 1: 2 large images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <ProjectImage src={hover1} hoverSrc={img1} alt="Custom Home — Sierra Vista" height={300} />
-            <ProjectImage src={hover2} hoverSrc={img2} alt="Spec Home — Cochise County" height={300} />
+            <ProjectImage src={hover1} hoverSrc={img1} alt="Paseo Venado" label="Paseo Venado" height={300} />
+            <ProjectImage src={hover2} hoverSrc={img2} alt="The Willow Creek Preserve" label="The Willow Creek Preserve" height={300} />
           </div>
           {/* Row 2: 3 smaller images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
-            <ProjectImage src={hover3} hoverSrc={img3} alt="Metal Roof — Hereford AZ" height={300} />
-            <ProjectImage src={hover4} hoverSrc={img4} alt="Custom Build — Fort Huachuca" height={300} />
-            <ProjectImage src={hover5} hoverSrc={img5} alt="Home Renovation — Bisbee" height={300} />
+            <ProjectImage src={hover3} hoverSrc={img3} alt="The Willow Creek Preserve" label="The Willow Creek Preserve" height={300} />
+            <ProjectImage src={hover4} hoverSrc={img4} alt="The Willow Creek Preserve" label="The Willow Creek Preserve" height={300} />
+            <ProjectImage src={hover5} hoverSrc={img5} alt="The Willow Creek Preserve" label="The Willow Creek Preserve" height={300} />
           </div>
         </div>
       </div>
