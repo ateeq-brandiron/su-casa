@@ -1,3 +1,7 @@
+import phoneIcon from '../assets/icons/contact-phone.svg'
+import clockIcon from '../assets/icons/contact-clock.svg'
+import locationIcon from '../assets/icons/contact-location.svg'
+
 function SectionLabel({ text }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -7,10 +11,10 @@ function SectionLabel({ text }) {
   )
 }
 
-function IconCircle({ children }) {
+function IconCircle({ src, alt }) {
   return (
-    <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#245079', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      {children}
+    <div style={{ width: 48, height: 48, borderRadius: '50%', background: '#245079', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <img src={src} alt={alt} style={{ width: 20, height: 20, objectFit: 'contain' }} />
     </div>
   )
 }
@@ -19,51 +23,47 @@ export default function Contact() {
   return (
     <section id="contact" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 96, alignItems: 'start' }}>
-        {/* Left info */}
+
+        {/* Left: two frames */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
-          {/* Header block */}
+
+          {/* Frame 1: label + heading + text, 20px gap each */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <SectionLabel text="Contact Us" />
-            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
+            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%', margin: 0 }}>
               Contact Su Casa Builders in Sierra Vista AZ
             </h2>
-            <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
+            <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
               Every project starts with a conversation. Reach out today, and let's explore how we can make your home fit your lifestyle.
             </p>
           </div>
 
-          {/* Contact details */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          {/* Frame 2: contact details, 40px gap between items */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
             {/* Phone */}
-            <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-              <IconCircle>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.24 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </IconCircle>
+            <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+              <IconCircle src={phoneIcon} alt="Phone" />
               <div>
-                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16, color: '#111827', marginBottom: 4 }}>Phone</p>
-                <a href="tel:5203358554" style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 16 }}>520-335-8554</a>
+                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 18, color: '#111827', margin: '0 0 4px' }}>Phone</p>
+                <a href="tel:5203358554" style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', textDecoration: 'none', fontSize: 16, fontWeight: 400 }}>520-335-8554</a>
               </div>
             </div>
 
             {/* Hours */}
-            <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-              <IconCircle>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </IconCircle>
+            <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+              <IconCircle src={clockIcon} alt="Office Hours" />
               <div>
-                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16, color: '#111827', marginBottom: 4 }}>Office Hours</p>
-                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16 }}>Monday - Friday: 7:30 AM – 4:00 PM</p>
+                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 18, color: '#111827', margin: '0 0 4px' }}>Office Hours</p>
+                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, margin: 0 }}>Monday – Friday: 7:30 AM – 4:00 PM</p>
               </div>
             </div>
 
             {/* Address */}
             <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-              <IconCircle>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </IconCircle>
+              <IconCircle src={locationIcon} alt="Address" />
               <div>
-                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16, color: '#111827', marginBottom: 4 }}>Address</p>
-                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, marginBottom: 6 }}>5362 S Santa Elena Ave, Sierra Vista, AZ 85650</p>
+                <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 18, color: '#111827', margin: '0 0 4px' }}>Address</p>
+                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, margin: '0 0 6px' }}>5362 S Santa Elena Ave, Sierra Vista, AZ 85650</p>
                 <a href="https://maps.google.com/?q=5362+S+Santa+Elena+Ave+Sierra+Vista+AZ+85650" target="_blank" rel="noreferrer"
                   style={{ fontFamily: 'Manrope, sans-serif', color: '#245079', fontSize: 14, fontWeight: 600, textDecoration: 'underline' }}>Click for Directions</a>
               </div>
@@ -72,7 +72,7 @@ export default function Contact() {
         </div>
 
         {/* Right: map */}
-        <div style={{ height: 480, overflow: 'hidden' }}>
+        <div style={{ height: 520, overflow: 'hidden', borderRadius: 4 }}>
           <iframe
             title="Su Casa Builders location"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-110.3336%2C31.5289%2C-110.2836%2C31.5689&layer=mapnik&marker=31.5489%2C-110.3086"
