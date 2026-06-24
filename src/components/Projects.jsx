@@ -4,6 +4,11 @@ import img2 from '../assets/images/Image2.png'
 import img3 from '../assets/images/Image3.png'
 import img4 from '../assets/images/Image4.png'
 import img5 from '../assets/images/Image5.png'
+import hover1 from '../assets/images/HoverImage1.png'
+import hover2 from '../assets/images/HoverImage2.png'
+import hover3 from '../assets/images/HoverImage3.png'
+import hover4 from '../assets/images/HoverImage4.png'
+import hover5 from '../assets/images/HoverImage5.png'
 
 function SectionLabel({ text }) {
   return (
@@ -14,22 +19,22 @@ function SectionLabel({ text }) {
   )
 }
 
-function ProjectImage({ src, alt, height }) {
+function ProjectImage({ src, hoverSrc, alt, height }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ overflow: 'hidden', position: 'relative' }}
+      style={{ overflow: 'hidden', position: 'relative', height }}
     >
-      <img
-        src={src} alt={alt}
-        style={{
-          width: '100%', height: height, objectFit: 'cover', display: 'block',
-          transform: hovered ? 'scale(1.05)' : 'scale(1)',
-          transition: 'transform 0.4s ease',
-        }}
-      />
+      <img src={src} alt={alt} style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+        opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
+      }} />
+      <img src={hoverSrc} alt="" aria-hidden="true" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+      }} />
     </div>
   )
 }
@@ -53,14 +58,14 @@ export default function Projects() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Row 1: 2 large images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img1} alt="Custom Home — Sierra Vista" height={300} />
-            <ProjectImage src={img2} alt="Spec Home — Cochise County" height={300} />
+            <ProjectImage src={img1} hoverSrc={hover1} alt="Custom Home — Sierra Vista" height={300} />
+            <ProjectImage src={img2} hoverSrc={hover2} alt="Spec Home — Cochise County" height={300} />
           </div>
           {/* Row 2: 3 smaller images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img3} alt="Metal Roof — Hereford AZ" height={300} />
-            <ProjectImage src={img4} alt="Custom Build — Fort Huachuca" height={300} />
-            <ProjectImage src={img5} alt="Home Renovation — Bisbee" height={300} />
+            <ProjectImage src={img3} hoverSrc={hover3} alt="Metal Roof — Hereford AZ" height={300} />
+            <ProjectImage src={img4} hoverSrc={hover4} alt="Custom Build — Fort Huachuca" height={300} />
+            <ProjectImage src={img5} hoverSrc={hover5} alt="Home Renovation — Bisbee" height={300} />
           </div>
         </div>
       </div>
