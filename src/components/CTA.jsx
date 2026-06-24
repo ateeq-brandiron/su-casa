@@ -2,20 +2,20 @@ import ctaBg from '../assets/images/CTA.png'
 
 export default function CTA() {
   return (
-    <section style={{ position: 'relative', overflow: 'hidden' }}>
+    <section style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
       <img src={ctaBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 56, fontWeight: 400, color: '#fff', lineHeight: '130%', maxWidth: 860 }}>
+        <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 56, fontWeight: 400, color: '#fff', lineHeight: '130%', maxWidth: 860, margin: 0 }}>
           Let's bring your vision to life with skill, quality, and integrity.
         </h2>
-        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 640 }}>
+        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.85)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 640, margin: 0 }}>
           Your home deserves a builder who values craftsmanship and clear communication.
         </p>
         <a href="#contact" style={{
           display: 'inline-flex', alignItems: 'center', gap: 16,
-          border: '1.5px solid rgba(255,255,255,0.85)', color: '#fff', background: 'transparent',
+          background: '#fff', color: '#245079', border: 'none',
           height: 66, padding: '20px 30px', textDecoration: 'none',
           fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
         }}>
