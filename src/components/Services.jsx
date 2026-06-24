@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import servicesBg from '../assets/images/Services.png'
 import frame1 from '../assets/images/Frame1.png'
 import frame1b from '../assets/images/Frame1-1.png'
 import frame1c from '../assets/images/Frame1-2.png'
@@ -131,11 +132,11 @@ function ServiceCard({ svc }) {
 
 export default function Services() {
   return (
-    <section id="services" style={{ position: 'relative', background: '#2a2d3e', overflow: 'hidden' }}>
-      <img
-        src={patternImg} alt="" aria-hidden="true"
-        style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', height: '120%', width: 'auto', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}
-      />
+    <section id="services" style={{
+        position: 'relative', overflow: 'hidden',
+        background: `url(${servicesBg}) lightgray 0px 860.229px / 100% 68.154% no-repeat, #3C3C3C`,
+        backgroundBlendMode: 'overlay, normal',
+      }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <SectionLabel text="Our Services" />
         <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>
