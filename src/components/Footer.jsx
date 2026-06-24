@@ -36,7 +36,7 @@ const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochis
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#EDE5D0', fontFamily: 'Manrope, sans-serif', position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ background: 'linear-gradient(to bottom, #fff 0px, #EDE5D0 60px)', fontFamily: 'Manrope, sans-serif', position: 'relative', overflow: 'hidden' }}>
       <img src={footerBg} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'bottom', pointerEvents: 'none', userSelect: 'none' }} />
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10, position: 'relative', zIndex: 1 }}>
         {/* Top grid */}
