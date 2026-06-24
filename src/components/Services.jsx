@@ -2,6 +2,9 @@ import { useState } from 'react'
 import frame1 from '../assets/images/Frame1.png'
 import frame1b from '../assets/images/Frame1-1.png'
 import frame1c from '../assets/images/Frame1-2.png'
+import service1 from '../assets/images/service1.jpg'
+import service2 from '../assets/images/service2.jpg'
+import service3 from '../assets/images/service3.jpg'
 import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 2.png'
 
 function SectionLabel({ text }) {
@@ -33,7 +36,7 @@ const SERVICES = [
   {
     title: 'General Contracting',
     desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
-    img: frame1,
+    img: frame1, hoverImg: service1,
     items: [
       { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
       { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
@@ -43,7 +46,7 @@ const SERVICES = [
   {
     title: 'Subcontracting',
     desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
-    img: frame1b,
+    img: frame1b, hoverImg: service2,
     items: [
       { label: 'Framing', detail: 'Structural framing for new construction, additions, and expansions.' },
       { label: 'Roofing', detail: 'Professional roofing installation and repair that ensures long-term protection.' },
@@ -53,7 +56,7 @@ const SERVICES = [
   {
     title: 'Special Projects and Products',
     desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
-    img: frame1c,
+    img: frame1c, hoverImg: service3,
     items: [
       { label: 'Screened Porches and Additions', detail: 'Seamlessly extend your living space with screened or enclosed rooms that match your home\'s original design.' },
       { label: 'Pergolas and Covered Patios', detail: 'Add shade and structure with custom-built pergolas, patio covers, or carports designed for durability and style.' },
@@ -111,8 +114,9 @@ function ServiceCard({ svc }) {
         transition: 'all 0.25s ease',
       }}
     >
-      <div style={{ height: 200, overflow: 'hidden' }}>
-        <img src={svc.img} alt={svc.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transform: hovered ? 'scale(1.04)' : 'scale(1)', transition: 'transform 0.4s ease' }} />
+      <div style={{ height: 200, overflow: 'hidden', position: 'relative' }}>
+        <img src={svc.img} alt={svc.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
+        <img src={svc.hoverImg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
       </div>
       <div style={{ padding: '1.5rem' }}>
         <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>{svc.title}</h3>
