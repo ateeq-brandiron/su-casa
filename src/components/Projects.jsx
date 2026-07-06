@@ -44,12 +44,20 @@ function ProjectImage({ src, hoverSrc, alt, label, height }) {
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 34.62%, rgba(0,0,0,0.75) 100%)',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
-        display: 'flex', justifyContent: 'center', alignItems: 'flex-end', padding: '0 0 24px 0',
+        display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center', padding: '0 0 24px 0', gap: 10,
       }}>
         <span style={{
           fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18,
           color: '#fff', lineHeight: '130%', textAlign: 'center',
         }}>{label}</span>
+        <a href="#contact" style={{
+          fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 13,
+          color: '#fff', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase',
+          border: '1px solid rgba(255,255,255,0.7)', padding: '6px 16px', borderRadius: 4,
+          background: 'rgba(255,255,255,0.15)',
+        }}>
+          Enquire About This Project →
+        </a>
       </div>
     </div>
   )

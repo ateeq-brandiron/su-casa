@@ -65,7 +65,7 @@ export default function Hero() {
               lineHeight: '130%',
               marginBottom: '1rem',
             }}>
-              Su Casa Builders – General Contractor in Sierra Vista AZ
+              Su Casa Builders – General Contractor in Sierra Vista, AZ
             </h1>
             <p style={{
               color: 'rgba(255,255,255,0.92)',
@@ -149,7 +149,7 @@ export default function Hero() {
             maxWidth: 1100,
             margin: '0 auto 2.5rem',
           }}>
-            Su Casa Builders LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting,
+            Su Casa Builders, LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting,
             custom home construction, and outdoor living projects. Since 2003, our team has delivered quality
             craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new
             construction, a home addition, or light commercial work, we bring integrity, experience, and precision to
@@ -212,11 +212,19 @@ export default function Hero() {
               <img src={icoInfo} alt="" style={{ width: 20, height: 20, opacity: 0.9 }} />
             </div>
 
-            {/* Centre play button */}
+            {/* Centre play button + coming soon */}
             <div style={{
               position: 'absolute', inset: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16,
             }}>
+              <div style={{
+                background: 'rgba(0,0,0,0.55)', borderRadius: 8,
+                padding: '6px 18px',
+                fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 14,
+                color: '#fff', letterSpacing: '0.06em', textTransform: 'uppercase',
+              }}>
+                Video Coming Soon
+              </div>
               <div style={{
                 width: 80, height: 56, borderRadius: 14,
                 background: '#FF0000',

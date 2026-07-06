@@ -88,7 +88,7 @@ export default function FAQ() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
           <SectionLabel text="Frequently Asked Questions" />
           <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%', margin: 0, width: '100%' }}>
-            Frequently Asked Questions About Our Work as General Contractors in Sierra Vista AZ
+            Frequently Asked Questions About Our Work as General Contractors in Sierra Vista, AZ
           </h2>
         </div>
 

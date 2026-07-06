@@ -63,13 +63,6 @@ function ReviewCard({ r }) {
 }
 
 export default function Testimonials() {
-  const [idx, setIdx] = useState(0)
-  const visible = [
-    REVIEWS[idx % REVIEWS.length],
-    REVIEWS[(idx + 1) % REVIEWS.length],
-    REVIEWS[(idx + 2) % REVIEWS.length],
-  ]
-
   return (
     <section id="testimonials" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', gap: 60 }}>
@@ -86,21 +79,9 @@ export default function Testimonials() {
 
         {/* Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {visible.map((r, i) => (
-            <ReviewCard key={r.name + i} r={r} />
+          {REVIEWS.map(r => (
+            <ReviewCard key={r.name} r={r} />
           ))}
-        </div>
-
-        {/* Navigation */}
-        <div style={{ display: 'flex', gap: 16 }}>
-          <button onClick={() => setIdx(i => (i - 1 + REVIEWS.length) % REVIEWS.length)}
-            style={{ width: 56, height: 56, borderRadius: '50%', border: '1.5px solid #d1d5db', background: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="11,3 5,9 11,15"/></svg>
-          </button>
-          <button onClick={() => setIdx(i => (i + 1) % REVIEWS.length)}
-            style={{ width: 56, height: 56, borderRadius: '50%', border: '1.5px solid #245079', background: 'rgba(36,80,121,0.08)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#245079" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="7,3 13,9 7,15"/></svg>
-          </button>
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ export default function Contact() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <SectionLabel text="Contact Us" />
             <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%', margin: 0 }}>
-              Contact Su Casa Builders in Sierra Vista AZ
+              Contact Su Casa Builders in Sierra Vista, AZ
             </h2>
             <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
               Every project starts with a conversation. Reach out today, and let's explore how we can make your home fit your lifestyle.
