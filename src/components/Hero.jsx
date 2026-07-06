@@ -212,19 +212,11 @@ export default function Hero() {
               <img src={icoInfo} alt="" style={{ width: 20, height: 20, opacity: 0.9 }} />
             </div>
 
-            {/* Centre play button + coming soon */}
+            {/* Centre play button */}
             <div style={{
               position: 'absolute', inset: 0,
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              <div style={{
-                background: 'rgba(0,0,0,0.55)', borderRadius: 8,
-                padding: '6px 18px',
-                fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 14,
-                color: '#fff', letterSpacing: '0.06em', textTransform: 'uppercase',
-              }}>
-                Video Coming Soon
-              </div>
               <div style={{
                 width: 80, height: 56, borderRadius: 14,
                 background: '#FF0000',
