@@ -58,9 +58,9 @@ export default function Hero() {
               <h1 style={{
                 color: '#FFF',
                 fontFamily: '"DM Sans", sans-serif',
-                fontSize: 72,
+                fontSize: 64,
                 fontWeight: 400,
-                lineHeight: '120%',
+                lineHeight: '130%',
                 margin: '0 0 16px',
               }}>
                 Su Casa Builders – General Contractor in Sierra Vista, AZ
@@ -68,9 +68,9 @@ export default function Hero() {
               <p style={{
                 color: 'rgba(255,255,255,0.90)',
                 fontFamily: 'Manrope, sans-serif',
-                fontSize: 22,
-                fontWeight: 400,
-                lineHeight: '150%',
+                fontSize: 32,
+                fontWeight: 500,
+                lineHeight: '66.77px',
                 margin: 0,
               }}>
                 We have quality nailed.
