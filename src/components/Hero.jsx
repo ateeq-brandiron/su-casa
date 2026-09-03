@@ -49,33 +49,33 @@ export default function Hero() {
         }} />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.20)' }} />
 
-        {/* Text — left-aligned, lower-middle portion */}
+        {/* Text — bottom-left, aligned to page grid */}
         <div style={{
-          position: 'absolute', bottom: '32%', left: '50%',
-          transform: 'translateX(-50%)',
-          width: '100%', maxWidth: 1280,
-          padding: '0 2rem',
+          position: 'absolute', bottom: 80, left: 0, right: 0,
         }}>
-          <div style={{ maxWidth: 900 }}>
-            <h1 style={{
-              color: '#FFF',
-              fontFamily: '"DM Sans", sans-serif',
-              fontSize: 64,
-              fontWeight: 400,
-              lineHeight: '130%',
-              marginBottom: '1rem',
-            }}>
-              Su Casa Builders – General Contractor in Sierra Vista, AZ
-            </h1>
-            <p style={{
-              color: 'rgba(255,255,255,0.92)',
-              fontFamily: 'Manrope, sans-serif',
-              fontSize: 32,
-              fontWeight: 500,
-              lineHeight: '66.766px',
-            }}>
-              We have quality nailed.
-            </p>
+          <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px' }}>
+            <div style={{ maxWidth: 860 }}>
+              <h1 style={{
+                color: '#FFF',
+                fontFamily: '"DM Sans", sans-serif',
+                fontSize: 72,
+                fontWeight: 400,
+                lineHeight: '120%',
+                margin: '0 0 16px',
+              }}>
+                Su Casa Builders – General Contractor in Sierra Vista, AZ
+              </h1>
+              <p style={{
+                color: 'rgba(255,255,255,0.90)',
+                fontFamily: 'Manrope, sans-serif',
+                fontSize: 22,
+                fontWeight: 400,
+                lineHeight: '150%',
+                margin: 0,
+              }}>
+                We have quality nailed.
+              </p>
+            </div>
           </div>
         </div>
 
