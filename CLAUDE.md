@@ -6,8 +6,8 @@ This file is living documentation. Update it whenever you discover a rule the ha
 
 ## Git workflow
 
-- **Working branch:** `develop` — all development goes here. Never push directly to `main`.
-- Create feature sub-branches off `develop` only if a change is large or experimental; merge back via rebase (no merge commits).
+- **Working branch:** `claude/sharp-feynman-k3wtbt` — all development goes here. Never push directly to `main`.
+- Create feature sub-branches off the working branch only if a change is large or experimental; merge back via rebase (no merge commits).
 - Each commit must be scoped to **one logical change**. Commit message format:
   ```
   <area>: <why this change was needed, not just what it does>
@@ -19,15 +19,15 @@ This file is living documentation. Update it whenever you discover a rule the ha
   - `hero: swap background image to aerial house shot per Asana task`
   - `why-us: add bottom border hover effect per design feedback`
   - `data: extract services list to data file to decouple content from UI`
-- Before pushing, always `git fetch origin develop` and rebase onto it if it has moved. Never force-push over someone else's work.
+- Before pushing, always `git fetch origin claude/sharp-feynman-k3wtbt` and rebase onto it if it has moved. Never force-push over someone else's work.
 - **Never create a PR** unless the user explicitly asks for one.
 
 ---
 
 ## Tech stack
 
-- **Framework:** React 19 + Vite 8, JSX (no TypeScript)
-- **Styling:** Inline styles only — no Tailwind classes in any component except `WhyChoose.jsx` (legacy, not used in App.jsx). All new work uses inline styles.
+- **Framework:** React 19 + Vite 8, JSX (no TypeScript — no `tsc`, lint with `npm run lint`)
+- **Styling:** Inline styles only — no Tailwind classes in any active component. All new work uses inline styles.
 - **Fonts:** Manrope (all body/headings), DM Sans (Hero `<h1>` only). Both loaded via Google Fonts in `index.html`.
 - **Contact form:** Formspree endpoint `https://formspree.io/SuCasaBuilder03@gmail.com`. First submission triggers an email verification to that address — the owner must click the link once.
 
@@ -122,23 +122,62 @@ When adding a new item (e.g. a new project photo), add it to the data file first
 src/assets/
   images/         ← all images actively used by components
     unused/       ← images no longer referenced anywhere (kept, not deleted)
-  icons/          ← SVG icons
+  icons/          ← SVG icons actively used by components
+    unused/       ← SVG icons no longer referenced
+  components/
+    unused/       ← components not rendered in App.jsx (kept for reference)
 ```
 
+### Active image inventory (as of Sep 2026)
+
+| File | Used in | Notes |
+|---|---|---|
+| `Hero.png` | Hero.jsx | Updated Sep 2026 — aerial house + mountains shot |
+| `hero-info-bg.png` | Hero.jsx (infoBg) | Background accent for info band |
+| `pattern-hero.png` | Hero.jsx (patternImg) | Geometric pattern, right side of info band |
+| `pattern-services.png` | Services.jsx (patternImg) | Geometric pattern, right side of services section |
+| `Frame 2147223472.png` | Hero.jsx (videoThumb) | Video player thumbnail |
+| `Frame1.png` | Services.jsx | Service card 1 default image |
+| `Frame1-1.png` | Services.jsx | Service card 2 default image |
+| `Frame1-2.png` | Services.jsx | Service card 3 default image |
+| `service1.jpg` | Services.jsx | Service card 1 hover image |
+| `service2.jpg` | Services.jsx | Service card 2 hover image |
+| `service3.jpg` | Services.jsx | Service card 3 hover image |
+| `Image Box 1.png` | About.jsx | About left column — top image (updated Sep 2026) |
+| `Image Box 2.png` | About.jsx | About left column — bottom image (updated Sep 2026) |
+| `Image Box 1 (1).png` | About.jsx | About top image hover state |
+| `ImageBox.png` | CoreValues.jsx | Core values right image default |
+| `Image Box (4).png` | CoreValues.jsx | Core values right image hover |
+| `Process.png` | Process.jsx | Process section background |
+| `Image1–5.png` | Projects.jsx | Project grid hover images |
+| `HoverImage1–5.png` | Projects.jsx | Project grid default images |
+| `source_20260507_094702.jpg` | FAQ.jsx | FAQ left column default image |
+| `Image box (3).png` | FAQ.jsx | FAQ left column hover image |
+| `CTA.png` | CTA.jsx | CTA section background |
+| `CTA (1).png` | CTA.jsx | CTA section hover background |
+| `Footer.png` | Footer.jsx | Footer background |
+
+### Newly uploaded — not yet wired to components (Sep 2026)
+
+| File | Likely purpose |
+|---|---|
+| `About.png` | New About section photo — wire into About.jsx |
+| `service-card-1.png` | Replacement for Frame1.png (service card 1) |
+| `service-card-2.png` | Replacement for Frame1-1.png (service card 2) |
+| `service-card-3.png` | Replacement for Frame1-2.png (service card 3) |
+| `Paseo.png` | New project image — Paseo Venado |
+| `Canyons.png` | New project image |
+| `Oaks.png` | New project image |
+| `Jens.png` | New project image |
+
 ### Before adding or replacing an image
-1. **Check for reuse:** `grep -r "ImageName" src/` across all components and data files. Do not reuse a photo/video already used elsewhere on the site without explicit approval.
-2. **Check for byte-identical duplicates under different filenames:**
+1. **Check for reuse:** `grep -r "ImageName" src/` across all components and data files.
+2. **Check for byte-identical duplicates:**
    ```bash
    md5sum src/assets/images/*.{png,jpg} | sort | awk '{seen[$1]=seen[$1]" "$2} END {for(h in seen) if(seen[h]~/ .* /) print h,seen[h]}'
    ```
 3. **Naming:** Use `kebab-case` for new images (e.g. `hero-house-aerial.jpg`). Avoid Figma export names with spaces or hash prefixes.
-4. **When retiring an image:** Move it to `src/assets/images/unused/` rather than deleting it outright. Keep `unused/` tidy by noting the reason in a commit message.
-
-### Current known duplicate pairs (kept in unused/)
-- `Frame1618868878-1.png` = `Frame1.png`
-- `Frame2.png` = `Frame 2147223472.png`
-- `ImageBox1.png` = `Image Box 1.png`
-- `ImageBox2.png` = `Image Box 2.png`
+4. **When retiring an image:** Move it to `src/assets/images/unused/` rather than deleting it outright.
 
 ---
 
@@ -153,19 +192,19 @@ src/assets/
 
 ## Pending Asana tasks (as of Sep 2026)
 
-All assigned to Ateeq Asif, due Sep 4 2026. Assets in Google Drive folder linked in each Asana task.
+All assigned to Ateeq Asif, due Sep 4 2026.
 
-| Task | What changes |
-|---|---|
-| Su Casa - Hero Image | New background photo for Hero section |
-| Su Casa - About Su Casa | New photos for About section image stack |
-| Su Casa - Our Services | New service card images |
-| Su Casa - Why Choose Su Casa | ✅ Hover effect done (bottom border + title color + icon fill) |
-| Su Casa - Our Core Values | New images + subtle background accent |
-| Su Casa - Our Process | New graphic element |
-| Su Casa - Featured Projects | Updated project photos |
-| Su Casa - FAQs | Updated FAQ section image |
-| Su Casa - CTA | Updated CTA background image |
+| Task | Status | Notes |
+|---|---|---|
+| Su Casa - Hero Image | ✅ Done | New Hero.png uploaded Sep 2026 |
+| Su Casa - About Su Casa | Pending | About.png uploaded — wire into About.jsx |
+| Su Casa - Our Services | Pending | service-card-1/2/3.png uploaded — replace Frame1.png etc. |
+| Su Casa - Why Choose Su Casa | ✅ Done | Bottom border + title color + icon fill on hover |
+| Su Casa - Our Core Values | Pending | New images + subtle background accent |
+| Su Casa - Our Process | Pending | New graphic element |
+| Su Casa - Featured Projects | Pending | Canyons/Jens/Oaks/Paseo.png uploaded — wire into Projects.jsx |
+| Su Casa - FAQs | Pending | Updated FAQ section image |
+| Su Casa - CTA | Pending | Updated CTA background image |
 
 **Pending client decisions (do not implement until answered):**
 - What video will play in the Hero info-band video player?
@@ -175,8 +214,9 @@ All assigned to Ateeq Asif, due Sep 4 2026. Assets in Google Drive folder linked
 
 ## Things that went wrong once — don't repeat
 
-- **Tailwind vs inline styles:** `WhyChoose.jsx` still uses Tailwind class names — it's not rendered in `App.jsx` (replaced by `WhyUs.jsx`). Don't accidentally re-introduce Tailwind in new components.
-- **Missing icon imports:** `contact-phone.svg`, `contact-clock.svg`, `contact-location.svg` exist in `src/assets/icons/` but were referenced with wrong relative paths in an earlier iteration of Contact.jsx. Contact.jsx now uses inline SVGs instead.
-- **Branch confusion:** Session branches (`claude/sharp-feynman-k3wtbt`) are ephemeral session branches. Long-lived development work goes to `develop`.
+- **Tailwind vs inline styles:** `WhyChoose.jsx` is archived in `components/unused/` — it used Tailwind and was replaced by `WhyUs.jsx`. Don't re-introduce Tailwind in new components.
+- **Missing icon imports:** `contact-phone.svg`, `contact-clock.svg`, `contact-location.svg` exist in `src/assets/icons/unused/` — they were referenced with wrong relative paths in an earlier Contact.jsx. Contact.jsx now uses inline SVGs instead.
 - **useState in .map():** Caused a React hooks violation. Always extract to a named component first.
 - **Hero arrow stroke color:** When the scroll button background was changed to white, the SVG stroke was still `stroke="white"` and became invisible. Always check SVG stroke/fill against the new background.
+- **Branch confusion:** Session branches are ephemeral. Working branch is `claude/sharp-feynman-k3wtbt`.
+- **git mv vs OS mv:** Using `mv` at the OS level means git tracks files as deleted + new-file (not rename). Always `git add -u` to stage deletions alongside the new files in the same commit.

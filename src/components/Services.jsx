@@ -5,7 +5,7 @@ import frame1c from '../assets/images/Frame1-2.png'
 import service1 from '../assets/images/service1.jpg'
 import service2 from '../assets/images/service2.jpg'
 import service3 from '../assets/images/service3.jpg'
-import patternImg from '../assets/images/abstract-architectural-backgroundtechnological-designgeometric-vector-illustration_531521-651 2.png'
+import patternImg from '../assets/images/pattern-services.png'
 
 function SectionLabel({ text }) {
   return (
