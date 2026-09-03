@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import imageBox from '../assets/images/Image Box 1.png'
-import imageBox1 from '../assets/images/Image Box 2.png'
+import imageBox1 from '../assets/images/About.png'
 import imageBoxHover from '../assets/images/Image Box 1 (1).png'
 
 function SectionLabel({ text }) {
