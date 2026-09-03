@@ -24,7 +24,7 @@ function SwapImage({ src, hoverSrc, height }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ position: 'relative', width: '100%', height, overflow: 'hidden' }}
+      style={{ position: 'relative', width: 484, height: 275, overflow: 'hidden' }}
     >
       <img src={src} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
       <img src={hoverSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
@@ -37,9 +37,9 @@ export default function About() {
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images — fills left column */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
-          <SwapImage src={imageBox} hoverSrc={imageBoxHover} height={300} />
-          <div style={{ position: 'relative', width: '100%', height: 300, overflow: 'hidden' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <SwapImage src={imageBox} hoverSrc={imageBoxHover} height={275} />
+          <div style={{ position: 'relative', width: 484, height: 275, overflow: 'hidden' }}>
             <img src={imageBox1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%' }} />
           </div>
         </div>
