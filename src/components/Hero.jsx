@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import heroImg from '../assets/images/Hero.png'
+import heroImg from '../assets/images/hero-bg.png'
 import patternImg from '../assets/images/pattern-hero.png'
 import infoBg from '../assets/images/hero-info-bg.png'
 import videoThumb from '../assets/images/Frame 2147223472.png'
