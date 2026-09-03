@@ -42,7 +42,13 @@ function ReasonCard({ r }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ display: 'flex', flexDirection: 'column', gap: 20, transition: 'transform 0.2s', transform: hovered ? 'translateY(-4px)' : 'none' }}
+      style={{
+        display: 'flex', flexDirection: 'column', gap: 20,
+        paddingBottom: 24,
+        borderBottom: `2px solid ${hovered ? '#245079' : 'transparent'}`,
+        transition: 'border-color 0.25s, transform 0.2s',
+        transform: hovered ? 'translateY(-4px)' : 'none',
+      }}
     >
       <div style={{
         width: 60, height: 60, borderRadius: '50%',
@@ -53,7 +59,7 @@ function ReasonCard({ r }) {
       }}>
         <img src={r.icon} alt="" style={{ width: 28, height: 28, objectFit: 'contain', filter: hovered ? 'brightness(0) invert(1)' : 'none', transition: 'filter 0.25s' }} />
       </div>
-      <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: '#000', lineHeight: '130%' }}>{r.title}</h3>
+      <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: hovered ? '#245079' : '#000', lineHeight: '130%', transition: 'color 0.25s' }}>{r.title}</h3>
       <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%' }}>{r.desc}</p>
     </div>
   )
