@@ -63,7 +63,7 @@ export default function Hero() {
                 lineHeight: '130%',
                 margin: '0 0 42px',
               }}>
-                Su Casa Builders – General Contractor<br />in Sierra Vista, AZ
+                Su Casa Builders – General <br />Contractor in Sierra Vista, AZ
               </h1>
               <p style={{
                 color: 'rgba(255,255,255,0.92)',
