@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import frame2 from '../assets/images/ImageBox.png'
-import frame2Hover from '../assets/images/Image Box (4).png'
+import frame2 from '../assets/images/jens7.webp'
+import frame2Hover from '../assets/images/jens8.webp'
 
 function SectionLabel({ text }) {
   return (
