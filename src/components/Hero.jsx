@@ -54,7 +54,7 @@ export default function Hero() {
           position: 'absolute', bottom: 80, left: 0, right: 0,
         }}>
           <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px' }}>
-            <div style={{ maxWidth: 751 }}>
+            <div style={{ maxWidth: 860 }}>
               <h1 style={{
                 color: '#FFFFFF',
                 fontFamily: '"DM Sans", sans-serif',
