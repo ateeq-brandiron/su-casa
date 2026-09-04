@@ -31,8 +31,8 @@ export default function Process() {
   return (
     <section id="process" style={{ position: 'relative', overflow: 'hidden' }}>
       <img src={processBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-      <img src={processTop} alt="" aria-hidden="true" style={{ position: 'absolute', top: 0, right: 0, height: '45%', width: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
-      <img src={processBottom} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, height: '40%', width: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
+      <img src={processTop} alt="" aria-hidden="true" style={{ position: 'absolute', top: 0, right: 0, height: '55%', width: 'auto', opacity: 0.6, pointerEvents: 'none', userSelect: 'none' }} />
+      <img src={processBottom} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, height: '45%', width: 'auto', opacity: 0.6, pointerEvents: 'none', userSelect: 'none' }} />
 
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0, marginBottom: 60 }}>
