@@ -51,7 +51,7 @@ function ReasonCard({ r }) {
       }}
     >
       <div style={{
-        width: 60, height: 60, borderRadius: '50%',
+        width: 76, height: 76, borderRadius: '50%',
         border: '1.5px solid #245079',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: hovered ? '#245079' : '#fff', flexShrink: 0,
@@ -71,14 +71,14 @@ export default function WhyUs() {
       <div style={{
         maxWidth: 1440, margin: '0 auto',
         padding: '100px 75px',
-        display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 60,
+        display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 80,
       }}>
         {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Why Choose Us" />
           <h2 style={{
-            fontFamily: 'Manrope, sans-serif',
-            fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%',
+            fontFamily: '"DM Sans", sans-serif',
+            fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%',
           }}>
             Why Choose Su Casa Builders
           </h2>

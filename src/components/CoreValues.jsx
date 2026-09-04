@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react' // used by CoreImage hover
 import frame2 from '../assets/images/jens7.webp'
 import frame2Hover from '../assets/images/jens8.webp'
 
@@ -27,30 +27,16 @@ const VALUES = [
 ]
 
 function ValueCard({ v }) {
-  const [hovered, setHovered] = useState(false)
   return (
-    <div
-      key={v.title}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        display: 'flex', flexDirection: 'column', gap: 12,
-        padding: '20px 24px',
-        border: `1px solid ${hovered ? '#245079' : 'transparent'}`,
-        transform: hovered ? 'translateX(6px)' : 'translateX(0)',
-        transition: 'all 0.25s ease',
-        cursor: 'default',
-      }}
-    >
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingLeft: 12 }}>
       <h4 style={{
         fontFamily: 'Manrope, sans-serif',
-        fontWeight: 600, fontSize: 22, lineHeight: '140%',
-        color: hovered ? '#245079' : '#000',
-        transition: 'color 0.25s',
+        fontWeight: 700, fontSize: 22, lineHeight: '140%',
+        color: '#111827', margin: 0,
       }}>{v.title}</h4>
       <p style={{
         fontFamily: 'Manrope, sans-serif',
-        color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%',
+        color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%', margin: 0,
       }}>{v.desc}</p>
     </div>
   )
@@ -63,8 +49,7 @@ function CoreImage() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        width: 478, height: 588, flexShrink: 0,
-        border: '2px solid #245079',
+        flex: '0 0 480px', alignSelf: 'stretch',
         overflow: 'hidden', position: 'relative',
       }}
     >
@@ -88,8 +73,8 @@ export default function CoreValues() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
             <SectionLabel text="Our Core Values" />
             <h2 style={{
-              fontFamily: 'Manrope, sans-serif',
-              fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%',
+              fontFamily: '"DM Sans", sans-serif',
+              fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%',
             }}>
               Our Core Values
             </h2>
@@ -102,7 +87,7 @@ export default function CoreValues() {
           </div>
 
           {/* Values list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 40, width: '100%' }}>
             {VALUES.map(v => <ValueCard key={v.title} v={v} />)}
           </div>
         </div>
