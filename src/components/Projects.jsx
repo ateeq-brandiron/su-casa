@@ -34,10 +34,18 @@ function ProjectImage({ project, height }) {
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
       }} />
-      <img src={hoverImg} alt={project.label} style={{
+      <img src={hoverImg} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
       }} />
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.70) 100%)',
+        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+        display: 'flex', justifyContent: 'center', alignItems: 'flex-end', padding: '0 0 20px',
+      }}>
+        <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18, color: '#fff', lineHeight: '130%', textAlign: 'center' }}>{project.label}</span>
+      </div>
     </div>
   )
 }
