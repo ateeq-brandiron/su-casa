@@ -5,13 +5,13 @@ import imageBoxHover from '../assets/images/about/about-top-hover.png'
 import imageBox2 from '../assets/images/about/about-bottom.png'
 import imageBox2Hover from '../assets/images/about/about-bottom-hover.png'
 
-function SwapImage({ src, hoverSrc, height }) {
+function SwapImage({ src, hoverSrc }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ position: 'relative', width: 484, height: 275, overflow: 'hidden' }}
+      style={{ position: 'relative', width: '100%', height: 275, overflow: 'hidden' }}
     >
       <img src={src} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
       <img src={hoverSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
@@ -24,15 +24,15 @@ export default function About() {
     <section id="about" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images — fills left column */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <SwapImage src={imageBox} hoverSrc={imageBoxHover} height={275} />
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <SwapImage src={imageBox} hoverSrc={imageBoxHover} />
           <SwapImage src={imageBox2} hoverSrc={imageBox2Hover} />
         </div>
 
         {/* Text */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 44 }}>
-          {/* Top block: label + heading + first paragraph */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 48 }}>
+          {/* Top block: label + heading + paragraph */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0 }}>
             <SectionLabel text="About Su Casa Builders" />
             <h2 style={{
               fontFamily: 'Manrope, sans-serif',
@@ -40,7 +40,7 @@ export default function About() {
               fontWeight: 500,
               color: '#245079',
               lineHeight: '130%',
-              margin: 0,
+              margin: '4px 0 16px',
             }}>
               About Su Casa Builders
             </h2>
