@@ -35,16 +35,18 @@ function CircleArrow() {
 const SERVICES = [
   {
     title: 'General Contracting',
+    intro: 'Our general contracting services include:',
     desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
     img: frame1, hoverImg: service1,
     items: [
-      { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
+      { label: 'Light Commercial Projects', detail: 'Commercial properties such as warehouses and office spaces.' },
       { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
-      { label: 'Light Commercial Projects', detail: 'Light Commercial Projects – Commercial properties such as warehouses and office spaces.' },
+      { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
     ],
   },
   {
     title: 'Subcontracting',
+    intro: 'Our subcontracting services include:',
     desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
     img: frame1b, hoverImg: service2,
     items: [
@@ -55,6 +57,7 @@ const SERVICES = [
   },
   {
     title: 'Special Projects and Products',
+    intro: 'Our special projects and products include:',
     desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
     img: frame1c, hoverImg: service3,
     items: [
@@ -114,15 +117,19 @@ function ServiceCard({ svc }) {
         transition: 'all 0.25s ease',
         display: 'flex', flexDirection: 'column',
         height: '100%', boxSizing: 'border-box',
+        padding: '16px',
       }}
     >
-      <div style={{ height: 200, overflow: 'hidden', position: 'relative' }}>
+      {/* Image with internal padding */}
+      <div style={{ height: 200, overflow: 'hidden', position: 'relative', borderRadius: 6, marginBottom: '1.25rem', flexShrink: 0 }}>
         <img src={svc.img} alt={svc.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
         <img src={svc.hoverImg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
       </div>
-      <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#fff', marginBottom: '0.75rem', lineHeight: '130%' }}>{svc.title}</h3>
         <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.65)', fontSize: 16, lineHeight: '140%', marginBottom: '1rem' }}>{svc.desc}</p>
+        <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.55)', fontSize: 14, lineHeight: '140%', marginBottom: '0.5rem' }}>{svc.intro}</p>
         <div>
           {svc.items.map(item => <AccordionItem key={item.label} label={item.label} detail={item.detail} />)}
         </div>
@@ -141,10 +148,10 @@ export default function Services() {
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: '3rem' }}>
           <SectionLabel text="Our Services" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', lineHeight: '130%', margin: 0 }}>
+          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', lineHeight: '130%', margin: 0 }}>
             Our Services
           </h2>
-          <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 680, margin: 0 }}>
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 800, margin: 0 }}>
             At Su Casa Builders LLC, we provide dependable construction services across Sierra Vista and Cochise County. Whether we serve as your general contractor or subcontractor, every project reflects our commitment to craftsmanship, honesty, and lasting value.
           </p>
         </div>
@@ -160,14 +167,15 @@ export default function Services() {
           <a href="#contact"
             style={{
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
-              background: '#fff', color: '#245079',
+              background: 'transparent', color: '#245079',
               height: 66, padding: '20px 30px',
               textDecoration: 'none',
               fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
+              border: '1.5px solid #245079',
               transition: 'background 0.2s, color 0.2s',
             }}
             onMouseEnter={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#245079' }}>
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#245079' }}>
             Request Your Construction Estimate
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
