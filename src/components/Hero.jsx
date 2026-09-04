@@ -47,26 +47,26 @@ export default function Hero() {
           width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center 30%',
         }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.20)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(18,18,18,0.47)' }} />
 
         {/* Text — bottom-left, aligned to page grid */}
         <div style={{
           position: 'absolute', bottom: 80, left: 0, right: 0,
         }}>
           <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px' }}>
-            <div style={{ maxWidth: 860 }}>
+            <div style={{ maxWidth: 751 }}>
               <h1 style={{
-                color: '#FFF',
+                color: '#FFFFFF',
                 fontFamily: '"DM Sans", sans-serif',
                 fontSize: 64,
                 fontWeight: 400,
                 lineHeight: '130%',
-                margin: '0 0 16px',
+                margin: '0 0 42px',
               }}>
                 Su Casa Builders – General Contractor in Sierra Vista, AZ
               </h1>
               <p style={{
-                color: 'rgba(255,255,255,0.90)',
+                color: 'rgba(255,255,255,0.92)',
                 fontFamily: 'Manrope, sans-serif',
                 fontSize: 32,
                 fontWeight: 500,
