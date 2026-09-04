@@ -137,18 +137,19 @@ export default function Hero() {
         <div style={{
           position: 'relative', zIndex: 1,
           maxWidth: 1440, margin: '0 auto',
-          padding: '100px 75px', textAlign: 'center',
+          padding: '100px 76px', textAlign: 'center',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 50,
         }}>
           <p style={{
             fontFamily: 'Manrope, sans-serif',
             fontWeight: 500,
             fontSize: 24,
             lineHeight: '150%',
-            color: '#000',
+            color: '#000000',
             textAlign: 'center',
             width: 1236,
             maxWidth: '100%',
-            margin: '0 auto 2.5rem',
+            margin: 0,
           }}>
             Su Casa Builders, LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting, custom home construction, and outdoor living projects. Since 2003, our team has delivered quality craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job. We also build custom features such as pergolas, metal awnings, and install Pella windows, helping homeowners enhance both function and curb appeal.
           </p>
@@ -156,19 +157,18 @@ export default function Hero() {
           {/* CTA button */}
           <a href="#contact" style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
-            background: '#245079', color: '#fff',
+            background: '#245079', color: '#E1DBD0',
             height: 66, padding: '20px 30px',
             textDecoration: 'none',
-            fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
-            marginBottom: 50,
+            fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 18,
             border: '1.5px solid #245079',
             transition: 'background 0.2s, color 0.2s',
           }}
             onMouseEnter={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#245079' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}>
+            onMouseLeave={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#E1DBD0' }}>
             Start Your Project Today
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>
+            <svg width="28" height="12" viewBox="0 0 28 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="0" y1="6" x2="24" y2="6"/><polyline points="19,1 24,6 19,11"/>
             </svg>
           </a>
 
@@ -176,9 +176,9 @@ export default function Hero() {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '100%',
+            maxWidth: 1290,
             margin: '0 auto',
-            borderRadius: 10,
+            borderRadius: 20,
             overflow: 'hidden',
             border: '3px solid #8B1A1A',
             boxShadow: '0 4px 32px rgba(0,0,0,0.18)',
