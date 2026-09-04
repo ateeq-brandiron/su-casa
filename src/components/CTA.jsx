@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ctaBg from '../assets/images/cta/cta-default.png'
-import ctaHover from '../assets/images/cta/cta-hover.png'
+import ctaBg from '../assets/images/cta/cta-bg.jpg'
+import ctaHover from '../assets/images/cta/cta-bg.jpg'
 
 export default function CTA() {
   const [hovered, setHovered] = useState(false)
