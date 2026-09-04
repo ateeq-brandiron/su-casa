@@ -39,9 +39,9 @@ const SERVICES = [
     desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
     img: frame1, hoverImg: service1,
     items: [
-      { label: 'Light Commercial Projects', detail: 'Commercial properties such as warehouses and office spaces.' },
-      { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
       { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
+      { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
+      { label: 'Light Commercial Projects', detail: 'Commercial properties such as warehouses and office spaces.' },
     ],
   },
   {
