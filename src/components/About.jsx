@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import imageBox from '../assets/images/Image Box 1.png'
-import imageBox1 from '../assets/images/Image Box 2.png'
 import imageBoxHover from '../assets/images/Image Box 1 (1).png'
+import imageBox2 from '../assets/images/Image Box 2 default.png'
+import imageBox2Hover from '../assets/images/Image Box 2.png'
 
 function SectionLabel({ text }) {
   return (
@@ -39,9 +40,7 @@ export default function About() {
         {/* Two stacked images — fills left column */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
           <SwapImage src={imageBox} hoverSrc={imageBoxHover} height={275} />
-          <div style={{ position: 'relative', width: 484, height: 275, overflow: 'hidden' }}>
-            <img src={imageBox1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%' }} />
-          </div>
+          <SwapImage src={imageBox2} hoverSrc={imageBox2Hover} />
         </div>
 
         {/* Text */}
