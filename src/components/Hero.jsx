@@ -54,7 +54,7 @@ export default function Hero() {
           position: 'absolute', bottom: 80, left: 0, right: 0,
         }}>
           <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px' }}>
-            <div style={{ maxWidth: 751 }}>
+            <div style={{ maxWidth: 900 }}>
               <h1 style={{
                 color: '#FFFFFF',
                 fontFamily: '"DM Sans", sans-serif',
@@ -63,7 +63,7 @@ export default function Hero() {
                 lineHeight: '130%',
                 margin: '0 0 42px',
               }}>
-                Su Casa Builders – General <br />Contractor in Sierra Vista, AZ
+                Su Casa Builders – General Contractor in Sierra Vista, AZ
               </h1>
               <p style={{
                 color: 'rgba(255,255,255,0.92)',
