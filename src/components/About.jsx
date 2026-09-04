@@ -11,7 +11,7 @@ function SwapImage({ src, hoverSrc }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ position: 'relative', width: '100%', height: 275, overflow: 'hidden' }}
+      style={{ position: 'relative', width: '100%', height: 275, overflow: 'hidden', outline: hovered ? '2px solid #245079' : 'none' }}
     >
       <img src={src} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
       <img src={hoverSrc} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
