@@ -1,40 +1,15 @@
 import { useState } from 'react'
+import SectionLabel from './SectionLabel'
+import { REASONS } from '../data/why-us'
 import whyDiamond from '../assets/icons/why-diamond.svg'
 import whyBulb from '../assets/icons/why-bulb.svg'
 import whyShield from '../assets/icons/why-shield.svg'
 
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2">
-        <g clipPath="url(#cwu)">
-          <path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs><clipPath id="cwu"><rect width="20" height="20" fill="white"/></clipPath></defs>
-      </svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#374151', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
+const ICON_MAP = {
+  'why-diamond.svg': whyDiamond,
+  'why-bulb.svg': whyBulb,
+  'why-shield.svg': whyShield,
 }
-
-const REASONS = [
-  {
-    icon: whyDiamond,
-    title: 'Experience and Reliability',
-    desc: 'Our team brings years of hands-on experience in framing and general contracting across Sierra Vista and Cochise County. We take pride in consistent, dependable work that meets professional standards.',
-  },
-  {
-    icon: whyBulb,
-    title: 'Commitment to Quality',
-    desc: "We use durable materials and proven building practices to ensure lasting performance and dependable results. Every project reflects the same attention to detail and pride we'd bring to our own homes.",
-  },
-  {
-    icon: whyShield,
-    title: 'Local and Trusted',
-    desc: "As a local company, we're proud to serve the communities where we live and work. Our clients know they can count on us for honest communication, dependable timelines, and results built on integrity.",
-  },
-]
 
 function ReasonCard({ r }) {
   const [hovered, setHovered] = useState(false)
@@ -57,7 +32,7 @@ function ReasonCard({ r }) {
         background: hovered ? '#245079' : '#fff', flexShrink: 0,
         transition: 'background 0.25s',
       }}>
-        <img src={r.icon} alt="" style={{ width: 28, height: 28, objectFit: 'contain', filter: hovered ? 'brightness(0) invert(1)' : 'none', transition: 'filter 0.25s' }} />
+        <img src={ICON_MAP[r.icon]} alt="" style={{ width: 28, height: 28, objectFit: 'contain', filter: hovered ? 'brightness(0) invert(1)' : 'none', transition: 'filter 0.25s' }} />
       </div>
       <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: hovered ? '#245079' : '#000', lineHeight: '130%', transition: 'color 0.25s' }}>{r.title}</h3>
       <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%' }}>{r.desc}</p>
@@ -73,27 +48,19 @@ export default function WhyUs() {
         padding: '100px 75px',
         display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 80,
       }}>
-        {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Why Choose Us" />
-          <h2 style={{
-            fontFamily: '"DM Sans", sans-serif',
-            fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%',
-          }}>
+          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
             Why Choose Su Casa Builders
           </h2>
-          <p style={{
-            fontFamily: 'Manrope, sans-serif',
-            color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%',
-          }}>
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
             When you hire Su Casa Builders, you're choosing a team that values craftsmanship, communication, and trust.<br />
             Every project we take on is handled with care, precision, and respect for your home or business.
           </p>
         </div>
 
-        {/* Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', columnGap: 87, rowGap: 40, width: '100%' }}>
-          {REASONS.map(r => <ReasonCard key={r.title} r={r} />)}
+          {REASONS.map(r => <ReasonCard key={r.slug} r={r} />)}
         </div>
       </div>
 

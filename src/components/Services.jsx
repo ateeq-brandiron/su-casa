@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import SectionLabel from './SectionLabel'
+import { SERVICES } from '../data/services'
 import frame1 from '../assets/images/service-card-1.png'
 import frame1b from '../assets/images/service-card-2.png'
 import frame1c from '../assets/images/service-card-3.png'
@@ -7,19 +9,10 @@ import service2 from '../assets/images/service2.jpg'
 import service3 from '../assets/images/service3.jpg'
 import patternImg from '../assets/images/pattern-services.png'
 
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2">
-        <g clipPath="url(#cs)">
-          <path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs><clipPath id="cs"><rect width="20" height="20" fill="white"/></clipPath></defs>
-      </svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
+const SERVICE_IMAGES = {
+  'general-contracting': { img: frame1,  hoverImg: service1 },
+  'subcontracting':      { img: frame1b, hoverImg: service2 },
+  'special-projects':    { img: frame1c, hoverImg: service3 },
 }
 
 function CircleArrow() {
@@ -31,42 +24,6 @@ function CircleArrow() {
     </svg>
   )
 }
-
-const SERVICES = [
-  {
-    title: 'General Contracting',
-    intro: 'Our general contracting services include:',
-    desc: 'We offer full-service general contracting for spec homes, custom homes, and light commercial construction. Our experienced team manages every phase of the building process to ensure structural integrity, quality materials, and clear communication from start to finish.',
-    img: frame1, hoverImg: service1,
-    items: [
-      { label: 'Spec Homes', detail: 'Professionally built homes designed and constructed for sale, reflecting high standards and quality finishes.' },
-      { label: 'Custom Homes', detail: 'Personalized builds tailored to client preferences, from layout and materials to final details.' },
-      { label: 'Light Commercial Projects', detail: 'Commercial properties such as warehouses and office spaces.' },
-    ],
-  },
-  {
-    title: 'Subcontracting',
-    intro: 'Our subcontracting services include:',
-    desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
-    img: frame1b, hoverImg: service2,
-    items: [
-      { label: 'Framing', detail: 'Structural framing for new construction, additions, and expansions.' },
-      { label: 'Roofing', detail: 'Professional roofing installation and repair that ensures long-term protection.' },
-      { label: 'Painting', detail: 'Exterior painting for residential and light commercial properties, as well as painting services for new construction projects.' },
-    ],
-  },
-  {
-    title: 'Special Projects and Products',
-    intro: 'Our special projects and products include:',
-    desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
-    img: frame1c, hoverImg: service3,
-    items: [
-      { label: 'Screened Porches and Additions', detail: 'Seamlessly extend your living space with screened or enclosed rooms that match your home\'s original design.' },
-      { label: 'Pergolas and Covered Patios', detail: 'Add shade and structure with custom-built pergolas, patio covers, or carports designed for durability and style.' },
-      { label: 'Pella Windows', detail: 'We proudly install Pella windows, offering energy efficiency, quality materials, and timeless design that enhances comfort and value.' },
-    ],
-  },
-]
 
 function AccordionItem({ label, detail }) {
   const [open, setOpen] = useState(false)
@@ -105,6 +62,7 @@ function AccordionItem({ label, detail }) {
 
 function ServiceCard({ svc }) {
   const [hovered, setHovered] = useState(false)
+  const imgs = SERVICE_IMAGES[svc.slug]
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -120,10 +78,9 @@ function ServiceCard({ svc }) {
         padding: '16px',
       }}
     >
-      {/* Image with internal padding */}
       <div style={{ height: 200, overflow: 'hidden', position: 'relative', borderRadius: 6, marginBottom: '1.25rem', flexShrink: 0 }}>
-        <img src={svc.img} alt={svc.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
-        <img src={svc.hoverImg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
+        <img src={imgs.img} alt={svc.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
+        <img src={imgs.hoverImg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
       </div>
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -147,7 +104,7 @@ export default function Services() {
       />
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: '3rem' }}>
-          <SectionLabel text="Our Services" />
+          <SectionLabel text="Our Services" color="rgba(255,255,255,0.7)" />
           <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', lineHeight: '130%', margin: 0 }}>
             Our Services
           </h2>
@@ -157,7 +114,7 @@ export default function Services() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: '4rem' }}>
-          {SERVICES.map(svc => <ServiceCard key={svc.title} svc={svc} />)}
+          {SERVICES.map(svc => <ServiceCard key={svc.slug} svc={svc} />)}
         </div>
 
         <div style={{ textAlign: 'center' }}>

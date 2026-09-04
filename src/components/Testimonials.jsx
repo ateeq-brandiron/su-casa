@@ -1,31 +1,6 @@
 import { useState } from 'react'
-
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2"><g clipPath="url(#ct)"><path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/></g><defs><clipPath id="ct"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#374151', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
-}
-
-const REVIEWS = [
-  {
-    title: 'Highly Recommended',
-    name: 'Bernard Barrowclough',
-    text: 'Harley Aldridge and his team have been the guiding force behind 2 custom homes I built in the Sierra Vista area and both times I was more than happy with the total experience\nI would highly recommended that if you are interested in the new construction, remodeling of your home or business that you contact subscribe casa builders',
-  },
-  {
-    title: 'Quality Work',
-    name: 'Bill Buhs',
-    text: 'Need a framer? Quality work, great prices, efficient and clean!',
-  },
-  {
-    title: 'Exceptional Craftsmanship',
-    name: 'Sarah Johnson',
-    text: 'Su Casa Builders delivered outstanding results on our home addition. Their attention to detail and commitment to quality exceeded our expectations from start to finish.',
-  },
-]
+import SectionLabel from './SectionLabel'
+import { REVIEWS } from '../data/testimonials'
 
 function Stars() {
   return (
@@ -101,7 +76,6 @@ export default function Testimonials() {
   return (
     <section id="testimonials" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', gap: 60 }}>
-        {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Testimonials" />
           <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
@@ -113,14 +87,10 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {visible.map(r => (
-            <ReviewCard key={r.name} r={r} />
-          ))}
+          {visible.map(r => <ReviewCard key={r.slug} r={r} />)}
         </div>
 
-        {/* Navigation arrows */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
             <polyline points="11,4 5,9 11,14"/>

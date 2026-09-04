@@ -1,23 +1,9 @@
 import { useState } from 'react'
+import SectionLabel from './SectionLabel'
 import imageBox from '../assets/images/Image Box 1.png'
 import imageBoxHover from '../assets/images/Image Box 1 (1).png'
 import imageBox2 from '../assets/images/Image Box 2 default.png'
 import imageBox2Hover from '../assets/images/Image Box 2.png'
-
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2">
-        <g clipPath="url(#ch)">
-          <path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs><clipPath id="ch"><rect width="20" height="20" fill="white"/></clipPath></defs>
-      </svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#374151', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
-}
 
 function SwapImage({ src, hoverSrc, height }) {
   const [hovered, setHovered] = useState(false)

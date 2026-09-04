@@ -1,30 +1,8 @@
-import { useState } from 'react' // used by CoreImage hover
+import { useState } from 'react'
+import SectionLabel from './SectionLabel'
+import { VALUES } from '../data/core-values'
 import frame2 from '../assets/images/jens7.webp'
 import frame2Hover from '../assets/images/jens8.webp'
-
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2"><g clipPath="url(#ccv)"><path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/></g><defs><clipPath id="ccv"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#374151', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
-}
-
-const VALUES = [
-  {
-    title: 'Loyalty & Gratitude',
-    desc: "We value lasting relationships and appreciate every opportunity to earn a client's trust. Many of our projects come from referrals, which we see as the highest compliment.",
-  },
-  {
-    title: 'Integrity & Faith',
-    desc: 'We believe that doing right pays off. Honesty and accountability shape every decision—from planning to completion.',
-  },
-  {
-    title: 'Community & Humility',
-    desc: 'Southeast Arizona is home. We hire local talent, support our neighbors, and stay humble enough to keep learning and improving with every project.',
-  },
-]
 
 function ValueCard({ v }) {
   return (
@@ -48,10 +26,7 @@ function CoreImage() {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        flex: '0 0 480px', alignSelf: 'stretch',
-        overflow: 'hidden', position: 'relative',
-      }}
+      style={{ flex: '0 0 480px', alignSelf: 'stretch', overflow: 'hidden', position: 'relative' }}
     >
       <img src={frame2} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease' }} />
       <img src={frame2Hover} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%', opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease' }} />
@@ -67,32 +42,22 @@ export default function CoreValues() {
         padding: '100px 75px',
         display: 'flex', alignItems: 'flex-start', gap: 96,
       }}>
-        {/* Left: text content */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 50 }}>
-          {/* Header block */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
             <SectionLabel text="Our Core Values" />
-            <h2 style={{
-              fontFamily: '"DM Sans", sans-serif',
-              fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%',
-            }}>
+            <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 64, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
               Our Core Values
             </h2>
-            <p style={{
-              fontFamily: 'Manrope, sans-serif',
-              color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%',
-            }}>
+            <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
               At Su Casa Builders, our values guide every project and every relationship. They reflect who we are as a company and how we serve our clients and community.
             </p>
           </div>
 
-          {/* Values list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 40, width: '100%' }}>
-            {VALUES.map(v => <ValueCard key={v.title} v={v} />)}
+            {VALUES.map(v => <ValueCard key={v.slug} v={v} />)}
           </div>
         </div>
 
-        {/* Right: image */}
         <CoreImage />
       </div>
 

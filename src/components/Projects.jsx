@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import SectionLabel from './SectionLabel'
+import { PROJECTS } from '../data/projects'
 import img1 from '../assets/images/Paseo.png'
 import img2 from '../assets/images/Canyons.png'
 import img3 from '../assets/images/Oaks.png'
@@ -10,56 +12,49 @@ import hover3 from '../assets/images/HoverImage3.png'
 import hover4 from '../assets/images/HoverImage4.png'
 import hover5 from '../assets/images/HoverImage5.png'
 
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2"><g clipPath="url(#cpr)"><path d="M2.5 7.5L10 1.667L17.5 7.5V16.667a1.667 1.667 0 01-1.667 1.666H4.167A1.667 1.667 0 012.5 16.667V7.5z" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.5 18.333V10H12.5V18.333" strokeLinecap="round" strokeLinejoin="round"/></g><defs><clipPath id="cpr"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
-      <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#374151', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{text}</span>
-    </div>
-  )
+// Default images (plain photos) and hover images (with text overlay) in slug order
+const PROJECT_IMAGES = {
+  'paseo-venado': { img: img1, hoverImg: hover1 },
+  'the-canyons':  { img: img2, hoverImg: hover2 },
+  'the-oaks':     { img: img3, hoverImg: hover3 },
+  'jens':         { img: img4, hoverImg: hover4 },
+  'project-5':    { img: img5, hoverImg: hover5 },
 }
 
-function ProjectImage({ src, hoverSrc, alt, label, height }) {
+function ProjectImage({ project, height }) {
   const [hovered, setHovered] = useState(false)
+  const { img, hoverImg } = PROJECT_IMAGES[project.slug]
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ overflow: 'hidden', position: 'relative', height }}
     >
-      {/* Default image */}
-      <img src={src} alt={alt} style={{
+      <img src={img} alt={project.alt} style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
       }} />
-
-      {/* Hover image */}
-      <img src={hoverSrc} alt="" aria-hidden="true" style={{
+      <img src={hoverImg} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
       }} />
-
-      {/* Gradient overlay + label — visible on hover */}
       <div style={{
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 34.62%, rgba(0,0,0,0.75) 100%)',
         opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
         display: 'flex', justifyContent: 'center', alignItems: 'flex-end', padding: '0 0 24px 0',
       }}>
-        <span style={{
-          fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18,
-          color: '#fff', lineHeight: '130%', textAlign: 'center',
-        }}>{label}</span>
+        <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18, color: '#fff', lineHeight: '130%', textAlign: 'center' }}>{project.label}</span>
       </div>
     </div>
   )
 }
 
 export default function Projects() {
+  const [row1, row2] = [PROJECTS.slice(0, 2), PROJECTS.slice(2)]
   return (
     <section id="projects" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', gap: 60 }}>
-        {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Projects" />
           <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
@@ -70,18 +65,12 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Photo grid */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {/* Row 1: 2 large images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img1} hoverSrc={hover1} alt="Paseo Venado" label="Paseo Venado" height={300} />
-            <ProjectImage src={img2} hoverSrc={hover2} alt="The Canyons" label="The Canyons" height={300} />
+            {row1.map(p => <ProjectImage key={p.slug} project={p} height={300} />)}
           </div>
-          {/* Row 2: 3 smaller images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
-            <ProjectImage src={img3} hoverSrc={hover3} alt="The Oaks" label="The Oaks" height={300} />
-            <ProjectImage src={img4} hoverSrc={hover4} alt="Jens" label="Jens" height={300} />
-            <ProjectImage src={img5} hoverSrc={hover5} alt="Project" label="Project" height={300} />
+            {row2.map(p => <ProjectImage key={p.slug} project={p} height={300} />)}
           </div>
         </div>
       </div>
