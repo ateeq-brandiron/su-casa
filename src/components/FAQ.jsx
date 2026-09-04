@@ -11,11 +11,11 @@ function FAQItem({ q, a, defaultOpen }) {
   return (
     <div>
       <button onClick={() => setOpen(!open)}
-        onMouseEnter={e => { if (!open) e.currentTarget.style.background = '#5B6470' }}
-        onMouseLeave={e => { if (!open) e.currentTarget.style.background = '#6B7280' }}
+        onMouseEnter={e => { if (!open) e.currentTarget.style.background = '#616161' }}
+        onMouseLeave={e => { if (!open) e.currentTarget.style.background = '#737373' }}
         style={{
           width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
-          background: open ? '#4B5563' : '#6B7280', border: 'none',
+          background: open ? '#3C3C3C' : '#737373', border: 'none',
           padding: '20px 24px', cursor: 'pointer', textAlign: 'left',
           transition: 'background 0.2s',
         }}>
@@ -25,7 +25,7 @@ function FAQItem({ q, a, defaultOpen }) {
         </div>
       </button>
       {open && a && (
-        <div style={{ background: '#4B5563', padding: '0 24px 20px' }}>
+        <div style={{ background: '#3C3C3C', padding: '0 24px 20px' }}>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 400, lineHeight: '160%', whiteSpace: 'pre-line', margin: 0 }}>{a}</p>
         </div>
       )}
