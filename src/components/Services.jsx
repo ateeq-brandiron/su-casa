@@ -97,7 +97,7 @@ function ServiceCard({ svc }) {
 
 export default function Services() {
   return (
-    <section id="services" style={{ position: 'relative', background: '#2a2d3e', overflow: 'hidden' }}>
+    <section id="services" style={{ position: 'relative', background: '#3C3C3C', overflow: 'hidden' }}>
       <img
         src={patternImg} alt="" aria-hidden="true"
         style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', height: '120%', width: 'auto', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}
@@ -105,7 +105,7 @@ export default function Services() {
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: '3rem' }}>
           <SectionLabel text="Our Services" color="rgba(255,255,255,0.7)" />
-          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#fff', lineHeight: '130%', margin: 0 }}>
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#fff', lineHeight: '130%', margin: 0 }}>
             Our Services
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 800, margin: 0 }}>
@@ -124,15 +124,15 @@ export default function Services() {
           <a href="#contact"
             style={{
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 16,
-              background: 'transparent', color: '#245079',
+              background: '#fff', color: '#245079',
               height: 66, padding: '20px 30px',
               textDecoration: 'none',
               fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 16,
-              border: '1.5px solid #245079',
-              transition: 'background 0.2s, color 0.2s',
+              border: '1.5px solid #fff',
+              transition: 'background 0.2s, color 0.2s, border-color 0.2s',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#245079' }}>
+            onMouseEnter={e => { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#245079' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#245079'; e.currentTarget.style.borderColor = '#fff' }}>
             Request Your Construction Estimate
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/>

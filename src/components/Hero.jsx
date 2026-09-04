@@ -39,7 +39,7 @@ export default function Hero() {
       <div style={{
         position: 'relative',
         width: '100%',
-        height: 819,
+        height: 863,
         overflow: 'hidden',
       }}>
         <img src={heroImg} alt="" aria-hidden="true" style={{
