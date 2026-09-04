@@ -63,8 +63,8 @@ export default function Process() {
       <img src={processBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       {/* Top-right architectural sketch */}
       <img src={processTop} alt="" aria-hidden="true" style={{ position: 'absolute', top: 0, right: 0, height: '45%', width: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
-      {/* Bottom cityscape */}
-      <img src={processBottom} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, width: '100%', height: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
+      {/* Bottom-left cityscape */}
+      <img src={processBottom} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, height: '40%', width: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
 
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: 60 }}>
@@ -73,7 +73,8 @@ export default function Process() {
             Our Process
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
-            Building or improving your home should feel straightforward, not stressful. At Su Casa Builders, we keep the process simple, transparent, and focused on your goals from start to finish.
+            Building or improving your home should feel straightforward, not stressful. At Su Casa Builders, we<br />
+            keep the process simple, transparent, and focused on your goals from start to finish.
           </p>
         </div>
 
