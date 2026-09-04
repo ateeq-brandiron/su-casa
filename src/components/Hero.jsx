@@ -58,7 +58,7 @@ export default function Hero() {
               <h1 style={{
                 color: '#FFFFFF',
                 fontFamily: '"DM Sans", sans-serif',
-                fontSize: 64,
+                fontSize: 'clamp(32px, 4.44vw, 64px)',
                 fontWeight: 400,
                 lineHeight: '130%',
                 margin: '0 0 42px',
@@ -68,9 +68,9 @@ export default function Hero() {
               <p style={{
                 color: 'rgba(255,255,255,0.92)',
                 fontFamily: 'Manrope, sans-serif',
-                fontSize: 32,
+                fontSize: 'clamp(18px, 2.22vw, 32px)',
                 fontWeight: 500,
-                lineHeight: '66.77px',
+                lineHeight: '130%',
                 margin: 0,
               }}>
                 We have quality nailed.
