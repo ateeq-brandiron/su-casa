@@ -120,63 +120,69 @@ When adding a new item (e.g. a new project photo), add it to the data file first
 ### Folder layout
 ```
 src/assets/
-  images/         ← all images actively used by components
-    unused/       ← images no longer referenced anywhere (kept, not deleted)
-  icons/          ← SVG icons actively used by components
-    unused/       ← SVG icons no longer referenced
+  images/
+    hero/           ← Hero.jsx images
+    about/          ← About.jsx images
+    services/       ← Services.jsx images
+    projects/       ← Projects.jsx images
+    process/        ← Process.jsx images
+    core-values/    ← CoreValues.jsx images
+    faq/            ← FAQ.jsx images
+    cta/            ← CTA.jsx images
+    footer/         ← Footer.jsx images
+    unused/         ← images no longer referenced (kept, not deleted)
+  icons/            ← SVG icons actively used by components
+    unused/         ← SVG icons no longer referenced
   components/
-    unused/       ← components not rendered in App.jsx (kept for reference)
+    unused/         ← components not rendered in App.jsx (kept for reference)
 ```
+
+**Rule:** Every new image goes into the section subfolder that matches the component using it. Name files in `kebab-case`. When retiring an image, move it to `unused/` — never delete outright.
 
 ### Active image inventory (as of Sep 2026)
 
 | File | Used in | Notes |
 |---|---|---|
-| `Hero.png` | Hero.jsx | Updated Sep 2026 — aerial house + mountains shot |
-| `hero-info-bg.png` | Hero.jsx (infoBg) | Background accent for info band |
-| `pattern-hero.png` | Hero.jsx (patternImg) | Geometric pattern, right side of info band |
-| `pattern-services.png` | Services.jsx (patternImg) | Geometric pattern, right side of services section |
-| `Frame 2147223472.png` | Hero.jsx (videoThumb) | Video player thumbnail |
-| `Frame1.png` | Services.jsx | Service card 1 default image |
-| `Frame1-1.png` | Services.jsx | Service card 2 default image |
-| `Frame1-2.png` | Services.jsx | Service card 3 default image |
-| `service1.jpg` | Services.jsx | Service card 1 hover image |
-| `service2.jpg` | Services.jsx | Service card 2 hover image |
-| `service3.jpg` | Services.jsx | Service card 3 hover image |
-| `Image Box 1.png` | About.jsx | About left column — top image (updated Sep 2026) |
-| `Image Box 2.png` | About.jsx | About left column — bottom image (updated Sep 2026) |
-| `Image Box 1 (1).png` | About.jsx | About top image hover state |
-| `ImageBox.png` | CoreValues.jsx | Core values right image default |
-| `Image Box (4).png` | CoreValues.jsx | Core values right image hover |
-| `Process.png` | Process.jsx | Process section background |
-| `Image1–5.png` | Projects.jsx | Project grid hover images |
-| `HoverImage1–5.png` | Projects.jsx | Project grid default images |
-| `source_20260507_094702.jpg` | FAQ.jsx | FAQ left column default image |
-| `Image box (3).png` | FAQ.jsx | FAQ left column hover image |
-| `CTA.png` | CTA.jsx | CTA section background |
-| `CTA (1).png` | CTA.jsx | CTA section hover background |
-| `Footer.png` | Footer.jsx | Footer background |
-
-### Newly uploaded — not yet wired to components (Sep 2026)
-
-| File | Likely purpose |
-|---|---|
-| `About.png` | New About section photo — wire into About.jsx |
-| `service-card-1.png` | Replacement for Frame1.png (service card 1) |
-| `service-card-2.png` | Replacement for Frame1-1.png (service card 2) |
-| `service-card-3.png` | Replacement for Frame1-2.png (service card 3) |
-| `Paseo.png` | New project image — Paseo Venado |
-| `Canyons.png` | New project image |
-| `Oaks.png` | New project image |
-| `Jens.png` | New project image |
+| `hero/hero-bg.png` | Hero.jsx | Aerial house + mountains shot |
+| `hero/hero-info-bg.png` | Hero.jsx | Background accent for info band |
+| `hero/pattern-hero.png` | Hero.jsx | Geometric pattern, right side of info band |
+| `hero/video-thumb.png` | Hero.jsx | Video player thumbnail |
+| `about/about-top.png` | About.jsx | Left column top image (default) |
+| `about/about-top-hover.png` | About.jsx | Left column top image (hover) |
+| `about/about-bottom.png` | About.jsx | Left column bottom image (default) |
+| `about/about-bottom-hover.png` | About.jsx | Left column bottom image (hover) |
+| `services/general-contracting-card.png` | Services.jsx | Service card 1 default |
+| `services/subcontracting-card.png` | Services.jsx | Service card 2 default |
+| `services/special-projects-card.png` | Services.jsx | Service card 3 default |
+| `services/general-contracting-hover.jpg` | Services.jsx | Service card 1 hover |
+| `services/subcontracting-hover.jpg` | Services.jsx | Service card 2 hover |
+| `services/special-projects-hover.jpg` | Services.jsx | Service card 3 hover |
+| `services/pattern-services.png` | Services.jsx | Geometric pattern, right side |
+| `core-values/core-values-default.webp` | CoreValues.jsx | Right column image (default) |
+| `core-values/core-values-hover.webp` | CoreValues.jsx | Right column image (hover) |
+| `process/process-bg.png` | Process.jsx | Full-bleed section background |
+| `process/sketch-top-right.png` | Process.jsx | Architectural sketch, top-right |
+| `process/cityscape-bottom-left.png` | Process.jsx | Cityscape graphic, bottom-left |
+| `projects/paseo-venado.png` | Projects.jsx | Paseo Venado — default |
+| `projects/paseo-venado-hover.png` | Projects.jsx | Paseo Venado — hover |
+| `projects/the-canyons.png` | Projects.jsx | The Canyons — default |
+| `projects/the-canyons-hover.png` | Projects.jsx | The Canyons — hover |
+| `projects/the-oaks.png` | Projects.jsx | The Oaks — default |
+| `projects/the-oaks-hover.png` | Projects.jsx | The Oaks — hover |
+| `projects/jens.png` | Projects.jsx | Jens — default |
+| `projects/jens-hover.png` | Projects.jsx | Jens — hover |
+| `projects/project-5.png` | Projects.jsx | Project 5 — default |
+| `projects/project-5-hover.png` | Projects.jsx | Project 5 — hover |
+| `faq/faq-default.png` | FAQ.jsx | Left column image (default) |
+| `faq/faq-hover.png` | FAQ.jsx | Left column image (hover) |
+| `cta/cta-default.png` | CTA.jsx | Section background (default) |
+| `cta/cta-hover.png` | CTA.jsx | Section background (hover) |
+| `footer/footer-bg.png` | Footer.jsx | Footer background |
 
 ### Before adding or replacing an image
-1. **Check for reuse:** `grep -r "ImageName" src/` across all components and data files.
-2. **Check for byte-identical duplicates:**
-   ```bash
-   md5sum src/assets/images/*.{png,jpg} | sort | awk '{seen[$1]=seen[$1]" "$2} END {for(h in seen) if(seen[h]~/ .* /) print h,seen[h]}'
-   ```
-3. **Naming:** Use `kebab-case` for new images (e.g. `hero-house-aerial.jpg`). Avoid Figma export names with spaces or hash prefixes.
+1. **Pick the right subfolder** — match the section component (e.g. a new About image → `about/`).
+2. **Check for reuse:** `grep -r "filename" src/` across all components and data files.
+3. **Naming:** Use `kebab-case` (e.g. `about-team-photo.jpg`). Avoid Figma export names with spaces or hash prefixes.
 4. **When retiring an image:** Move it to `src/assets/images/unused/` rather than deleting it outright.
 
 ---
@@ -196,15 +202,15 @@ All assigned to Ateeq Asif, due Sep 4 2026.
 
 | Task | Status | Notes |
 |---|---|---|
-| Su Casa - Hero Image | ✅ Done | New Hero.png uploaded Sep 2026 |
-| Su Casa - About Su Casa | Pending | About.png uploaded — wire into About.jsx |
-| Su Casa - Our Services | Pending | service-card-1/2/3.png uploaded — replace Frame1.png etc. |
+| Su Casa - Hero Image | ✅ Done | hero/hero-bg.png wired |
+| Su Casa - About Su Casa | ✅ Done | about/ images wired into About.jsx |
+| Su Casa - Our Services | ✅ Done | services/ card + hover images wired |
 | Su Casa - Why Choose Su Casa | ✅ Done | Bottom border + title color + icon fill on hover |
-| Su Casa - Our Core Values | Pending | New images + subtle background accent |
-| Su Casa - Our Process | Pending | New graphic element |
-| Su Casa - Featured Projects | Pending | Canyons/Jens/Oaks/Paseo.png uploaded — wire into Projects.jsx |
-| Su Casa - FAQs | Pending | Updated FAQ section image |
-| Su Casa - CTA | Pending | Updated CTA background image |
+| Su Casa - Our Core Values | ✅ Done | core-values/ images wired into CoreValues.jsx |
+| Su Casa - Our Process | ✅ Done | process/ bg + sketch + cityscape wired |
+| Su Casa - Featured Projects | ✅ Done | projects/ images wired; plain = default, hover = text overlay |
+| Su Casa - FAQs | ✅ Done | faq/ images wired into FAQ.jsx |
+| Su Casa - CTA | ✅ Done | cta/ images wired into CTA.jsx |
 
 **Pending client decisions (do not implement until answered):**
 - What video will play in the Hero info-band video player?
