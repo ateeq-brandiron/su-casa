@@ -109,16 +109,17 @@ export default function Hero() {
       {/* ── Info section ── */}
       <div id="info" style={{ position: 'relative', background: '#E1DBD0', overflow: 'hidden' }}>
         {/* Architectural background image */}
-        <div
-          aria-hidden="true"
+        <img
+          src={infoBg}
+          alt="" aria-hidden="true"
           style={{
-            position: 'absolute', right: 2, top: 1,
+            position: 'absolute', left: 753, top: 1,
             width: 685, height: 342,
-            aspectRatio: '683/341',
             opacity: 0.5,
-            background: `url(${infoBg}) lightgray 50% / cover no-repeat`,
-            backgroundBlendMode: 'lighten',
+            transform: 'scaleX(-1)',
+            mixBlendMode: 'lighten',
             pointerEvents: 'none', userSelect: 'none',
+            objectFit: 'cover',
           }}
         />
         {/* Geometric background pattern — right side */}
