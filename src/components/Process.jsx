@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { STEPS } from '../data/process'
-import processBg from '../assets/images/Process.png'
-import processTop from '../assets/images/image 19.png'
-import processBottom from '../assets/images/image 20.png'
+import processBg from '../assets/images/process/process-bg.png'
+import processTop from '../assets/images/process/sketch-top-right.png'
+import processBottom from '../assets/images/process/cityscape-bottom-left.png'
 
 function StepCard({ step }) {
   const [hovered, setHovered] = useState(false)

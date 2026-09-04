@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import logo from '../assets/icons/Logo.svg'
-import footerBg from '../assets/images/Footer.png'
+import footerBg from '../assets/images/footer/footer-bg.png'
 
 const year = 2026
 

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { VALUES } from '../data/core-values'
-import frame2 from '../assets/images/jens7.webp'
-import frame2Hover from '../assets/images/jens8.webp'
+import frame2 from '../assets/images/core-values/core-values-default.webp'
+import frame2Hover from '../assets/images/core-values/core-values-hover.webp'
 
 function ValueCard({ v }) {
   return (

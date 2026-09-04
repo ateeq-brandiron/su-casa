@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { FAQS } from '../data/faqs'
-import faqImg from '../assets/images/Image box.png'
-import faqHoverImg from '../assets/images/Image box (3).png'
+import faqImg from '../assets/images/faq/faq-default.png'
+import faqHoverImg from '../assets/images/faq/faq-hover.png'
 import arrowUp from '../assets/icons/faq-arrow-up.svg'
 import arrowDown from '../assets/icons/faq-arrow-down.svg'
 
