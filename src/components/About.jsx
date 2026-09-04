@@ -52,13 +52,13 @@ export default function About() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 24 }}>
             <p style={{
               fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%',
-              borderLeft: '4px solid #E1DBD0', paddingLeft: '1.25rem', margin: 0,
+              borderLeft: '4px solid #D1D5DB', paddingLeft: '1.25rem', margin: 0,
             }}>
               At Su Casa Builders, we believe every structure deserves attention to detail and a solid foundation. Whether we are building a new home, expanding an existing property, or supporting a commercial project, our focus is on craftsmanship and honest communication from start to finish.
             </p>
             <p style={{
               fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%',
-              borderLeft: '4px solid #E1DBD0', paddingLeft: '1.25rem', margin: 0,
+              borderLeft: '4px solid #D1D5DB', paddingLeft: '1.25rem', margin: 0,
             }}>
               From our roots in Southeast Arizona, Su Casa has grown alongside the communities we serve. Many of our long-term team members live right here in Sierra Vista, bringing local experience and pride to every project. We don't just build structures — we build trust, lasting relationships, and spaces that stand the test of time.
             </p>
