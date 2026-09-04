@@ -34,8 +34,8 @@ function ReasonCard({ r }) {
       }}>
         <img src={ICON_MAP[r.icon]} alt="" style={{ width: 28, height: 28, objectFit: 'contain', filter: hovered ? 'brightness(0) invert(1)' : 'none', transition: 'filter 0.25s' }} />
       </div>
-      <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 25, color: hovered ? '#245079' : '#000', lineHeight: '130%', transition: 'color 0.25s' }}>{r.title}</h3>
-      <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%' }}>{r.desc}</p>
+      <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 22, color: hovered ? '#245079' : '#000', lineHeight: '130%', margin: 0, transition: 'color 0.25s' }}>{r.title}</h3>
+      <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, fontWeight: 400, lineHeight: '140%', margin: 0 }}>{r.desc}</p>
     </div>
   )
 }
@@ -46,15 +46,15 @@ export default function WhyUs() {
       <div style={{
         maxWidth: 1440, margin: '0 auto',
         padding: '100px 75px',
-        display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 80,
+        display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 60,
       }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0 }}>
           <SectionLabel text="Why Choose Us" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%' }}>
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%', margin: '4px 0 20px' }}>
             Why Choose Su Casa Builders
           </h2>
-          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
-            When you hire Su Casa Builders, you're choosing a team that values craftsmanship, communication, and trust.<br />
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
+            When you hire Su Casa Builders, you're choosing a team that values craftsmanship, communication, and trust.
             Every project we take on is handled with care, precision, and respect for your home or business.
           </p>
         </div>
