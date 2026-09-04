@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import heroImg from '../assets/images/hero/hero-bg.png'
 import patternImg from '../assets/images/hero/pattern-hero.png'
-import infoBg from '../assets/images/hero/hero-info-bg.png'
+import infoBg from '../assets/images/hero/hero-info-abstract.png'
 import videoThumb from '../assets/images/hero/video-thumb.png'
 import icoPlay from '../assets/icons/ico-play.svg'
 import icoNext from '../assets/icons/ico-next.svg'
