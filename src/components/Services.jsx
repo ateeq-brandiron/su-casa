@@ -100,7 +100,7 @@ export default function Services() {
     <section id="services" style={{ position: 'relative', background: '#3C3C3C', overflow: 'hidden' }}>
       <img
         src={patternImg} alt="" aria-hidden="true"
-        style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', height: '120%', width: 'auto', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}
+        style={{ position: 'absolute', right: 0, top: 0, height: '75%', width: 'auto', opacity: 0.10, pointerEvents: 'none', userSelect: 'none' }}
       />
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         {/* Header */}
