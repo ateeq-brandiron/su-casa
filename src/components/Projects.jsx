@@ -62,7 +62,7 @@ export default function Projects() {
         {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Projects" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
+          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
             Featured Projects
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>

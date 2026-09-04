@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import processBg from '../assets/images/Process.png'
+import processTop from '../assets/images/image 19.png'
+import processBottom from '../assets/images/image 20.png'
 
 function SectionLabel({ text }) {
   return (
@@ -59,11 +61,15 @@ export default function Process() {
   return (
     <section id="process" style={{ position: 'relative', overflow: 'hidden' }}>
       <img src={processBg} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      {/* Top-right architectural sketch */}
+      <img src={processTop} alt="" aria-hidden="true" style={{ position: 'absolute', top: 0, right: 0, height: '45%', width: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
+      {/* Bottom cityscape */}
+      <img src={processBottom} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, width: '100%', height: 'auto', pointerEvents: 'none', userSelect: 'none' }} />
 
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20, marginBottom: 60 }}>
           <SectionLabel text="Our Process" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#111827', lineHeight: '130%' }}>
+          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#111827', lineHeight: '130%' }}>
             Our Process
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
