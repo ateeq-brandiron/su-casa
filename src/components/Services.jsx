@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { SERVICES } from '../data/services'
-import frame1 from '../assets/images/service-card-1.png'
-import frame1b from '../assets/images/service-card-2.png'
-import frame1c from '../assets/images/service-card-3.png'
-import service1 from '../assets/images/service1.jpg'
-import service2 from '../assets/images/service2.jpg'
-import service3 from '../assets/images/service3.jpg'
-import patternImg from '../assets/images/pattern-services.png'
+import frame1 from '../assets/images/services/general-contracting-card.png'
+import frame1b from '../assets/images/services/subcontracting-card.png'
+import frame1c from '../assets/images/services/special-projects-card.png'
+import service1 from '../assets/images/services/general-contracting-hover.jpg'
+import service2 from '../assets/images/services/subcontracting-hover.jpg'
+import service3 from '../assets/images/services/special-projects-hover.jpg'
+import patternImg from '../assets/images/services/pattern-services.png'
 
 const SERVICE_IMAGES = {
   'general-contracting': { img: frame1,  hoverImg: service1 },

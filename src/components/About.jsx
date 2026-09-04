@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
-import imageBox from '../assets/images/Image Box 1.png'
-import imageBoxHover from '../assets/images/Image Box 1 (1).png'
-import imageBox2 from '../assets/images/Image Box 2 default.png'
-import imageBox2Hover from '../assets/images/Image Box 2.png'
+import imageBox from '../assets/images/about/about-top.png'
+import imageBoxHover from '../assets/images/about/about-top-hover.png'
+import imageBox2 from '../assets/images/about/about-bottom.png'
+import imageBox2Hover from '../assets/images/about/about-bottom-hover.png'
 
 function SwapImage({ src, hoverSrc, height }) {
   const [hovered, setHovered] = useState(false)
