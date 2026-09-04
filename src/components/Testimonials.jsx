@@ -62,26 +62,72 @@ function ReviewCard({ r }) {
   )
 }
 
+function NavButton({ onClick, disabled, children }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        width: 52, height: 52, borderRadius: '50%',
+        border: '1.5px solid #245079',
+        background: hovered && !disabled ? '#245079' : '#fff',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        cursor: disabled ? 'default' : 'pointer',
+        opacity: disabled ? 0.35 : 1,
+        transition: 'background 0.2s',
+        flexShrink: 0,
+      }}
+    >
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+        stroke={hovered && !disabled ? '#fff' : '#245079'}
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        style={{ transition: 'stroke 0.2s' }}>
+        {children}
+      </svg>
+    </button>
+  )
+}
+
+const PAGE_SIZE = 3
+
 export default function Testimonials() {
+  const [page, setPage] = useState(0)
+  const totalPages = Math.ceil(REVIEWS.length / PAGE_SIZE)
+  const visible = REVIEWS.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE)
+
   return (
     <section id="testimonials" style={{ background: '#fff' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', gap: 60 }}>
         {/* Header block */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
           <SectionLabel text="Testimonials" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
+          <h2 style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%' }}>
             What Our Clients Say
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%' }}>
-            Our greatest measure of success is the trust we've earned from homeowners and partners across Cochise County. These testimonials highlight the professionalism, skill, and integrity that guide every Su Casa Builders project.
+            Our greatest measure of success is the trust we've earned from homeowners and partners across Cochise County.<br />
+            These testimonials highlight the professionalism, skill, and integrity that guide every Su Casa Builders project.
           </p>
         </div>
 
         {/* Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {REVIEWS.map(r => (
+          {visible.map(r => (
             <ReviewCard key={r.name} r={r} />
           ))}
+        </div>
+
+        {/* Navigation arrows */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
+            <polyline points="11,4 5,9 11,14"/>
+          </NavButton>
+          <NavButton onClick={() => setPage(p => p + 1)} disabled={page >= totalPages - 1}>
+            <polyline points="7,4 13,9 7,14"/>
+          </NavButton>
         </div>
       </div>
     </section>
