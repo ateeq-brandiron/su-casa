@@ -90,16 +90,14 @@ export default function Testimonials() {
           {visible.map(r => <ReviewCard key={r.slug} r={r} />)}
         </div>
 
-        {totalPages > 1 && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
-              <polyline points="11,4 5,9 11,14"/>
-            </NavButton>
-            <NavButton onClick={() => setPage(p => p + 1)} disabled={page >= totalPages - 1}>
-              <polyline points="7,4 13,9 7,14"/>
-            </NavButton>
-          </div>
-        )}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
+            <polyline points="11,4 5,9 11,14"/>
+          </NavButton>
+          <NavButton onClick={() => setPage(p => p + 1)} disabled={page >= totalPages - 1}>
+            <polyline points="7,4 13,9 7,14"/>
+          </NavButton>
+        </div>
       </div>
     </section>
   )
