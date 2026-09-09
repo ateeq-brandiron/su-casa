@@ -66,7 +66,7 @@ export default function FAQ() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 96, alignItems: 'stretch' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ flex: 1, position: 'relative', overflow: 'hidden', minHeight: 300 }}>
+            <div style={{ flex: 1, position: 'relative', overflow: 'hidden', minHeight: 500 }}>
               <FaqImage />
             </div>
             <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 14, color: '#374151', margin: 0 }}>
