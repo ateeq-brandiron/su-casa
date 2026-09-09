@@ -47,17 +47,16 @@ function NavButton({ onClick, disabled, children }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         width: 52, height: 52, borderRadius: '50%',
-        border: '1.5px solid #245079',
+        border: `2px solid ${disabled ? '#d1d5db' : '#245079'}`,
         background: hovered && !disabled ? '#245079' : '#fff',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: disabled ? 'default' : 'pointer',
-        opacity: disabled ? 0.35 : 1,
-        transition: 'background 0.2s',
+        transition: 'background 0.2s, border-color 0.2s',
         flexShrink: 0,
       }}
     >
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-        stroke={hovered && !disabled ? '#fff' : '#245079'}
+        stroke={disabled ? '#d1d5db' : hovered ? '#fff' : '#245079'}
         strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
         style={{ transition: 'stroke 0.2s' }}>
         {children}
@@ -91,14 +90,16 @@ export default function Testimonials() {
           {visible.map(r => <ReviewCard key={r.slug} r={r} />)}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
-            <polyline points="11,4 5,9 11,14"/>
-          </NavButton>
-          <NavButton onClick={() => setPage(p => p + 1)} disabled={page >= totalPages - 1}>
-            <polyline points="7,4 13,9 7,14"/>
-          </NavButton>
-        </div>
+        {totalPages > 1 && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <NavButton onClick={() => setPage(p => p - 1)} disabled={page === 0}>
+              <polyline points="11,4 5,9 11,14"/>
+            </NavButton>
+            <NavButton onClick={() => setPage(p => p + 1)} disabled={page >= totalPages - 1}>
+              <polyline points="7,4 13,9 7,14"/>
+            </NavButton>
+          </div>
+        )}
       </div>
     </section>
   )
