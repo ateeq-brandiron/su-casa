@@ -39,7 +39,7 @@ function FaqImage() {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ position: 'relative', width: '100%', aspectRatio: '3/4', overflow: 'hidden' }}
+      style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}
     >
       <img src={faqImg} alt="Construction site" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
@@ -64,11 +64,13 @@ export default function FAQ() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 96, alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 96, alignItems: 'stretch' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <FaqImage />
+            <div style={{ flex: 1, position: 'relative', overflow: 'hidden', minHeight: 300 }}>
+              <FaqImage />
+            </div>
             <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 14, color: '#374151', margin: 0 }}>
-              Any question? <a href="mailto:support@sucasabuilders.com" style={{ color: '#245079', fontWeight: 600, textDecoration: 'underline' }}>support@sucasabuilders.com</a>
+              Any question? <a href="mailto:SuCasaBuilder03@gmail.com" style={{ color: '#245079', fontWeight: 600, textDecoration: 'underline' }}>SuCasaBuilder03@gmail.com</a>
             </p>
           </div>
 
