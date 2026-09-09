@@ -140,12 +140,12 @@ export default function Contact() {
                   style={{
                     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 12,
                     background: status === 'sending' ? '#6b96b5' : '#245079', color: '#fff',
-                    height: 52, padding: '0 28px', border: 'none', cursor: status === 'sending' ? 'default' : 'pointer',
+                    height: 52, padding: '0 28px', border: '1.5px solid #245079', cursor: status === 'sending' ? 'default' : 'pointer',
                     fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 15,
-                    transition: 'background 0.2s',
+                    transition: 'background 0.2s, color 0.2s, border-color 0.2s',
                   }}
-                  onMouseEnter={e => { if (status !== 'sending') e.currentTarget.style.background = '#1a3d5c' }}
-                  onMouseLeave={e => { if (status !== 'sending') e.currentTarget.style.background = '#245079' }}
+                  onMouseEnter={e => { if (status !== 'sending') { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#245079' } }}
+                  onMouseLeave={e => { if (status !== 'sending') { e.currentTarget.style.background = '#245079'; e.currentTarget.style.color = '#fff' } }}
                 >
                   {status === 'sending' ? 'Sending…' : 'Send Message'}
                   {status !== 'sending' && (
