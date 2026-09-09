@@ -43,19 +43,9 @@ export default function Contact() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('https://formspree.io/SuCasaBuilder03@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
-      setStatus(res.ok ? 'success' : 'error')
-    } catch {
-      setStatus('error')
-    }
+    setStatus('success')
   }
 
   return (
@@ -119,12 +109,17 @@ export default function Contact() {
           {/* Right: contact form */}
           <div>
             {status === 'success' ? (
-              <div style={{ textAlign: 'center', padding: '2rem 0' }}>
+              <div style={{ padding: '2rem 0' }}>
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#245079" strokeWidth="2" style={{ marginBottom: 16 }}>
                   <circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/>
                 </svg>
-                <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 22, color: '#111827', marginBottom: 8 }}>Message Sent!</h3>
-                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 15 }}>Thank you for reaching out. We'll be in touch shortly.</p>
+                <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 22, color: '#111827', margin: '0 0 12px' }}>Thank you for reaching out!</h3>
+                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, lineHeight: '150%', margin: '0 0 8px' }}>
+                  Our contact form is currently being set up. In the meantime, please send us an email directly and we'll get back to you as soon as possible.
+                </p>
+                <a href="mailto:SuCasaBuilder03@gmail.com" style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 16, color: '#245079' }}>
+                  SuCasaBuilder03@gmail.com
+                </a>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
