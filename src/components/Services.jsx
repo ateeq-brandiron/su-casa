@@ -11,7 +11,7 @@ import patternImg from '../assets/images/services/pattern-services.png'
 
 const SERVICE_IMAGES = {
   'general-contracting': { img: frame1,  hoverImg: service1 },
-  'subcontracting':      { img: frame1b, hoverImg: service2 },
+  'subcontracting':      { img: service2, hoverImg: service2 },
   'special-projects':    { img: frame1c, hoverImg: service3 },
 }
 
