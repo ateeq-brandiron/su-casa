@@ -60,21 +60,26 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{ background: '#fff' }}>
-      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 96, alignItems: 'flex-start' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', gap: 60 }}>
 
-        {/* Left: header + contact info */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+        {/* Full-width header */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0 }}>
           <SectionLabel text="Contact Us" />
           <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 400, color: '#245079', lineHeight: '130%', margin: '4px 0 16px' }}>
             Contact Su Casa Builders in Sierra Vista AZ
           </h2>
-          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: '0 0 48px' }}>
+          <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
             Every project starts with a conversation. Reach out today, and let's explore how we can make your home fit your lifestyle.
           </p>
+        </div>
 
-          <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#111827', margin: '0 0 32px' }}>Call Us Today</h3>
+        {/* Two-column: contact info + form */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 96, alignItems: 'flex-start' }}>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+          {/* Left: contact info */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#111827', margin: '0 0 32px' }}>Call Us Today</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
             <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
               <IconCircle>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#245079" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.24 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -107,10 +112,9 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Right: contact form */}
-        <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, padding: '2.5rem' }}>
+          {/* Right: contact form */}
+          <div>
           {status === 'success' ? (
             <div style={{ textAlign: 'center', padding: '2rem 0' }}>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#245079" strokeWidth="2" style={{ marginBottom: 16 }}>
@@ -154,12 +158,14 @@ export default function Contact() {
               </button>
             </form>
           )}
+          </div>
         </div>
       </div>
 
       <style>{`
         @media (max-width: 768px) {
-          #contact > div { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 24px !important; }
+          #contact > div { padding: 60px 24px !important; }
+          #contact > div > div:last-child { grid-template-columns: 1fr !important; gap: 40px !important; }
         }
       `}</style>
     </section>
