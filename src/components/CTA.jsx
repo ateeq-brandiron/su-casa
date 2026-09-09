@@ -1,25 +1,10 @@
-import { useState } from 'react'
 import ctaBg from '../assets/images/cta/cta-bg.jpg'
-import ctaHover from '../assets/images/cta/cta-bg.jpg'
 
 export default function CTA() {
-  const [hovered, setHovered] = useState(false)
-
   return (
-    <section
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}
-    >
-      {/* Base image */}
+    <section style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
       <img src={ctaBg} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
-      }} />
-      {/* Hover image */}
-      <img src={ctaHover} alt="" aria-hidden="true" style={{
-        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
       }} />
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
 

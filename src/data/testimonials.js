@@ -3,7 +3,7 @@ export const REVIEWS = [
     slug: 'bernard-barrowclough',
     title: 'Highly Recommended',
     name: 'Bernard Barrowclough',
-    text: 'Harley Aldridge and his team have been the guiding force behind 2 custom homes I built in the Sierra Vista area and both times I was more than happy with the total experience\nI would highly recommended that if you are interested in the new construction, remodeling of your home or business that you contact subscribe casa builders',
+    text: 'Harley Aldridge and his team have been the guiding force behind 2 custom homes I built in the Sierra Vista area and both times I was more than happy with the total experience\nI would highly recommended that if you are interested in the new construction, remodeling of your home or business that you contact Su Casa Builders',
   },
   {
     slug: 'bill-buhs',

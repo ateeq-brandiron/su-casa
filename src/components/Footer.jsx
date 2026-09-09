@@ -2,7 +2,7 @@ import { useState } from 'react'
 import logo from '../assets/icons/Logo.svg'
 import footerBg from '../assets/images/footer/footer-bg.png'
 
-const year = 2026
+const year = new Date().getFullYear()
 
 function FooterLink({ href, children }) {
   const [hovered, setHovered] = useState(false)
