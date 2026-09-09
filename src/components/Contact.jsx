@@ -79,7 +79,7 @@ export default function Contact() {
           {/* Left: contact info */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 20, color: '#111827', margin: '0 0 32px' }}>Call Us Today</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
 
               <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
                 <IconCircle>

@@ -86,7 +86,7 @@ export default function Hero() {
           onMouseLeave={() => setBtnHovered(false)}
           aria-label={scrolledPast ? 'Scroll to top' : 'Scroll down'}
           style={{
-            position: 'fixed', right: '2rem', bottom: '2rem', zIndex: 200,
+            position: 'fixed', right: '1.5rem', bottom: '5rem', zIndex: 200,
             width: 44, height: 44, borderRadius: '50%',
             background: btnHovered ? '#f0f4f8' : '#fff',
             border: '2px solid #245079',
