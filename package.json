@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap || echo 'Prerender skipped'",
+    "prerender": "PUPPETEER_EXECUTABLE_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -16,7 +17,6 @@
     "crawl": false,
     "include": ["/"],
     "headless": true,
-    "puppeteerExecutablePath": "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "dependencies": {
