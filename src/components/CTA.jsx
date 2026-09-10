@@ -33,9 +33,9 @@ export default function CTA() {
       <style>{`
         @media (max-width: 768px) {
           #cta-section > div:last-child { padding: 60px 24px !important; }
-          #cta-section > div:last-child h2 { font-size: 28px !important; }
-          #cta-section > div:last-child p { font-size: 16px !important; }
-          #cta-section > div:last-child a { font-size: 14px !important; height: auto !important; padding: 14px 20px !important; width: 100% !important; box-sizing: border-box !important; justify-content: center !important; }
+          #cta-section > div:last-child h2 { font-size: 26px !important; }
+          #cta-section > div:last-child p { font-size: 15px !important; }
+          #cta-section > div:last-child a { font-size: 13px !important; height: auto !important; padding: 14px 18px !important; white-space: nowrap !important; gap: 10px !important; }
         }
       `}</style>
     </section>
