@@ -99,6 +99,14 @@ export default function Testimonials() {
           </NavButton>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #testimonials > div { padding: 60px 24px !important; }
+          #testimonials > div > div:nth-child(2) { grid-template-columns: 1fr !important; }
+          #testimonials > div > div:first-child h2 { font-size: 32px !important; }
+          #testimonials > div > div:first-child p { font-size: 16px !important; }
+        }
+      `}</style>
     </section>
   )
 }

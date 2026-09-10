@@ -85,6 +85,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile   { display: flex !important; }
+          nav > div:first-child { padding: 0 24px !important; height: 72px !important; }
         }
       `}</style>
     </nav>

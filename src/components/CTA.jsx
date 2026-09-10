@@ -2,7 +2,7 @@ import ctaBg from '../assets/images/cta/cta-bg.jpg'
 
 export default function CTA() {
   return (
-    <section style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
+    <section id="cta-section" style={{ position: 'relative', overflow: 'hidden', minHeight: 400 }}>
       <img src={ctaBg} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
       }} />
@@ -30,6 +30,14 @@ export default function CTA() {
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
         </a>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #cta-section > div:last-child { padding: 60px 24px !important; }
+          #cta-section > div:last-child h2 { font-size: 28px !important; }
+          #cta-section > div:last-child p { font-size: 16px !important; }
+          #cta-section > div:last-child a { font-size: 14px !important; height: auto !important; padding: 14px 20px !important; width: 100% !important; box-sizing: border-box !important; justify-content: center !important; }
+        }
+      `}</style>
     </section>
   )
 }

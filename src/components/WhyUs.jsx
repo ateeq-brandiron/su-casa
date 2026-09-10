@@ -59,7 +59,7 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', columnGap: 87, rowGap: 40, width: '100%' }}>
+        <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', columnGap: 87, rowGap: 40, width: '100%' }}>
           {REASONS.map(r => <ReasonCard key={r.slug} r={r} />)}
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function WhyUs() {
       <style>{`
         @media (max-width: 768px) {
           #why-us > div { padding: 60px 24px !important; }
-          #why-us .cards { grid-template-columns: 1fr !important; }
+          #why-us .why-grid { grid-template-columns: 1fr !important; column-gap: 0 !important; }
         }
       `}</style>
     </section>

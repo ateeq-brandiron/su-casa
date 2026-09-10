@@ -63,7 +63,8 @@ export default function CoreValues() {
 
       <style>{`
         @media (max-width: 768px) {
-          #core-values > div { flex-direction: column !important; padding: 60px 24px !important; }
+          #core-values > div { flex-direction: column !important; padding: 60px 24px !important; gap: 40px !important; }
+          #core-values > div > div:last-child { flex: none !important; width: 100% !important; height: 280px !important; }
         }
       `}</style>
     </section>

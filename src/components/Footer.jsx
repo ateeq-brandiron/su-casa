@@ -40,7 +40,7 @@ export default function Footer() {
       <img src={footerBg} alt="" aria-hidden="true" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'bottom', pointerEvents: 'none', userSelect: 'none' }} />
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '75px 75px 25px 75px', gap: 10, position: 'relative', zIndex: 1 }}>
         {/* Top grid */}
-        <div style={{ display: 'flex', gap: 0, alignItems: 'flex-start', width: '100%', marginBottom: '3rem' }}>
+        <div className="footer-top" style={{ display: 'flex', gap: 0, alignItems: 'flex-start', width: '100%', marginBottom: '3rem' }}>
           {/* Brand */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: 340, flexShrink: 0 }}>
             <img src={logo} alt="Su Casa Builders" style={{ height: 60, width: 'auto', objectFit: 'contain', objectPosition: 'left' }} />
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Gap between brand and first services block */}
-          <div style={{ width: 131, flexShrink: 0 }} />
+          <div className="footer-spacer" style={{ width: 131, flexShrink: 0 }} />
 
           {/* Services */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -62,7 +62,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div style={{ width: 41, flexShrink: 0 }} />
+          <div className="footer-spacer" style={{ width: 41, flexShrink: 0 }} />
 
           {/* Projects */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -74,7 +74,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div style={{ width: 41, flexShrink: 0 }} />
+          <div className="footer-spacer" style={{ width: 41, flexShrink: 0 }} />
 
           {/* Service Areas */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div style={{ borderTop: '1px solid rgba(0,0,0,0.15)', paddingTop: 24, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(0,0,0,0.15)', paddingTop: 24, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ fontSize: 13, color: '#6b7280' }}>© {year} Su Casa Builders. All rights reserved.</p>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy Policy', 'Terms of Service'].map(l => (
@@ -97,6 +97,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          footer > div { padding: 48px 24px 24px !important; }
+          .footer-top { flex-direction: column !important; gap: 32px !important; margin-bottom: 2rem !important; }
+          .footer-top > div:first-child { width: 100% !important; }
+          .footer-spacer { display: none !important; }
+          footer .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+        }
+      `}</style>
     </footer>
   )
 }
