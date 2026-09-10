@@ -165,6 +165,7 @@ export default function Contact() {
         @media (max-width: 768px) {
           #contact > div { padding: 60px 24px !important; }
           #contact > div > div:last-child { grid-template-columns: 1fr !important; gap: 40px !important; }
+          #contact form > div:first-child { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
