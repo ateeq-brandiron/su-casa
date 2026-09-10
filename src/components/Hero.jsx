@@ -174,7 +174,7 @@ export default function Hero() {
           </a>
 
           {/* ── Fake video player ── */}
-          <div style={{
+          <div className="video-player" style={{
             position: 'relative',
             width: '100%',
             maxWidth: 1290,
@@ -271,6 +271,15 @@ export default function Hero() {
 
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #home > div:first-child { height: 560px !important; }
+          #home #info > div { padding: 60px 24px !important; }
+          #home #info p { width: 100% !important; font-size: 18px !important; }
+          #home #info a { font-size: 15px !important; height: auto !important; padding: 16px 20px !important; text-align: center !important; }
+          #home .video-player { display: none !important; }
+        }
+      `}</style>
     </section>
   )
 }

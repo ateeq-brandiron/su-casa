@@ -74,6 +74,12 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #projects > div { padding: 60px 24px !important; }
+          #projects > div > div:last-child > div { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }

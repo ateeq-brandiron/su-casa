@@ -147,8 +147,9 @@ export default function Services() {
 
       <style>{`
         @media (max-width: 768px) {
-          #services .services-grid { grid-template-columns: 1fr !important; }
-          #services > div > div { padding: 60px 24px !important; }
+          #services > div { padding: 60px 24px !important; }
+          #services > div > div:nth-child(2) { grid-template-columns: 1fr !important; }
+          #services > div > div:last-child a { font-size: 14px !important; height: auto !important; padding: 14px 20px !important; line-height: 1.4 !important; text-align: center !important; }
         }
       `}</style>
     </section>

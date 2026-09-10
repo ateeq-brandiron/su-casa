@@ -68,7 +68,8 @@ export default function About() {
 
       <style>{`
         @media (max-width: 768px) {
-          #about > div { flex-direction: column !important; padding: 60px 24px !important; }
+          #about > div { flex-direction: column !important; padding: 60px 24px !important; gap: 40px !important; }
+          #about > div > div:first-child { display: none !important; }
         }
       `}</style>
     </section>

@@ -79,6 +79,13 @@ export default function FAQ() {
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #faq > div { padding: 60px 24px !important; }
+          #faq > div > div:last-child { grid-template-columns: 1fr !important; gap: 32px !important; }
+          #faq > div > div:last-child > div:first-child { display: none !important; }
+        }
+      `}</style>
     </section>
   )
 }
