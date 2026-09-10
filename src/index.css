@@ -16,4 +16,9 @@
   section[id], div[id] { scroll-margin-top: 100px; }
   main { display: block; }
   footer { display: block; margin-top: 0; }
+
+  @media (max-width: 768px) {
+    main { padding-top: 72px !important; }
+    section[id], div[id] { scroll-margin-top: 72px; }
+  }
 }

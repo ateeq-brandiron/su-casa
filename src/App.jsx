@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div style={{ fontFamily: 'Manrope, sans-serif' }}>
       <Navbar />
-      <main>
+      <main style={{ paddingTop: 100 }}>
         <Hero />
         <About />
         <Services />

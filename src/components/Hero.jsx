@@ -273,10 +273,15 @@ export default function Hero() {
       </div>
       <style>{`
         @media (max-width: 768px) {
-          #home > div:first-child { height: 560px !important; }
-          #home #info > div { padding: 60px 24px !important; }
-          #home #info p { width: 100% !important; font-size: 18px !important; }
-          #home #info a { font-size: 15px !important; height: auto !important; padding: 16px 20px !important; text-align: center !important; }
+          #home > div:first-child { height: 480px !important; }
+          #home > div:first-child > div:last-child { bottom: 24px !important; }
+          #home > div:first-child > div:last-child > div { padding: 0 24px !important; }
+          #home > div:first-child > div:last-child > div h1 { font-size: 26px !important; margin-bottom: 12px !important; }
+          #home > div:first-child > div:last-child > div p { font-size: 16px !important; }
+          #home #info > div { padding: 48px 24px !important; gap: 28px !important; }
+          #home #info p { width: 100% !important; font-size: 15px !important; line-height: 160% !important; }
+          #home #info a { font-size: 14px !important; height: auto !important; padding: 14px 20px !important; width: 100% !important; box-sizing: border-box !important; }
+          #home #info img[style*="left: 753"] { display: none !important; }
           #home .video-player { display: none !important; }
         }
       `}</style>
