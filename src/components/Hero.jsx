@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import heroImg from '../assets/images/hero/hero-bg.png'
 import patternImg from '../assets/images/hero/pattern-hero.png'
 import infoBg from '../assets/images/hero/hero-info-abstract.png'
@@ -13,34 +13,44 @@ import icoInfo from '../assets/icons/ico-info.svg'
 
 function VideoPlayer() {
   const [playing, setPlaying] = useState(false)
-  const videoRef = useState(null)
+  const videoRef = useRef(null)
 
   const handlePlay = () => {
     setPlaying(true)
     setTimeout(() => {
-      const vid = document.getElementById('hero-video')
-      if (vid) vid.play()
+      if (videoRef.current) videoRef.current.play()
     }, 50)
+  }
+
+  const handleEnded = () => {
+    setPlaying(false)
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
   }
 
   return (
     <div style={{ position: 'relative', width: '100%', background: '#000' }}>
-      {/* Actual video — always rendered so it can load */}
+      {/* Video — hidden until playing so the native bar doesn't bleed through */}
       <video
-        id="hero-video"
+        ref={videoRef}
         src={heroVideo}
-        poster={videoThumb}
-        controls={playing}
+        controls
         playsInline
-        style={{ display: 'block', width: '100%', height: 'auto' }}
+        onEnded={handleEnded}
+        style={{
+          display: playing ? 'block' : 'none',
+          width: '100%', height: 'auto',
+        }}
       />
 
-      {/* Thumbnail overlay with play button — shown until user clicks */}
+      {/* Thumbnail + play button — shown by default and after video ends */}
       {!playing && (
         <div
           onClick={handlePlay}
           style={{
-            position: 'absolute', inset: 0,
+            position: 'relative', width: '100%',
             cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
@@ -48,10 +58,10 @@ function VideoPlayer() {
           <img
             src={videoThumb}
             alt="Company Overview Video"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ display: 'block', width: '100%', height: 'auto' }}
           />
           <div style={{
-            position: 'relative', zIndex: 1,
+            position: 'absolute',
             width: 80, height: 56, borderRadius: 14,
             background: '#FF0000',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
