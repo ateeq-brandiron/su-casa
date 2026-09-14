@@ -3,12 +3,69 @@ import heroImg from '../assets/images/hero/hero-bg.png'
 import patternImg from '../assets/images/hero/pattern-hero.png'
 import infoBg from '../assets/images/hero/hero-info-abstract.png'
 import videoThumb from '../assets/images/hero/video-thumb.png'
+import heroVideo from '../assets/images/hero/hero-video.mp4'
 import icoPlay from '../assets/icons/ico-play.svg'
 import icoNext from '../assets/icons/ico-next.svg'
 import icoSound from '../assets/icons/ico-sound.svg'
 import icoHd from '../assets/icons/ico-hd.svg'
 import icoFullscreen from '../assets/icons/ico-fullscreen.svg'
 import icoInfo from '../assets/icons/ico-info.svg'
+
+function VideoPlayer() {
+  const [playing, setPlaying] = useState(false)
+  const videoRef = useState(null)
+
+  const handlePlay = () => {
+    setPlaying(true)
+    setTimeout(() => {
+      const vid = document.getElementById('hero-video')
+      if (vid) vid.play()
+    }, 50)
+  }
+
+  return (
+    <div style={{ position: 'relative', width: '100%', background: '#000' }}>
+      {/* Actual video — always rendered so it can load */}
+      <video
+        id="hero-video"
+        src={heroVideo}
+        poster={videoThumb}
+        controls={playing}
+        playsInline
+        style={{ display: 'block', width: '100%', height: 'auto' }}
+      />
+
+      {/* Thumbnail overlay with play button — shown until user clicks */}
+      {!playing && (
+        <div
+          onClick={handlePlay}
+          style={{
+            position: 'absolute', inset: 0,
+            cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          <img
+            src={videoThumb}
+            alt="Company Overview Video"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+          <div style={{
+            position: 'relative', zIndex: 1,
+            width: 80, height: 56, borderRadius: 14,
+            background: '#FF0000',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
+          }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+              <polygon points="9.5,7 19,12 9.5,17"/>
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function Hero() {
   const [scrolledPast, setScrolledPast] = useState(false)
@@ -173,7 +230,7 @@ export default function Hero() {
             </svg>
           </a>
 
-          {/* ── Fake video player ── */}
+          {/* ── Video player ── */}
           <div className="video-player" style={{
             position: 'relative',
             width: '100%',
@@ -183,91 +240,9 @@ export default function Hero() {
             overflow: 'hidden',
             border: '3px solid #8B1A1A',
             boxShadow: '0 4px 32px rgba(0,0,0,0.18)',
-            cursor: 'default',
-            userSelect: 'none',
           }}>
-            {/* Thumbnail */}
-            <img
-              src={videoThumb}
-              alt="Company Overview Video"
-              style={{ display: 'block', width: '100%', height: 'auto' }}
-            />
-
-            {/* Top bar overlay */}
-            <div style={{
-              position: 'absolute', top: 0, left: 0, right: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: '10px 14px',
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)',
-            }}>
-              <span style={{
-                color: '#fff', fontSize: '0.85rem', fontFamily: 'Inter, sans-serif',
-                fontWeight: 500, letterSpacing: '0.01em',
-              }}>
-                Company Overview Video
-              </span>
-              <img src={icoInfo} alt="" style={{ width: 20, height: 20, opacity: 0.9 }} />
-            </div>
-
-            {/* Centre play button */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <div style={{
-                width: 80, height: 56, borderRadius: 14,
-                background: '#FF0000',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
-              }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                  <polygon points="9.5,7 19,12 9.5,17"/>
-                </svg>
-              </div>
-            </div>
-
-            {/* Bottom controls overlay */}
-            <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)',
-            }}>
-              {/* Progress bar */}
-              <div style={{ position: 'relative', height: 4, background: 'rgba(255,255,255,0.3)', margin: '0 0 8px' }}>
-                <div style={{ height: '100%', width: '33%', background: '#FF0000' }} />
-                <div style={{
-                  position: 'absolute', top: '50%', left: '33%',
-                  transform: 'translate(-50%, -50%)',
-                  width: 12, height: 12, borderRadius: '50%',
-                  background: '#FF0000',
-                }} />
-              </div>
-
-              {/* Controls row */}
-              <div style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: '0 12px 10px',
-              }}>
-                {/* Left controls */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <img src={icoPlay}       alt="Play"       style={{ width: 18, height: 18, opacity: 0.9 }} />
-                  <img src={icoNext}       alt="Next"       style={{ width: 18, height: 18, opacity: 0.9 }} />
-                  <img src={icoSound}      alt="Sound"      style={{ width: 18, height: 18, opacity: 0.9 }} />
-                  <span style={{
-                    color: '#fff', fontSize: '0.75rem', fontFamily: 'Inter, sans-serif',
-                    fontWeight: 500, letterSpacing: '0.02em',
-                  }}>
-                    5:07 / 15:28
-                  </span>
-                </div>
-                {/* Right controls */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                  <img src={icoHd}         alt="HD"         style={{ width: 22, height: 22, opacity: 0.9 }} />
-                  <img src={icoFullscreen} alt="Fullscreen" style={{ width: 18, height: 18, opacity: 0.9 }} />
-                </div>
-              </div>
-            </div>
+            <VideoPlayer />
           </div>
-          {/* end fake video player */}
 
         </div>
       </div>
