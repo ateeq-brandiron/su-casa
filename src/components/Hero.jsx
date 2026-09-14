@@ -2,14 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import heroImg from '../assets/images/hero/hero-bg.png'
 import patternImg from '../assets/images/hero/pattern-hero.png'
 import infoBg from '../assets/images/hero/hero-info-abstract.png'
-import videoThumb from '../assets/images/hero/video-thumb.png'
 import heroVideo from '../assets/images/hero/hero-video.mp4'
-import icoPlay from '../assets/icons/ico-play.svg'
-import icoNext from '../assets/icons/ico-next.svg'
-import icoSound from '../assets/icons/ico-sound.svg'
-import icoHd from '../assets/icons/ico-hd.svg'
-import icoFullscreen from '../assets/icons/ico-fullscreen.svg'
-import icoInfo from '../assets/icons/ico-info.svg'
 
 function VideoPlayer() {
   const [playing, setPlaying] = useState(false)
