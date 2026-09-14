@@ -17,51 +17,38 @@ function VideoPlayer() {
 
   const handlePlay = () => {
     setPlaying(true)
-    setTimeout(() => {
-      if (videoRef.current) videoRef.current.play()
-    }, 50)
+    if (videoRef.current) videoRef.current.play()
   }
 
   const handleEnded = () => {
     setPlaying(false)
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
-    }
+    if (videoRef.current) videoRef.current.currentTime = 0
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', background: '#000' }}>
-      {/* Video — hidden until playing so the native bar doesn't bleed through */}
+    <div
+      style={{ position: 'relative', width: '100%', background: '#000', cursor: playing ? 'default' : 'pointer' }}
+      onClick={!playing ? handlePlay : undefined}
+    >
+      {/* Video always visible — paused at frame 0 acts as the thumbnail */}
       <video
         ref={videoRef}
         src={heroVideo}
-        controls
+        controls={playing}
         playsInline
+        preload="metadata"
         onEnded={handleEnded}
-        style={{
-          display: playing ? 'block' : 'none',
-          width: '100%', height: 'auto',
-        }}
+        style={{ display: 'block', width: '100%', height: 'auto' }}
       />
 
-      {/* Thumbnail + play button — shown by default and after video ends */}
+      {/* Play button overlay — shown when not playing */}
       {!playing && (
-        <div
-          onClick={handlePlay}
-          style={{
-            position: 'relative', width: '100%',
-            cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}
-        >
-          <img
-            src={videoThumb}
-            alt="Company Overview Video"
-            style={{ display: 'block', width: '100%', height: 'auto' }}
-          />
+        <div style={{
+          position: 'absolute', inset: 0,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          pointerEvents: 'none',
+        }}>
           <div style={{
-            position: 'absolute',
             width: 80, height: 56, borderRadius: 14,
             background: '#FF0000',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
