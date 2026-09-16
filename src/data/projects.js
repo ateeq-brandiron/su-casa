@@ -3,5 +3,5 @@ export const PROJECTS = [
   { slug: 'the-oaks',      label: 'The Oaks',                  alt: 'The Oaks' },
   { slug: 'the-canyons',   label: 'Canyons',                   alt: 'The Canyons' },
   { slug: 'jens',          label: 'Jens',                      alt: 'Jens' },
-  { slug: 'project-5',     label: 'The Oaks',                  alt: 'The Oaks' },
+  { slug: 'project-5',     label: 'The Willow',                alt: 'The Willow' },
 ]
