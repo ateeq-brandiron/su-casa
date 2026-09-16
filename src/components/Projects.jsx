@@ -1,20 +1,24 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { PROJECTS } from '../data/projects'
-import img1 from '../assets/images/projects/paseo-venado.jpg'
+import img1 from '../assets/images/projects/paseo-venado.png'
+import img2 from '../assets/images/projects/the-canyons.png'
 import img3 from '../assets/images/projects/the-oaks.png'
 import img4 from '../assets/images/projects/jens.png'
-import img5 from '../assets/images/projects/commercial-project.jpg'
-import hover1 from '../assets/images/projects/paseo-venado-hover.png'
+import img5 from '../assets/images/projects/project-5.png'
+import hover1 from '../assets/images/projects/Paseo - Image 1.png'
+import hover2 from '../assets/images/projects/Canyons - Image 3.png'
 import hover3 from '../assets/images/projects/The Oaks - Image 2.png'
 import hover4 from '../assets/images/projects/Jens - Image 4.png'
-import hover5 from '../assets/images/projects/commercial-project-hover.jpg'
+import hover5 from '../assets/images/projects/The Willow - Image 5.png'
 
+// Default images (plain photos) and hover images (with text overlay) in slug order
 const PROJECT_IMAGES = {
-  'paseo-venado':       { img: img1, hoverImg: hover1 },
-  'the-oaks':           { img: img3, hoverImg: hover3 },
-  'jens':               { img: img4, hoverImg: hover4 },
-  'commercial-project': { img: img5, hoverImg: hover5 },
+  'paseo-venado': { img: img1, hoverImg: hover1 },
+  'the-canyons':  { img: img2, hoverImg: hover2 },
+  'the-oaks':     { img: img3, hoverImg: hover3 },
+  'jens':         { img: img4, hoverImg: hover4 },
+  'project-5':    { img: img5, hoverImg: hover5 },
 }
 
 function ProjectImage({ project, height }) {
