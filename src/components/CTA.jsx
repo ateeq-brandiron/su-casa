@@ -10,11 +10,11 @@ export default function CTA() {
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 1440, margin: '0 auto', padding: '100px 75px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32, textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#fff', lineHeight: '130%', maxWidth: 860, margin: 0 }}>
-          Let's bring your vision to life with skill, quality, and integrity.
+          <span className="cta-h2-desktop">Let's bring your vision to life with skill, quality, and integrity.</span>
+          <span className="cta-h2-mobile">Let's bring<br />your vision to life<br />with skill,<br />quality,<br />and integrity.</span>
         </h2>
         <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.85)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 640, margin: 0 }}>
-          <span className="cta-p-desktop">Your home deserves a builder who values craftsmanship and clear communication.</span>
-          <span className="cta-p-mobile">Your home deserves<br />a builder who values<br />craftsmanship<br />and clear<br />communication.</span>
+          Your home deserves a builder who values craftsmanship and clear communication.
         </p>
         <a href="#contact"
           style={{
@@ -32,10 +32,10 @@ export default function CTA() {
         </a>
       </div>
       <style>{`
-        .cta-p-mobile { display: none; }
+        .cta-h2-mobile { display: none; }
         @media (max-width: 768px) {
-          .cta-p-desktop { display: none; }
-          .cta-p-mobile { display: inline; }
+          .cta-h2-desktop { display: none; }
+          .cta-h2-mobile { display: inline; }
           #cta-section > div:last-child { padding: 80px 24px !important; gap: 24px !important; }
           #cta-section > div:last-child h2 { font-size: 32px !important; }
           #cta-section > div:last-child p { font-size: 16px !important; }
