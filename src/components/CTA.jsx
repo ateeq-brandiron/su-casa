@@ -38,7 +38,7 @@ export default function CTA() {
           .cta-h2-mobile { display: inline; }
           #cta-section > div:last-child { padding: 80px 24px !important; gap: 24px !important; }
           #cta-section > div:last-child h2 { font-size: 32px !important; }
-          #cta-section > div:last-child p { font-size: 16px !important; }
+          #cta-section > div:last-child p { font-size: 14px !important; max-width: 240px !important; }
           #cta-section > div:last-child a { font-size: 15px !important; height: auto !important; padding: 16px 24px !important; gap: 12px !important; width: 100% !important; justify-content: center !important; box-sizing: border-box !important; }
         }
       `}</style>
