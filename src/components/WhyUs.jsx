@@ -2,12 +2,12 @@ import { useState } from 'react'
 import SectionLabel from './SectionLabel'
 import { REASONS } from '../data/why-us'
 import whyDiamond from '../assets/icons/why-diamond.svg'
-import whyBulb from '../assets/icons/why-bulb.svg'
+import whyAward from '../assets/icons/why-award.svg'
 import whyShield from '../assets/icons/why-shield.svg'
 
 const ICON_MAP = {
   'why-diamond.svg': whyDiamond,
-  'why-bulb.svg': whyBulb,
+  'why-award.svg': whyAward,
   'why-shield.svg': whyShield,
 }
 

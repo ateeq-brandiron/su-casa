@@ -9,7 +9,7 @@ export const REASONS = [
     slug: 'commitment-quality',
     title: 'Commitment to Quality',
     desc: "We use durable materials and proven building practices to ensure lasting performance and dependable results. Every project reflects the same attention to detail and pride we'd bring to our own homes.",
-    icon: 'why-bulb.svg',
+    icon: 'why-award.svg',
   },
   {
     slug: 'local-trusted',
