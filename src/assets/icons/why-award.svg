@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
   <!-- Outer circle -->
-  <circle cx="12" cy="9" r="7"/>
+  <circle cx="14" cy="11" r="10"/>
   <!-- Inner circle -->
-  <circle cx="12" cy="9" r="4.5"/>
+  <circle cx="14" cy="11" r="6.5"/>
   <!-- Checkmark -->
-  <polyline points="9.8,9 11.2,10.5 14.2,7.2"/>
-  <!-- Left ribbon tail with notch -->
-  <polyline points="7.2,14.8 5,22 7.5,20.2 10,22 10,14.8"/>
-  <!-- Right ribbon tail with notch -->
-  <polyline points="14,14.8 14,22 16.5,20.2 19,22 16.8,14.8"/>
+  <polyline points="10.5,11 13,13.5 17.5,8"/>
+  <!-- Left ribbon with notch -->
+  <polyline points="6.5,19 3,29 8,26 11,29 11,19"/>
+  <!-- Right ribbon with notch -->
+  <polyline points="17,19 17,29 20,26 25,29 21.5,19"/>
 </svg>
