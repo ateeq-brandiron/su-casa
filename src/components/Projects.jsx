@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import SectionLabel from './SectionLabel'
 import { PROJECTS } from '../data/projects'
 import img1 from '../assets/images/projects/Paseo Venado default.jpg'
@@ -22,29 +22,88 @@ const PROJECT_IMAGES = {
 }
 
 function ProjectImage({ project, height }) {
+  const [tapped, setTapped] = useState(false)
   const [hovered, setHovered] = useState(false)
+  const active = hovered || tapped
   const { img, hoverImg } = PROJECT_IMAGES[project.slug]
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ overflow: 'hidden', position: 'relative', height }}
+      onClick={() => setTapped(t => !t)}
+      style={{ overflow: 'hidden', position: 'relative', height, cursor: 'pointer', flexShrink: 0 }}
     >
       <img src={img} alt={project.alt} style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        opacity: hovered ? 0 : 1, transition: 'opacity 0.5s ease',
+        opacity: active ? 0 : 1, transition: 'opacity 0.5s ease',
       }} />
       <img src={hoverImg} alt="" aria-hidden="true" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+        opacity: active ? 1 : 0, transition: 'opacity 0.5s ease',
       }} />
       <div style={{
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.70) 100%)',
-        opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease',
+        opacity: active ? 1 : 0, transition: 'opacity 0.5s ease',
         display: 'flex', justifyContent: 'center', alignItems: 'flex-end', padding: '0 0 20px',
       }}>
         <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: 18, color: '#fff', lineHeight: '130%', textAlign: 'center' }}>{project.label}</span>
+      </div>
+    </div>
+  )
+}
+
+function MobileCarousel() {
+  const [active, setActive] = useState(0)
+  const trackRef = useRef(null)
+
+  const handleScroll = () => {
+    const el = trackRef.current
+    if (!el) return
+    const idx = Math.round(el.scrollLeft / el.offsetWidth)
+    setActive(idx)
+  }
+
+  const goTo = (i) => {
+    const el = trackRef.current
+    if (!el) return
+    el.scrollTo({ left: i * el.offsetWidth, behavior: 'smooth' })
+    setActive(i)
+  }
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <div
+        ref={trackRef}
+        onScroll={handleScroll}
+        style={{
+          display: 'flex', overflowX: 'scroll', scrollSnapType: 'x mandatory',
+          scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch',
+          gap: 12, paddingBottom: 4,
+          msOverflowStyle: 'none', scrollbarWidth: 'none',
+        }}
+      >
+        {PROJECTS.map(p => (
+          <div key={p.slug} style={{ scrollSnapAlign: 'center', width: '85vw', flexShrink: 0 }}>
+            <ProjectImage project={p} height={240} />
+          </div>
+        ))}
+      </div>
+      {/* Dot indicators */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 16 }}>
+        {PROJECTS.map((p, i) => (
+          <button
+            key={p.slug}
+            onClick={() => goTo(i)}
+            aria-label={`Go to ${p.label}`}
+            style={{
+              width: i === active ? 20 : 8, height: 8, borderRadius: 4,
+              background: i === active ? '#245079' : '#CBD5E1',
+              border: 'none', padding: 0, cursor: 'pointer',
+              transition: 'all 0.3s ease',
+            }}
+          />
+        ))}
       </div>
     </div>
   )
@@ -65,7 +124,8 @@ export default function Projects() {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        {/* Desktop grid */}
+        <div className="projects-desktop" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {row1.map(p => <ProjectImage key={p.slug} project={p} height={320} />)}
           </div>
@@ -73,11 +133,20 @@ export default function Projects() {
             {row2.map(p => <ProjectImage key={p.slug} project={p} height={290} />)}
           </div>
         </div>
+
+        {/* Mobile carousel */}
+        <div className="projects-mobile" style={{ display: 'none' }}>
+          <MobileCarousel />
+        </div>
       </div>
       <style>{`
+        .projects-desktop ::-webkit-scrollbar { display: none; }
         @media (max-width: 768px) {
-          #projects > div { padding: 60px 24px !important; }
-          #projects > div > div:last-child > div { grid-template-columns: 1fr !important; }
+          #projects > div { padding: 60px 24px !important; gap: 40px !important; }
+          .projects-desktop { display: none !important; }
+          .projects-mobile { display: block !important; }
+          .projects-mobile div[style*="overflow"] { overflow-x: scroll !important; }
+          .projects-mobile div[style*="overflow"]::-webkit-scrollbar { display: none; }
         }
       `}</style>
     </section>
