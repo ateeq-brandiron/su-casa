@@ -13,7 +13,8 @@ export default function CTA() {
           Let's bring your vision to life with skill, quality, and integrity.
         </h2>
         <p style={{ fontFamily: 'Manrope, sans-serif', color: 'rgba(255,255,255,0.85)', fontSize: 20, fontWeight: 400, lineHeight: '140%', maxWidth: 640, margin: 0 }}>
-          Your home deserves a builder who values craftsmanship and clear communication.
+          <span className="cta-p-desktop">Your home deserves a builder who values craftsmanship and clear communication.</span>
+          <span className="cta-p-mobile">Your home deserves<br />a builder who values<br />craftsmanship<br />and clear<br />communication.</span>
         </p>
         <a href="#contact"
           style={{
@@ -31,7 +32,10 @@ export default function CTA() {
         </a>
       </div>
       <style>{`
+        .cta-p-mobile { display: none; }
         @media (max-width: 768px) {
+          .cta-p-desktop { display: none; }
+          .cta-p-mobile { display: inline; }
           #cta-section > div:last-child { padding: 80px 24px !important; gap: 24px !important; }
           #cta-section > div:last-child h2 { font-size: 32px !important; }
           #cta-section > div:last-child p { font-size: 16px !important; }
