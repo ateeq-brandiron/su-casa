@@ -1,12 +1,7 @@
-<svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Outer circle -->
-  <circle cx="14" cy="11" r="10"/>
-  <!-- Inner circle -->
-  <circle cx="14" cy="11" r="6.5"/>
-  <!-- Checkmark -->
-  <polyline points="10.5,11 13,13.5 17.5,8"/>
-  <!-- Left ribbon with notch -->
-  <polyline points="6.5,19 3,29 8,26 11,29 11,19"/>
-  <!-- Right ribbon with notch -->
-  <polyline points="17,19 17,29 20,26 25,29 21.5,19"/>
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="15" cy="11" r="9.5"/>
+  <circle cx="15" cy="11" r="5.5"/>
+  <polyline points="11.5,11 14,13.5 18.5,8"/>
+  <polyline points="7,19.5 1,29 8,26 12,29 12,19.5"/>
+  <polyline points="18,19.5 18,29 22,26 29,29 23,19.5"/>
 </svg>
