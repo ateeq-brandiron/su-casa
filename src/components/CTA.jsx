@@ -32,10 +32,10 @@ export default function CTA() {
       </div>
       <style>{`
         @media (max-width: 768px) {
-          #cta-section > div:last-child { padding: 60px 24px !important; }
-          #cta-section > div:last-child h2 { font-size: 26px !important; }
-          #cta-section > div:last-child p { font-size: 15px !important; }
-          #cta-section > div:last-child a { font-size: 13px !important; height: auto !important; padding: 14px 18px !important; white-space: nowrap !important; gap: 10px !important; }
+          #cta-section > div:last-child { padding: 80px 24px !important; gap: 24px !important; }
+          #cta-section > div:last-child h2 { font-size: 32px !important; }
+          #cta-section > div:last-child p { font-size: 16px !important; }
+          #cta-section > div:last-child a { font-size: 15px !important; height: auto !important; padding: 16px 24px !important; gap: 12px !important; width: 100% !important; justify-content: center !important; box-sizing: border-box !important; }
         }
       `}</style>
     </section>
