@@ -2,7 +2,7 @@
   <!-- Outer ring -->
   <circle cx="15" cy="12" r="10"/>
   <!-- Inner ring -->
-  <circle cx="15" cy="12" r="7"/>
+  <circle cx="15" cy="12" r="6"/>
   <!-- Checkmark (large, centered inside inner ring) -->
   <polyline points="11,12.5 14,15.5 19.5,8.5"/>
   <!-- Left ribbon: splays out to lower-left, V-notch at bottom -->
