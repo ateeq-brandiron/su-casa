@@ -1,7 +1,12 @@
-<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="15" cy="10" r="8.5" stroke="black" stroke-width="2"/>
-  <circle cx="15" cy="10" r="5" stroke="black" stroke-width="2"/>
-  <path d="M11.5,10 L14,12.5 L18.5,7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8,18 L8,29 L10.5,26.5 L13,29 L13,18 Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M17,18 L17,29 L19.5,26.5 L22,29 L22,18 Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer ring -->
+  <circle cx="15" cy="12" r="10"/>
+  <!-- Inner ring -->
+  <circle cx="15" cy="12" r="7"/>
+  <!-- Checkmark (large, centered inside inner ring) -->
+  <polyline points="11,12.5 14,15.5 19.5,8.5"/>
+  <!-- Left ribbon: splays out to lower-left, V-notch at bottom -->
+  <path d="M6.5,20 L12,21.5 L12,29 L8.5,25.5 L1.5,29 Z"/>
+  <!-- Right ribbon: splays out to lower-right, V-notch at bottom -->
+  <path d="M18,21.5 L23.5,20 L28.5,29 L21.5,25.5 L18,29 Z"/>
 </svg>
