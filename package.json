@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-sitemap.js && vite build",
     "postbuild": "react-snap || echo 'Prerender skipped'",
     "prerender": "PUPPETEER_EXECUTABLE_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome react-snap",
     "lint": "eslint .",
@@ -15,15 +15,27 @@
     "source": "dist",
     "minifyHtml": false,
     "crawl": false,
-    "include": ["/"],
+    "include": [
+      "/",
+      "/about/",
+      "/services/",
+      "/projects/",
+      "/contact/",
+      "/service-areas/"
+    ],
     "headless": true,
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "lucide-react": "^1.18.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

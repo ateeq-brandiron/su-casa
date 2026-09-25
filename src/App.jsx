@@ -1,36 +1,38 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
-import Navbar       from './components/Navbar'
-import Hero         from './components/Hero'
-import About        from './components/About'
-import Services     from './components/Services'
-import WhyUs        from './components/WhyUs'
-import CoreValues   from './components/CoreValues'
-import Process      from './components/Process'
-import Projects     from './components/Projects'
-import Testimonials from './components/Testimonials'
-import FAQ          from './components/FAQ'
-import CTA          from './components/CTA'
-import Contact      from './components/Contact'
-import Footer       from './components/Footer'
+import Navbar          from './components/Navbar'
+import Footer          from './components/Footer'
+import HomePage        from './pages/HomePage'
+import AboutPage       from './pages/AboutPage'
+import ServicesPage    from './pages/ServicesPage'
+import ProjectsPage    from './pages/ProjectsPage'
+import ContactPage     from './pages/ContactPage'
+import ServiceAreasPage from './pages/ServiceAreasPage'
+import NotFoundPage    from './pages/NotFoundPage'
 
 export default function App() {
   return (
-    <div style={{ fontFamily: 'Manrope, sans-serif' }}>
-      <Navbar />
-      <main style={{ paddingTop: 100 }}>
-        <Hero />
-        <About />
-        <Services />
-        <WhyUs />
-        <CoreValues />
-        <Process />
-        <Projects />
-        <Testimonials />
-        <FAQ />
-        <CTA />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <BrowserRouter>
+        <div style={{ fontFamily: 'Manrope, sans-serif' }}>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Navbar />
+                <HomePage />
+                <Footer />
+              </>
+            } />
+            <Route path="/about/"         element={<AboutPage />} />
+            <Route path="/services/"      element={<ServicesPage />} />
+            <Route path="/projects/"      element={<ProjectsPage />} />
+            <Route path="/contact/"       element={<ContactPage />} />
+            <Route path="/service-areas/" element={<ServiceAreasPage />} />
+            <Route path="*"               element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
