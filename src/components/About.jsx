@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
-import imageBox from '../assets/images/about/about-top.png'
+import imageBox from '../assets/images/about/su-casa-4.png'
 import imageBoxHover from '../assets/images/about/about-top-hover.png'
-import imageBox2 from '../assets/images/about/about-bottom.png'
-import imageBox2Hover from '../assets/images/about/about-bottom-hover.png'
+import imageBox2 from '../assets/images/about/loaded-tile-roof.jpg'
+import imageBox2Hover from '../assets/images/about/loaded-tile-roof.jpg'
 
 function SwapImage({ src, hoverSrc }) {
   const [hovered, setHovered] = useState(false)
@@ -45,7 +45,7 @@ export default function About() {
               About Su Casa Builders
             </h2>
             <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
-              Founded in 2003, Su Casa Builders LLC is a locally owned and operated general contractor serving Sierra Vista and surrounding Cochise County communities. Our team focuses on high-quality residential and light commercial construction, including framing, roofing, painting, and custom home projects built with care and precision.
+              Founded in 2003, Su Casa Builders LLC is a locally owned and operated general contractor serving Sierra Vista and surrounding Cochise County communities. Our team focuses on high-quality residential and light commercial construction, including framing, painting, and custom home projects built with care and precision.
             </p>
           </div>
           {/* Bottom block: two blockquotes */}

@@ -14,10 +14,9 @@ export const SERVICES = [
     slug: 'subcontracting',
     title: 'Subcontracting',
     intro: 'Our subcontracting services include:',
-    desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
+    desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
     items: [
       { label: 'Framing', detail: 'Structural framing for new construction, additions, and expansions.' },
-      { label: 'Roofing', detail: 'Professional roofing installation and repair that ensures long-term protection.' },
       { label: 'Painting', detail: 'Exterior painting for residential and light commercial properties, as well as painting services for new construction projects.' },
     ],
   },
