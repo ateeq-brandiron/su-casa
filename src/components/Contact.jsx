@@ -43,9 +43,24 @@ export default function Contact() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    setStatus('success')
+    setStatus('sending')
+    try {
+      const res = await fetch('https://formspree.io/SuCasaBuilder03@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setStatus('success')
+        setForm({ name: '', email: '', phone: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -114,12 +129,9 @@ export default function Contact() {
                   <circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/>
                 </svg>
                 <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 22, color: '#111827', margin: '0 0 12px' }}>Thank you for reaching out!</h3>
-                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, lineHeight: '150%', margin: '0 0 8px' }}>
-                  Our contact form is currently being set up. In the meantime, please send us an email directly and we'll get back to you as soon as possible.
+                <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 16, lineHeight: '150%', margin: 0 }}>
+                  We received your message and will get back to you as soon as possible. If you need immediate assistance, call us at <a href="tel:5203358554" style={{ color: '#245079', fontWeight: 600 }}>520-335-8554</a>.
                 </p>
-                <a href="mailto:SuCasaBuilder03@gmail.com" style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 16, color: '#245079' }}>
-                  SuCasaBuilder03@gmail.com
-                </a>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
