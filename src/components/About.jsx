@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SectionLabel from './SectionLabel'
-import imageBox from '../assets/images/about/about-top.png'
 import imageBoxHover from '../assets/images/about/about-top-hover.png'
+import imageBox2 from '../assets/images/about/about-bottom.png'
 import imageBox2Hover from '../assets/images/about/about-bottom-hover.png'
 
 function SwapImage({ src, hoverSrc }) {
@@ -24,10 +24,10 @@ export default function About() {
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', padding: '100px 75px', gap: 96, alignItems: 'flex-start' }}>
         {/* Two stacked images — fills left column */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <SwapImage src={imageBox} hoverSrc={imageBoxHover} />
           <div style={{ width: '100%', height: 275, overflow: 'hidden' }}>
-            <img src={imageBox2Hover} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%' }} />
+            <img src={imageBoxHover} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50%' }} />
           </div>
+          <SwapImage src={imageBox2} hoverSrc={imageBox2Hover} />
         </div>
 
         {/* Text */}
