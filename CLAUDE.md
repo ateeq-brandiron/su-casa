@@ -144,18 +144,17 @@ src/assets/
 | File | Used in | Notes |
 |---|---|---|
 | `hero/hero-bg.png` | Hero.jsx | Aerial house + mountains shot |
-| `hero/hero-info-bg.png` | Hero.jsx | Background accent for info band |
+| `hero/hero-info-abstract.png` | Hero.jsx | Background accent for info band |
+| `hero/hero-video.mp4` | Hero.jsx | Inline video in info band |
 | `hero/pattern-hero.png` | Hero.jsx | Geometric pattern, right side of info band |
-| `hero/video-thumb.png` | Hero.jsx | Video player thumbnail |
 | `about/about-top.png` | About.jsx | Left column top image (default) |
 | `about/about-top-hover.png` | About.jsx | Left column top image (hover) |
 | `about/about-bottom.png` | About.jsx | Left column bottom image (default) |
 | `about/about-bottom-hover.png` | About.jsx | Left column bottom image (hover) |
 | `services/general-contracting-card.png` | Services.jsx | Service card 1 default |
-| `services/subcontracting-card.png` | Services.jsx | Service card 2 default |
 | `services/special-projects-card.png` | Services.jsx | Service card 3 default |
 | `services/general-contracting-hover.jpg` | Services.jsx | Service card 1 hover |
-| `services/subcontracting-hover.jpg` | Services.jsx | Service card 2 hover |
+| `services/subcontracting-hover.jpg` | Services.jsx | Service card 2 — used for both default and hover (pending proper default photo) |
 | `services/special-projects-hover.jpg` | Services.jsx | Service card 3 hover |
 | `services/pattern-services.png` | Services.jsx | Geometric pattern, right side |
 | `core-values/core-values-default.webp` | CoreValues.jsx | Right column image (default) |
@@ -163,20 +162,20 @@ src/assets/
 | `process/process-bg.png` | Process.jsx | Full-bleed section background |
 | `process/sketch-top-right.png` | Process.jsx | Architectural sketch, top-right |
 | `process/cityscape-bottom-left.png` | Process.jsx | Cityscape graphic, bottom-left |
-| `projects/paseo-venado.png` | Projects.jsx | Paseo Venado — default |
-| `projects/paseo-venado-hover.png` | Projects.jsx | Paseo Venado — hover |
-| `projects/the-canyons.png` | Projects.jsx | The Canyons — default |
-| `projects/the-canyons-hover.png` | Projects.jsx | The Canyons — hover |
+| `projects/Paseo Venado default.jpg` | Projects.jsx | Paseo Venado — default |
+| `projects/Paseo - Image 1.png` | Projects.jsx | Paseo Venado — hover (text overlay) |
+| `projects/The Canyons — garage doors front.jpg` | Projects.jsx | The Canyons — default |
+| `projects/Canyons - Image 3.png` | Projects.jsx | The Canyons — hover (text overlay) |
 | `projects/the-oaks.png` | Projects.jsx | The Oaks — default |
-| `projects/the-oaks-hover.png` | Projects.jsx | The Oaks — hover |
+| `projects/The Oaks - Image 2.png` | Projects.jsx | The Oaks — hover (text overlay) |
 | `projects/jens.png` | Projects.jsx | Jens — default |
-| `projects/jens-hover.png` | Projects.jsx | Jens — hover |
+| `projects/Jens - Image 4.png` | Projects.jsx | Jens — hover (text overlay) |
 | `projects/project-5.png` | Projects.jsx | Project 5 — default |
-| `projects/project-5-hover.png` | Projects.jsx | Project 5 — hover |
+| `projects/The Willow.jpeg` | Projects.jsx | Project 5 — hover (text overlay) |
 | `faq/faq-default.png` | FAQ.jsx | Left column image (default) |
 | `faq/faq-hover.png` | FAQ.jsx | Left column image (hover) |
-| `cta/cta-default.png` | CTA.jsx | Section background (default) |
-| `cta/cta-hover.png` | CTA.jsx | Section background (hover) |
+| `cta/cta-bg.jpg` | CTA.jsx | Section background |
+| `footer/footer-bg.png` | Footer.jsx | Footer background |
 | `footer/footer-bg.png` | Footer.jsx | Footer background |
 
 ### Before adding or replacing an image
@@ -226,3 +225,5 @@ All assigned to Ateeq Asif, due Sep 4 2026.
 - **Hero arrow stroke color:** When the scroll button background was changed to white, the SVG stroke was still `stroke="white"` and became invisible. Always check SVG stroke/fill against the new background.
 - **Branch confusion:** Session branches are ephemeral. Working branch is `claude/sharp-feynman-k3wtbt`.
 - **git mv vs OS mv:** Using `mv` at the OS level means git tracks files as deleted + new-file (not rename). Always `git add -u` to stage deletions alongside the new files in the same commit.
+- **Subcontracting card image:** `services/subcontracting-card.png` was moved to `unused/` — it was never imported. The subcontracting `ServiceCard` currently uses `subcontracting-hover.jpg` for both its default and hover state. When the client provides a proper default photo for the subcontracting card, add it to `services/` and update the `SERVICE_IMAGES` map in Services.jsx.
+- **Figma export filenames in projects/:** The active hover images for Projects.jsx have Figma export names with spaces (e.g. `Paseo - Image 1.png`, `Canyons - Image 3.png`). Do not rename them — they are imported by exact filename and renaming requires updating the imports. When the client replaces them with final assets, use kebab-case and update the imports at the same time.
