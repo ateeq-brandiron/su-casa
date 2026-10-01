@@ -39,7 +39,7 @@ function Field({ label, ...props }) {
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
@@ -54,7 +54,7 @@ export default function Contact() {
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ name: '', email: '', phone: '', message: '' })
+        setForm({ name: '', email: '', phone: '', address: '', message: '' })
       } else {
         setStatus('error')
       }
@@ -140,6 +140,7 @@ export default function Contact() {
                   <Field label="Email *" name="email" type="email" required placeholder="john@example.com" value={form.email} onChange={handleChange} />
                 </div>
                 <Field label="Phone" name="phone" type="tel" placeholder="520-000-0000" value={form.phone} onChange={handleChange} />
+                <Field label="Property Address" name="address" type="text" placeholder="123 Main St, Sierra Vista, AZ" value={form.address} onChange={handleChange} />
                 <Field label="Message *" name="message" as="textarea" required placeholder="Tell us about your project…" value={form.message} onChange={handleChange} />
 
                 {status === 'error' && (
