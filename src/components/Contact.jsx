@@ -39,7 +39,7 @@ function Field({ label, ...props }) {
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
-  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', street: '', street2: '', city: '', state: '', zip: '', message: '' })
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
@@ -54,7 +54,7 @@ export default function Contact() {
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ name: '', email: '', phone: '', address: '', message: '' })
+        setForm({ name: '', email: '', phone: '', street: '', street2: '', city: '', state: '', zip: '', message: '' })
       } else {
         setStatus('error')
       }
@@ -140,7 +140,13 @@ export default function Contact() {
                   <Field label="Email *" name="email" type="email" required placeholder="john@example.com" value={form.email} onChange={handleChange} />
                 </div>
                 <Field label="Phone" name="phone" type="tel" placeholder="520-000-0000" value={form.phone} onChange={handleChange} />
-                <Field label="Property Address" name="address" type="text" placeholder="123 Main St, Sierra Vista, AZ" value={form.address} onChange={handleChange} />
+                <Field label="Street Address" name="street" type="text" placeholder="Street Address" value={form.street} onChange={handleChange} />
+                <Field label="Address Line 2" name="street2" type="text" placeholder="Apt, Suite, etc." value={form.street2} onChange={handleChange} />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 100px', gap: 12 }}>
+                  <Field label="City" name="city" type="text" placeholder="City" value={form.city} onChange={handleChange} />
+                  <Field label="State" name="state" type="text" placeholder="State" value={form.state} onChange={handleChange} />
+                  <Field label="ZIP Code" name="zip" type="text" placeholder="ZIP Code" value={form.zip} onChange={handleChange} />
+                </div>
                 <Field label="Message *" name="message" as="textarea" required placeholder="Tell us about your project…" value={form.message} onChange={handleChange} />
 
                 {status === 'error' && (
