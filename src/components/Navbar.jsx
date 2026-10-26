@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import logoSrc from '../assets/icons/Logo.svg'
 
 const LINKS = [
-  { label: 'Home',     hash: '#home' },
-  { label: 'About Us', hash: '#about' },
-  { label: 'Services', hash: '#services' },
-  { label: 'Projects', hash: '#projects' },
-  { label: 'Blog',     hash: '#blog' },
-  { label: 'Contact',  hash: '#contact' },
+  { label: 'Home',     hash: 'home' },
+  { label: 'About Us', hash: 'about' },
+  { label: 'Services', hash: 'services' },
+  { label: 'Projects', hash: 'projects' },
+  { label: 'Blog',     hash: 'blog' },
+  { label: 'Contact',  hash: 'contact' },
 ]
 
-function NavLink({ label, href }) {
+function NavLink({ label, onClick }) {
   const [hovered, setHovered] = useState(false)
   return (
     <a
-      href={href}
+      href="#"
+      onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -27,6 +28,7 @@ function NavLink({ label, href }) {
         transition: 'color 0.2s',
         paddingBottom: 4,
         borderBottom: hovered ? '2px solid #245079' : '2px solid transparent',
+        cursor: 'pointer',
       }}
     >
       {label}
@@ -38,14 +40,26 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const onHome = location.pathname === '/'
-  const linkHref = (hash) => onHome ? hash : `/${hash}`
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
   }, [])
+
+  function handleNav(e, hash) {
+    e.preventDefault()
+    setOpen(false)
+    if (onHome) {
+      const el = document.getElementById(hash)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      sessionStorage.setItem('scrollTo', hash)
+      navigate('/')
+    }
+  }
 
   return (
     <nav style={{
@@ -57,13 +71,13 @@ export default function Navbar() {
     }}>
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 75px', height: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href={linkHref('#home')} style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <a href="#" onClick={(e) => handleNav(e, 'home')} style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <img src={logoSrc} alt="Su Casa Builders" style={{ height: 38, width: 'auto' }} />
         </a>
 
         {/* Desktop links */}
         <div style={{ display: 'flex', gap: '2.25rem', alignItems: 'center' }} className="hidden-mobile">
-          {LINKS.map(l => <NavLink key={l.hash} label={l.label} href={linkHref(l.hash)} />)}
+          {LINKS.map(l => <NavLink key={l.hash} label={l.label} onClick={(e) => handleNav(e, l.hash)} />)}
         </div>
 
         {/* Mobile hamburger */}
@@ -78,8 +92,8 @@ export default function Navbar() {
       {open && (
         <div style={{ background: '#fff', borderTop: '1px solid #e5e7eb', padding: '1rem 2rem 1.5rem' }}>
           {LINKS.map(l => (
-            <a key={l.hash} href={linkHref(l.hash)} onClick={() => setOpen(false)}
-              style={{ display: 'block', padding: '0.65rem 0', fontSize: '0.95rem', fontWeight: 500, color: '#374151', textDecoration: 'none', borderBottom: '1px solid #f3f4f6' }}>
+            <a key={l.hash} href="#" onClick={(e) => handleNav(e, l.hash)}
+              style={{ display: 'block', padding: '0.65rem 0', fontSize: '0.95rem', fontWeight: 500, color: '#374151', textDecoration: 'none', borderBottom: '1px solid #f3f4f6', cursor: 'pointer' }}>
               {l.label}
             </a>
           ))}

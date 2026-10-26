@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Hero         from '../components/Hero'
 import About        from '../components/About'
@@ -13,6 +14,15 @@ import CTA          from '../components/CTA'
 import Contact      from '../components/Contact'
 
 export default function HomePage() {
+  useEffect(() => {
+    const target = sessionStorage.getItem('scrollTo')
+    if (target) {
+      sessionStorage.removeItem('scrollTo')
+      const el = document.getElementById(target)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
   return (
     <>
       <Helmet>
