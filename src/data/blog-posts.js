@@ -39,7 +39,9 @@ Licensing, bonding, and insurance are separate matters. A contractor having one 
 - General liability insurance: This typically addresses certain property damage or third-party injuries that may arise from the contractor's work.
 - Workers' compensation: This generally covers employees who are injured on the job.
 
-Ask for current certificates of insurance rather than relying on a verbal confirmation, and check the policy dates. If subcontractors will work on your property, ask how their licensing and insurance are verified.
+Ask for current certificates of insurance rather than relying on a verbal confirmation, and check the policy dates. If subcontractors will work on your property, ask how their licensing and insurance are verified. A subcontractor's coverage is not automatically the same as the general contractor's.
+
+If you have questions about your own liability as a property owner, your insurance agent or an attorney can explain how your specific coverage applies.
 
 ## 3. Look for familiarity with local permits and site conditions
 
@@ -58,7 +60,7 @@ Local familiarity also matters for site conditions. Soil, drainage, slope, and s
 
 ## 4. Ask how the project will be managed and who you will talk to
 
-Unclear communication causes a lot of frustration on construction projects. Before you hire, ask:
+Unclear communication causes a lot of frustration on construction projects. Before you hire, ask how the project will run:
 
 - Who is your main point of contact once work begins?
 - Who supervises the job site day to day?
@@ -70,7 +72,15 @@ Some homeowners prefer a company where the owner stays directly involved in each
 
 ## 5. Compare detailed written estimates, not just totals
 
-The lowest total is not always the best value, and the highest is not always the most thorough. Estimates are only comparable when they describe the same scope of work. A clear estimate typically spells out the scope of work (what is and is not included), materials and specifications, any allowances for items not yet selected, whether permit costs are included, exclusions, the payment schedule, and how change orders are handled.
+The lowest total is not always the best value, and the highest is not always the most thorough. Estimates are only comparable when they describe the same scope of work. A clear estimate typically spells out the following:
+
+- Scope of work — defines what is and is not included, so you can compare bids accurately
+- Materials and specifications — the type and grade of key materials affect cost, performance, and maintenance
+- Allowances — placeholder amounts for items not yet selected, such as fixtures or finishes, which can change the final cost
+- Permits and fees — shows whether permit costs are included or billed separately
+- Exclusions — lists work the contractor is not including, such as electrical upgrades or site work
+- Payment schedule — explains when payments are due and which milestones they are tied to
+- Change order process — describes how changes to the scope are priced and approved
 
 Be cautious of an estimate that is much lower than the others without a clear explanation. The gap may reflect a smaller scope, different materials, or items that were left out.
 
@@ -78,7 +88,13 @@ Be cautious of an estimate that is much lower than the others without a clear ex
 
 Sierra Vista's climate places specific demands on exterior materials and building details. Strong sunlight, temperature swings, seasonal monsoon storms, and wind can all affect how materials perform over time.
 
-You do not need to be an expert in these details, but a good contractor should be able to explain how they apply to your project. Useful questions include asking which exterior paints or coatings they recommend for sun-exposed surfaces, how roof penetrations and flashing will be detailed to manage monsoon water, how outdoor structures such as patio covers will be designed for wind, how grading and drainage will direct water away from the foundation, and how insulation and air sealing will be handled for comfort and energy efficiency.
+You don't need to be an expert in these details, but a good contractor should be able to explain how they apply to your project. Useful questions include:
+
+- Sun and UV exposure — which exterior paints, coatings, or materials do you recommend for sun-exposed surfaces, and what maintenance will they need?
+- Monsoon rain — how will roof penetrations, flashing, and the connection between new and existing construction be detailed to manage water?
+- Wind — how will outdoor structures such as patio covers or pergolas be designed and attached for wind? Will engineering be needed?
+- Drainage — how will grading and drainage around new construction direct water away from the foundation?
+- Heat and energy use — how will insulation, windows, and air sealing be handled to support comfort and energy efficiency?
 
 Good answers are specific to your project and explain trade-offs. Be wary of promises that a material will last forever or never need maintenance.
 
@@ -97,13 +113,13 @@ Online reviews and directories add context. The Better Business Bureau's directo
 
 A written contract protects both you and the contractor by making expectations clear. Before signing, make sure it includes the scope of work, the price and payment schedule, how change orders are handled, the contractor's license number, and any warranty terms.
 
-If a contractor mentions a warranty, ask for the terms in writing, including what it covers, how long it lasts, and how to request service.
+If a contractor mentions a warranty, ask for the terms in writing, including what it covers, how long it lasts, and how to request service. For questions about contract terms or lien rights, consider consulting an attorney before you sign.
 
 ## Red flags to take seriously
 
 Some warning signs deserve a closer look before you commit:
 
-- No license number, or a license that does not match the business name or project type
+- No license number, or a license that doesn't match the business name or project type
 - Reluctance to provide proof of insurance
 - Pressure to sign immediately or pay a large deposit well before work is scheduled
 - Vague estimates with little detail about scope, materials, or exclusions
@@ -111,7 +127,7 @@ Some warning signs deserve a closer look before you commit:
 - Guarantees about inspection results, exact completion dates, or outcomes that sound too good to be true
 - Poor communication during bidding, such as missed appointments or unanswered questions
 
-One red flag does not automatically rule out a contractor, but it should prompt a direct question and a clear answer.
+One red flag doesn't automatically rule out a contractor, but it should prompt a direct question and a clear answer.
 
 ## Questions to ask a general contractor before hiring
 
@@ -143,6 +159,6 @@ Should I choose the lowest bid? Not automatically. Compare what each bid include
 
 The right contractor should make your project easier to understand, not harder. Verifying licensing and insurance, comparing detailed estimates, and asking how the work will be managed gives you clearer expectations before construction starts.
 
-Su Casa Builders has served Sierra Vista and Cochise County since 2003 with a licensed, insured team. Call us at 520-335-8554 or reach out through our contact form — we are happy to answer questions with no pressure.`,
+Su Casa Builders has served Sierra Vista and Cochise County since 2003 with a licensed, insured team. Call us at 520-458-1033 or reach out through our contact form — we are happy to answer questions with no pressure.`,
   },
 ]
