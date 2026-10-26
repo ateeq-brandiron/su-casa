@@ -72,15 +72,16 @@ Some homeowners prefer a company where the owner stays directly involved in each
 
 ## 5. Compare detailed written estimates, not just totals
 
-The lowest total is not always the best value, and the highest is not always the most thorough. Estimates are only comparable when they describe the same scope of work. A clear estimate typically spells out the following:
+The lowest total is not always the best value, and the highest is not always the most thorough. Estimates are only comparable when they describe the same scope of work. A clear estimate typically spells out the following.
 
-- Scope of work — defines what is and is not included, so you can compare bids accurately
-- Materials and specifications — the type and grade of key materials affect cost, performance, and maintenance
-- Allowances — placeholder amounts for items not yet selected, such as fixtures or finishes, which can change the final cost
-- Permits and fees — shows whether permit costs are included or billed separately
-- Exclusions — lists work the contractor is not including, such as electrical upgrades or site work
-- Payment schedule — explains when payments are due and which milestones they are tied to
-- Change order process — describes how changes to the scope are priced and approved
+| What to look for | Why it matters
+| Scope of work | Defines what is and isn't included, so you can compare bids accurately
+| Materials and specifications | The type and grade of key materials affect cost, performance, and maintenance
+| Allowances | Placeholder amounts for items not yet selected, such as fixtures or finishes, which can change the final cost
+| Permits and fees | Shows whether permit costs are included or billed separately
+| Exclusions | Lists work the contractor is not including, such as electrical upgrades or site work
+| Payment schedule | Explains when payments are due and which milestones they are tied to
+| Change order process | Describes how changes to the scope are priced and approved
 
 Be cautious of an estimate that is much lower than the others without a clear explanation. The gap may reflect a smaller scope, different materials, or items that were left out.
 
@@ -90,11 +91,12 @@ Sierra Vista's climate places specific demands on exterior materials and buildin
 
 You don't need to be an expert in these details, but a good contractor should be able to explain how they apply to your project. Useful questions include:
 
-- Sun and UV exposure — which exterior paints, coatings, or materials do you recommend for sun-exposed surfaces, and what maintenance will they need?
-- Monsoon rain — how will roof penetrations, flashing, and the connection between new and existing construction be detailed to manage water?
-- Wind — how will outdoor structures such as patio covers or pergolas be designed and attached for wind? Will engineering be needed?
-- Drainage — how will grading and drainage around new construction direct water away from the foundation?
-- Heat and energy use — how will insulation, windows, and air sealing be handled to support comfort and energy efficiency?
+| Condition | Question to ask
+| Sun and UV exposure | Which exterior paints, coatings, or materials do you recommend for sun-exposed surfaces, and what maintenance will they need?
+| Monsoon rain | How will roof penetrations, flashing, and the connection between new and existing construction be detailed to manage water?
+| Wind | How will outdoor structures such as patio covers or pergolas be designed and attached for wind? Will engineering be needed?
+| Drainage | How will grading and drainage around new construction direct water away from the foundation?
+| Heat and energy use | How will insulation, windows, and air sealing be handled to support comfort and energy efficiency?
 
 Good answers are specific to your project and explain trade-offs. Be wary of promises that a material will last forever or never need maintenance.
 
@@ -145,15 +147,25 @@ One red flag doesn't automatically rule out a contractor, but it should prompt a
 
 ## Frequently asked questions
 
-Do I need a licensed contractor for a small project in Arizona? Generally, yes, if the project's labor and materials exceed $1,000 or the work requires a permit, according to the [Arizona Registrar of Contractors](https://roc.az.gov/license-classifications-page). If you're unsure whether your project falls under that threshold, check with the ROC.
+### Do I need a licensed contractor for a small project in Arizona?
 
-How can I check a contractor's license in Arizona? The Arizona Registrar of Contractors maintains license records, and you can look up a contractor's status and classification through the ROC. Compare what you find with the business name and license number on your estimate.
+Generally, yes, if the project's labor and materials exceed $1,000 or the work requires a permit, according to the [Arizona Registrar of Contractors](https://roc.az.gov/license-classifications-page). If you're unsure whether your project falls under that threshold, check with the ROC.
 
-How many estimates should I get? Many homeowners compare two or three estimates for a larger project. More important than the number is making sure each estimate covers the same scope, so you're comparing similar work.
+### How can I check a contractor's license in Arizona?
 
-Who is responsible for getting building permits? It depends on your agreement. In many cases the contractor applies for permits and schedules inspections, but confirm this in writing. Requirements vary by scope and jurisdiction, so check with the City of Sierra Vista or Cochise County depending on where your property is located.
+The Arizona Registrar of Contractors maintains license records, and you can look up a contractor's status and classification through the ROC. Compare what you find with the business name and license number on your estimate.
 
-Should I choose the lowest bid? Not automatically. Compare what each bid includes, the materials specified, the allowances, and the exclusions. A lower bid may cover less work, and a higher one may include items the others left out.
+### How many estimates should I get?
+
+Many homeowners compare two or three estimates for a larger project. More important than the number is making sure each estimate covers the same scope, so you're comparing similar work.
+
+### Who is responsible for getting building permits?
+
+It depends on your agreement. In many cases the contractor applies for permits and schedules inspections, but confirm this in writing. Requirements vary by scope and jurisdiction, so check with the City of Sierra Vista or Cochise County depending on where your property is located.
+
+### Should I choose the lowest bid?
+
+Not automatically. Compare what each bid includes, the materials specified, the allowances, and the exclusions. A lower bid may cover less work, and a higher one may include items the others left out.
 
 ## Planning a project in Sierra Vista?
 

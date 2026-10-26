@@ -69,27 +69,74 @@ function renderBody(body) {
   let i = 0
   while (i < lines.length) {
     const line = lines[i]
+
     if (line.startsWith('## ')) {
       elements.push(
-        <h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.25rem', fontWeight: 700, color: '#245079', margin: '2.25rem 0 0.6rem', lineHeight: 1.35, borderBottom: '1px solid #e5e7eb', paddingBottom: '0.4rem' }}>
-          {line.replace('## ', '')}
+        <h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.25rem', fontWeight: 700, color: '#245079', margin: '2.25rem 0 0.65rem', lineHeight: 1.35, borderBottom: '2px solid #EFF4F8', paddingBottom: '0.5rem' }}>
+          {line.slice(3)}
         </h2>
       )
       i++
+
+    } else if (line.startsWith('### ')) {
+      elements.push(
+        <h3 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#111827', margin: '1.5rem 0 0.3rem', lineHeight: 1.4 }}>
+          {line.slice(4)}
+        </h3>
+      )
+      i++
+
+    } else if (line.startsWith('| ')) {
+      const rows = []
+      while (i < lines.length && lines[i].startsWith('| ')) {
+        const cells = lines[i].slice(2).split(' | ')
+        rows.push(cells)
+        i++
+      }
+      const [header, ...body2] = rows
+      elements.push(
+        <div key={`tbl-${i}`} style={{ overflowX: 'auto', margin: '0.75rem 0 1.5rem' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Manrope, sans-serif', fontSize: '0.93rem' }}>
+            <thead>
+              <tr>
+                {header.map((cell, ci) => (
+                  <th key={ci} style={{ background: '#245079', color: '#fff', fontWeight: 700, padding: '10px 14px', textAlign: 'left', fontSize: '0.85rem', letterSpacing: '0.03em', whiteSpace: 'nowrap' }}>
+                    {cell}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {body2.map((row, ri) => (
+                <tr key={ri} style={{ background: ri % 2 === 0 ? '#f9fafb' : '#fff' }}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} style={{ padding: '10px 14px', color: ci === 0 ? '#111827' : '#3C3C3C', fontWeight: ci === 0 ? 600 : 400, borderBottom: '1px solid #e5e7eb', lineHeight: 1.6, verticalAlign: 'top' }}>
+                      {parseInline(cell, `td-${ri}-${ci}`)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+
     } else if (line.startsWith('- ')) {
       const items = []
       while (i < lines.length && lines[i].startsWith('- ')) {
         const text = lines[i].slice(2)
         items.push(
-          <li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: '0.25rem' }}>
+          <li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: '0.3rem' }}>
             {parseInline(text, `li-${i}`)}
           </li>
         )
         i++
       }
       elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.5rem', margin: '0.25rem 0 1.25rem' }}>{items}</ul>)
+
     } else if (line.trim() === '') {
       i++
+
     } else {
       elements.push(
         <p key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, margin: '0 0 1.1rem' }}>
