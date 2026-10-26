@@ -88,14 +88,12 @@ export default function Blog() {
         {/* Header */}
         <div style={{ marginBottom: 48 }}>
           <SectionLabel text="Blog" />
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 500, color: '#245079', lineHeight: '130%', margin: 0 }}>
-              Construction Tips & Insights
-            </h2>
-            <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 16, color: '#3C3C3C', lineHeight: '150%', margin: 0, maxWidth: 480 }}>
-              Practical advice from the Su Casa team — helping Cochise County homeowners make informed decisions.
-            </p>
-          </div>
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 500, color: '#245079', lineHeight: '130%', margin: '0 0 16px' }}>
+            Construction Tips & Insights
+          </h2>
+          <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 16, color: '#3C3C3C', lineHeight: '150%', margin: 0, maxWidth: 600 }}>
+            Practical advice from the Su Casa team — helping Cochise County homeowners make informed decisions.
+          </p>
         </div>
 
         {/* Cards grid */}
