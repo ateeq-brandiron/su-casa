@@ -5,6 +5,7 @@ import { BLOG_POSTS } from '../data/blog-posts'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CTA from '../components/CTA'
+import blogHeaderImg from '../assets/images/blog/blog-header.png'
 
 function CategoryBadge({ text }) {
   return (
@@ -185,8 +186,11 @@ export default function BlogPostPage() {
 
       <main style={{ paddingTop: 100 }}>
         {/* Hero band */}
-        <section style={{ background: '#245079', padding: '56px 75px 48px' }}>
-          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+        <section style={{ background: '#245079', padding: '0 0 0', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+            <img src={blogHeaderImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.22 }} />
+          </div>
+          <div style={{ maxWidth: 860, margin: '0 auto', position: 'relative', zIndex: 1, padding: '56px 75px 48px' }}>
             <Link to="/#blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.75)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', marginBottom: 20 }}>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="14" y1="8" x2="2" y2="8"/><polyline points="6,4 2,8 6,12"/>
