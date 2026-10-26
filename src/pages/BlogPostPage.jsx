@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { BLOG_POSTS } from '../data/blog-posts'
@@ -44,17 +44,34 @@ function RelatedCard({ post }) {
 }
 
 function renderBody(body) {
-  return body.split('\n').filter(l => l !== undefined).map((line, i) => {
+  const lines = body.split('\n')
+  const elements = []
+  let i = 0
+  while (i < lines.length) {
+    const line = lines[i]
     if (line.startsWith('## ')) {
-      return <h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.3rem', fontWeight: 700, color: '#245079', margin: '2rem 0 0.75rem', lineHeight: 1.3 }}>{line.replace('## ', '')}</h2>
+      elements.push(<h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.3rem', fontWeight: 700, color: '#245079', margin: '2rem 0 0.75rem', lineHeight: 1.3 }}>{line.replace('## ', '')}</h2>)
+      i++
+    } else if (line.startsWith('- ')) {
+      const items = []
+      while (i < lines.length && lines[i].startsWith('- ')) {
+        items.push(<li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: 4 }}>{lines[i].replace('- ', '')}</li>)
+        i++
+      }
+      elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.5rem', margin: '0 0 1rem' }}>{items}</ul>)
+    } else if (line.trim() === '') {
+      i++
+    } else {
+      elements.push(<p key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, margin: '0 0 1rem' }}>{line}</p>)
+      i++
     }
-    if (line.trim() === '') return null
-    return <p key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, margin: '0 0 1rem' }}>{line}</p>
-  })
+  }
+  return elements
 }
 
 export default function BlogPostPage() {
   const { slug } = useParams()
+  useEffect(() => { window.scrollTo(0, 0) }, [slug])
   const post = BLOG_POSTS.find(p => p.slug === slug)
   const related = BLOG_POSTS.filter(p => p.slug !== slug).slice(0, 2)
 
