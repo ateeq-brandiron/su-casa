@@ -9,6 +9,8 @@ import ServicesPage    from './pages/ServicesPage'
 import ProjectsPage    from './pages/ProjectsPage'
 import ContactPage     from './pages/ContactPage'
 import ServiceAreasPage from './pages/ServiceAreasPage'
+import BlogPage        from './pages/BlogPage'
+import BlogPostPage    from './pages/BlogPostPage'
 import NotFoundPage    from './pages/NotFoundPage'
 
 export default function App() {
@@ -29,6 +31,8 @@ export default function App() {
             <Route path="/projects/"      element={<ProjectsPage />} />
             <Route path="/contact/"       element={<ContactPage />} />
             <Route path="/service-areas/" element={<ServiceAreasPage />} />
+            <Route path="/blog/"          element={<BlogPage />} />
+            <Route path="/blog/:slug/"    element={<BlogPostPage />} />
             <Route path="*"               element={<NotFoundPage />} />
           </Routes>
         </div>
