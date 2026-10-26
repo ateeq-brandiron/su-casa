@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { BLOG_POSTS } from '../data/blog-posts'
 
 function SectionLabel({ text }) {
@@ -70,6 +71,10 @@ function BlogCard({ post }) {
         </p>
         <div style={{ paddingTop: 14, borderTop: '1px solid #f3f4f6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: '0.78rem', color: '#6b7280' }}>{formatted}</span>
+          <Link to={`/blog/${post.slug}/`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', fontWeight: 600, color: '#245079', textDecoration: 'none' }}>
+            Read More
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#245079" strokeWidth="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="10,4 14,8 10,12"/></svg>
+          </Link>
         </div>
       </div>
     </div>
