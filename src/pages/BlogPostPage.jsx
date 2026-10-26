@@ -43,6 +43,26 @@ function RelatedCard({ post }) {
   )
 }
 
+function parseInline(text, keyPrefix) {
+  const parts = []
+  const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
+  let last = 0
+  let match
+  let idx = 0
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index))
+    parts.push(
+      <a key={`${keyPrefix}-a${idx++}`} href={match[2]} target="_blank" rel="noopener noreferrer"
+        style={{ color: '#245079', textDecoration: 'underline', fontWeight: 600 }}>
+        {match[1]}
+      </a>
+    )
+    last = match.index + match[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts.length === 1 && typeof parts[0] === 'string' ? parts[0] : parts
+}
+
 function renderBody(body) {
   const lines = body.split('\n')
   const elements = []
@@ -50,19 +70,32 @@ function renderBody(body) {
   while (i < lines.length) {
     const line = lines[i]
     if (line.startsWith('## ')) {
-      elements.push(<h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.3rem', fontWeight: 700, color: '#245079', margin: '2rem 0 0.75rem', lineHeight: 1.3 }}>{line.replace('## ', '')}</h2>)
+      elements.push(
+        <h2 key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.25rem', fontWeight: 700, color: '#245079', margin: '2.25rem 0 0.6rem', lineHeight: 1.35, borderBottom: '1px solid #e5e7eb', paddingBottom: '0.4rem' }}>
+          {line.replace('## ', '')}
+        </h2>
+      )
       i++
     } else if (line.startsWith('- ')) {
       const items = []
       while (i < lines.length && lines[i].startsWith('- ')) {
-        items.push(<li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: 4 }}>{lines[i].replace('- ', '')}</li>)
+        const text = lines[i].slice(2)
+        items.push(
+          <li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: '0.25rem' }}>
+            {parseInline(text, `li-${i}`)}
+          </li>
+        )
         i++
       }
-      elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.5rem', margin: '0 0 1rem' }}>{items}</ul>)
+      elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.5rem', margin: '0.25rem 0 1.25rem' }}>{items}</ul>)
     } else if (line.trim() === '') {
       i++
     } else {
-      elements.push(<p key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, margin: '0 0 1rem' }}>{line}</p>)
+      elements.push(
+        <p key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, margin: '0 0 1.1rem' }}>
+          {parseInline(line, `p-${i}`)}
+        </p>
+      )
       i++
     }
   }
@@ -128,11 +161,13 @@ export default function BlogPostPage() {
         {/* Article + sidebar */}
         <section style={{ background: '#f9fafb', padding: '60px 75px 80px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 48, alignItems: 'start' }} className="post-layout">
-            <article style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, padding: '2.5rem' }}>
-              <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, margin: '0 0 1.5rem', fontWeight: 500, borderLeft: '3px solid #245079', paddingLeft: '1.25rem' }}>
+            <article style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, padding: '2.5rem 3rem' }}>
+              <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1.05rem', color: '#374151', lineHeight: 1.85, margin: '0 0 2rem', fontWeight: 500, borderLeft: '3px solid #245079', paddingLeft: '1.25rem' }}>
                 {post.excerpt}
               </p>
-              {renderBody(post.body)}
+              <div style={{ fontFamily: 'Manrope, sans-serif' }}>
+                {renderBody(post.body)}
+              </div>
             </article>
 
             <aside style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -141,9 +176,9 @@ export default function BlogPostPage() {
                 <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: '0 0 18px' }}>
                   Su Casa Builders has served Sierra Vista and Cochise County since 2003.
                 </p>
-                <a href="tel:5203358554" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#245079', padding: '10px 18px', borderRadius: 4, fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                <a href="tel:5204581033" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#245079', padding: '10px 18px', borderRadius: 4, fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#245079" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.24 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  520-335-8554
+                  520-458-1033
                 </a>
               </div>
 

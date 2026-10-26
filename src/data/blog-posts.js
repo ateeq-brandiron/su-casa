@@ -18,7 +18,7 @@ On many projects, the general contractor performs some work with their own crews
 
 ## 1. Confirm the contractor's Arizona license and classification
 
-In Arizona, contractor licensing is overseen by the Arizona Registrar of Contractors. A license is generally required when labor and materials exceed $1,000, or when the work requires a permit, regardless of price.
+In Arizona, contractor licensing is overseen by the Arizona Registrar of Contractors. According to the [ROC's license classifications page](https://roc.az.gov/license-classifications-page), a license is generally required when labor and materials exceed $1,000, or when the work requires a permit, regardless of price.
 
 A license number is only part of the picture. Arizona issues different license classifications for residential, commercial, and specialty work, so confirm that the contractor's classification matches the project you are planning. A contractor licensed for one specialty trade may not be licensed to manage a full room addition, for example.
 
@@ -45,7 +45,7 @@ If you have questions about your own liability as a property owner, your insuran
 
 ## 3. Look for familiarity with local permits and site conditions
 
-Permit requirements depend on the project scope and on which jurisdiction your property falls under. Properties inside Sierra Vista city limits work with the City of Sierra Vista's Community Development department. Properties in unincorporated areas, including much of Hereford, generally fall under Cochise County instead.
+Permit requirements depend on the project scope and on which jurisdiction your property falls under. Properties inside Sierra Vista city limits work with the City of Sierra Vista's Community Development department, which publishes [site plan requirements and guidance for contractors](https://www.sierravistaaz.gov/our-city/departments/community-development/planning-zoning/site-plans). Properties in unincorporated areas, including much of Hereford, generally fall under Cochise County instead.
 
 A contractor who regularly works in the area should be able to explain:
 
@@ -107,7 +107,7 @@ Past clients can tell you a lot about how a contractor communicates and handles 
 - The contractor returned calls and answered questions promptly
 - Issues after completion were addressed
 
-Online reviews and directories add context. The Better Business Bureau's directory of general contractors near Sierra Vista lists business profiles, ratings, and customer complaints. Look for patterns over time, and notice how a contractor responds to complaints, not just whether any exist.
+Online reviews and directories add context. The [Better Business Bureau's directory of general contractors near Sierra Vista](https://www.bbb.org/us/az/sierra-vista/category/general-contractor) lists business profiles, ratings, and customer complaints. Look for patterns over time, and notice how a contractor responds to complaints, not just whether any exist.
 
 ## 8. Get the agreement in writing before work begins
 
@@ -145,7 +145,7 @@ One red flag doesn't automatically rule out a contractor, but it should prompt a
 
 ## Frequently asked questions
 
-Do I need a licensed contractor for a small project in Arizona? Generally, yes, if the project's labor and materials exceed $1,000 or the work requires a permit, according to the Arizona Registrar of Contractors. If you're unsure whether your project falls under that threshold, check with the ROC.
+Do I need a licensed contractor for a small project in Arizona? Generally, yes, if the project's labor and materials exceed $1,000 or the work requires a permit, according to the [Arizona Registrar of Contractors](https://roc.az.gov/license-classifications-page). If you're unsure whether your project falls under that threshold, check with the ROC.
 
 How can I check a contractor's license in Arizona? The Arizona Registrar of Contractors maintains license records, and you can look up a contractor's status and classification through the ROC. Compare what you find with the business name and license number on your estimate.
 
