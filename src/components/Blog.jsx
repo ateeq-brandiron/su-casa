@@ -88,7 +88,7 @@ export default function Blog() {
         {/* Header */}
         <div style={{ marginBottom: 48 }}>
           <SectionLabel text="Blog" />
-          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 700, color: '#245079', lineHeight: '130%', margin: '0 0 16px' }}>
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontSize: 48, fontWeight: 500, color: '#245079', lineHeight: '130%', margin: '0 0 16px' }}>
             Construction Tips & Insights
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: 16, color: '#3C3C3C', lineHeight: '150%', margin: 0, maxWidth: 600 }}>
