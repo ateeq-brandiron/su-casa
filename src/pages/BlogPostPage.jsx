@@ -126,13 +126,13 @@ function renderBody(body) {
       while (i < lines.length && lines[i].startsWith('- ')) {
         const text = lines[i].slice(2)
         items.push(
-          <li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: '0.3rem' }}>
+          <li key={i} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '1rem', color: '#3C3C3C', lineHeight: 1.8, marginBottom: '0.3rem', display: 'list-item' }}>
             {parseInline(text, `li-${i}`)}
           </li>
         )
         i++
       }
-      elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.5rem', margin: '0.25rem 0 1.25rem' }}>{items}</ul>)
+      elements.push(<ul key={`ul-${i}`} style={{ paddingLeft: '1.75rem', margin: '0.25rem 0 1.25rem', listStyleType: 'disc' }}>{items}</ul>)
 
     } else if (line.trim() === '') {
       i++
