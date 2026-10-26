@@ -6,8 +6,8 @@ const LINKS = [
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Blog',     href: '#blog' },
   { label: 'Contact',  href: '#contact' },
-  { label: 'Blog',     href: '/blog/' },
 ]
 
 function NavLink({ label, href }) {

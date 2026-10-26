@@ -8,6 +8,7 @@ import Process      from '../components/Process'
 import Projects     from '../components/Projects'
 import Testimonials from '../components/Testimonials'
 import FAQ          from '../components/FAQ'
+import Blog         from '../components/Blog'
 import CTA          from '../components/CTA'
 import Contact      from '../components/Contact'
 
@@ -31,6 +32,7 @@ export default function HomePage() {
         <Projects />
         <Testimonials />
         <FAQ />
+        <Blog />
         <CTA />
         <Contact />
       </main>
