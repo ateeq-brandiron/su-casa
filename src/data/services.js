@@ -25,11 +25,11 @@ export const SERVICES = [
     slug: 'special-projects',
     title: 'Special Projects and Products',
     intro: 'Our special projects and products include:',
-    desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to improve.',
+    desc: 'At Su Casa Builders, we also take on unique projects that enhance homes and outdoor spaces while maintaining the same level of craftsmanship and care found in our larger builds. These custom features add both functionality and curb appeal, giving homeowners creative ways to enhance their properties.',
     items: [
       { label: 'Screened Porches and Additions', detail: "Seamlessly extend your living space with screened or enclosed rooms that match your home's original design." },
       { label: 'Pergolas and Covered Patios', detail: 'Add shade and structure with custom-built pergolas, patio covers, or carports designed for durability and style.' },
-      { label: 'Pella Windows', detail: 'We proudly install Pella windows, offering energy efficiency, quality materials, and timeless design that enhances comfort and value.' },
+      { label: 'Pella Windows', detail: 'We sell and install Pella windows. Installation is performed by Su Casa Builders Inc. only when windows are purchased through us, ensuring quality craftsmanship and seamless results.' },
     ],
   },
 ]
