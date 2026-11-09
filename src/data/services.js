@@ -29,7 +29,7 @@ export const SERVICES = [
     items: [
       { label: 'Screened Porches and Additions', detail: "Seamlessly extend your living space with screened or enclosed rooms that match your home's original design." },
       { label: 'Pergolas and Covered Patios', detail: 'Add shade and structure with custom-built pergolas, patio covers, or carports designed for durability and style.' },
-      { label: 'Pella Windows', detail: 'We sell and install Pella windows. Installation is performed by Su Casa Builders Inc. only when windows are purchased through us, ensuring quality craftsmanship and seamless results.' },
+      { label: 'Pella Windows', detail: 'We SELL & INSTALL. We do not install unless windows are purchased & installed by Su Casa Builders Inc.' },
     ],
   },
 ]
