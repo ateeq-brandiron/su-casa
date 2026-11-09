@@ -189,7 +189,7 @@ export default function Hero() {
             maxWidth: '100%',
             margin: 0,
           }}>
-            Su Casa Builders, LLC is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting, custom home construction, and outdoor living projects. Since 2003, our team has delivered quality craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job. We also build custom features such as pergolas, metal awnings, and install Pella windows, helping homeowners enhance both function and curb appeal.
+            Su Casa Builders Inc. is a trusted general contractor in Sierra Vista, AZ, specializing in framing, painting, custom home construction, and outdoor living projects. Since 2003, our team has delivered quality craftsmanship and honest service across Cochise County. Whether you need a reliable partner for new construction, a home addition, or light commercial work, we bring integrity, experience, and precision to every job. We also build custom features such as pergolas, metal awnings, and install Pella windows, helping homeowners enhance both function and curb appeal.
           </p>
 
           {/* CTA button */}
