@@ -19,14 +19,15 @@ function FooterLink({ href, children }) {
 }
 
 const SERVICE_LINKS = [
-  { label: 'Custom Home Construction', href: '#services' },
+  { label: 'Custom Home Design', href: '#services' },
+  { label: 'Home Construction', href: '#services' },
   { label: 'Renovations and Additions', href: '#services' },
-  { label: 'Framing', href: '#services' },
-  { label: 'Exterior Painting', href: '#services' },
+  { label: 'Windows', href: '#services' },
   { label: 'Pergolas', href: '#services' },
-  { label: 'Pella Windows', href: '#services' },
+  { label: 'Framing', href: '#services' },
   { label: 'Subcontracting', href: '#services' },
   { label: 'Screen Rooms', href: '#services' },
+  { label: 'Painting', href: '#services' },
 ]
 
 const PROJECT_LINKS = [
