@@ -75,6 +75,9 @@ export default function Navbar() {
           <img src={logoSrc} alt="Su Casa Builders" style={{ height: 38, width: 'auto' }} />
         </a>
 
+        {/* Tagline */}
+        <p className="hidden-mobile" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.95rem', fontWeight: 500, color: '#245079', margin: 0, letterSpacing: '0.01em', whiteSpace: 'nowrap' }}>We've got Quality Nailed.</p>
+
         {/* Desktop links */}
         <div style={{ display: 'flex', gap: '2.25rem', alignItems: 'center' }} className="hidden-mobile">
           {LINKS.map(l => <NavLink key={l.hash} label={l.label} onClick={(e) => handleNav(e, l.hash)} />)}

@@ -112,16 +112,6 @@ export default function Hero() {
               }}>
                 Su Casa Builders – General Contractor in Sierra Vista, AZ
               </h1>
-              <p style={{
-                color: 'rgba(255,255,255,0.92)',
-                fontFamily: 'Manrope, sans-serif',
-                fontSize: 'clamp(18px, 2.22vw, 32px)',
-                fontWeight: 500,
-                lineHeight: '130%',
-                margin: 0,
-              }}>
-                We have quality nailed.
-              </p>
             </div>
           </div>
         </div>
