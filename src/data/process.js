@@ -15,12 +15,12 @@ export const STEPS = [
     slug: 'confirm-schedule',
     num: 'STEP 3',
     title: 'Confirm and Schedule',
-    desc: 'Once the plan is approved, we set the schedule and assign your crew. You can trust that our team will be prepared, punctual, and ready to get to work.',
+    desc: 'Once the plan is approved, we set the schedule and assign your crew. You can trust that our team will be prepared and ready to get to work.',
   },
   {
     slug: 'construction-communication',
     num: 'STEP 4',
     title: 'Construction and Communication',
-    desc: 'Our experienced crews arrive on time, work efficiently, and keep you informed throughout the build. We respect your property and maintain a clean, safe jobsite until the project is complete.',
+    desc: 'Our experienced crews work efficiently and keep you informed throughout the build. We respect your property and maintain a clean, safe jobsite until the project is complete.',
   },
 ]
