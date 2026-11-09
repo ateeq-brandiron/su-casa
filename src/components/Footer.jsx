@@ -19,10 +19,14 @@ function FooterLink({ href, children }) {
 }
 
 const SERVICE_LINKS = [
-  { label: 'Custom Home Design', href: '#services' },
-  { label: 'Home Construction', href: '#services' },
+  { label: 'Custom Home Construction', href: '#services' },
   { label: 'Renovations and Additions', href: '#services' },
-  { label: 'Kitchen Remodeling', href: '#services' },
+  { label: 'Framing', href: '#services' },
+  { label: 'Exterior Painting', href: '#services' },
+  { label: 'Pergolas', href: '#services' },
+  { label: 'Pella Windows', href: '#services' },
+  { label: 'Subcontracting', href: '#services' },
+  { label: 'Screen Rooms', href: '#services' },
 ]
 
 const PROJECT_LINKS = [
@@ -32,7 +36,7 @@ const PROJECT_LINKS = [
   { label: 'Contact', href: '#contact' },
 ]
 
-const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Cochise County']
+const AREAS = ['Sierra Vista', 'Hereford', 'Tombstone', 'Huachuca City', 'Benson', 'Cochise County', 'Select areas of Bisbee']
 
 export default function Footer() {
   return (
