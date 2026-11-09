@@ -227,9 +227,8 @@ export default function BlogPostPage() {
                 <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, margin: '0 0 18px' }}>
                   Su Casa Builders has served Sierra Vista and Cochise County since 2003.
                 </p>
-                <a href="tel:5204581033" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#245079', padding: '10px 18px', borderRadius: 4, fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#245079" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.24 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  520-458-1033
+                <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#245079', padding: '10px 18px', borderRadius: 4, fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  Get a Free Estimate
                 </a>
               </div>
 

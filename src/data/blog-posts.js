@@ -171,6 +171,6 @@ Not automatically. Compare what each bid includes, the materials specified, the 
 
 The right contractor should make your project easier to understand, not harder. Verifying licensing and insurance, comparing detailed estimates, and asking how the work will be managed gives you clearer expectations before construction starts.
 
-If you're planning a construction or home improvement project, you can learn more about [Su Casa Builders Inc.](https://sucasabuildersinc.com/) and [the services Su Casa provides](https://sucasabuildersinc.com/#services). When you're ready to talk through your project's scope and priorities, [contact Su Casa Builders to request an estimate](https://sucasabuildersinc.com/#contact) or call 520-458-1033.`,
+If you're planning a construction or home improvement project, you can learn more about [Su Casa Builders Inc.](https://sucasabuildersinc.com/) and [the services Su Casa provides](https://sucasabuildersinc.com/#services). When you're ready to talk through your project's scope and priorities, [contact Su Casa Builders to request an estimate](https://sucasabuildersinc.com/#contact).`,
   },
 ]
