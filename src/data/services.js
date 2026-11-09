@@ -17,7 +17,7 @@ export const SERVICES = [
     desc: 'In addition to general contracting, Su Casa Builders serves as a trusted subcontractor for framing, roofing, and painting projects across Southeast Arizona. Our crews are known for their professionalism, precision, and commitment to high-quality results on every job.',
     items: [
       { label: 'Framing', detail: 'Structural framing for new construction, additions, and expansions.' },
-      { label: 'Roofing', detail: 'Professional roofing installation and repair that ensures long-term protection.' },
+      { label: 'Roofing', detail: 'For professional roofing services, Su Casa Builders works with our affiliated company, Artistic Roofing Systems LLC. Together, we provide homeowners and contractors with reliable solutions for their roofing and construction needs.' },
       { label: 'Painting', detail: 'Exterior painting for residential and light commercial properties, as well as painting services for new construction projects.' },
     ],
   },
