@@ -24,7 +24,6 @@ const SERVICE_LINKS = [
   { label: 'Renovations and Additions', href: '#services' },
   { label: 'Windows', href: '#services' },
   { label: 'Pergolas', href: '#services' },
-  { label: 'Framing', href: '#services' },
   { label: 'Subcontracting', href: '#services' },
   { label: 'Screen Rooms', href: '#services' },
   { label: 'Painting', href: '#services' },
