@@ -54,8 +54,7 @@ export default function WhyUs() {
             Why Choose Su Casa Builders
           </h2>
           <p style={{ fontFamily: 'Manrope, sans-serif', color: '#3C3C3C', fontSize: 20, fontWeight: 400, lineHeight: '140%', margin: 0 }}>
-            When you hire Su Casa Builders, you're choosing a team that values craftsmanship, communication, and trust.
-            Every project we take on is handled with care, precision, and respect for your home or business.
+            When you hire Su Casa Builders, you're choosing a team that values craftsmanship, expertise, and trust. Every project we take on is handled with care, precision, and respect for your home or business.
           </p>
         </div>
 
