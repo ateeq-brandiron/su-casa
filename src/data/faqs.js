@@ -7,7 +7,7 @@ export const FAQS = [
   {
     slug: 'service-areas',
     q: 'What areas of Southeast Arizona do you serve?',
-    a: 'We serve Sierra Vista, Hereford, and surrounding Cochise County communities. Our crews live and work in this region, giving us firsthand knowledge of the local climate, building codes, and construction standards.\nFrom framing and roofing to exterior painting and custom builds, our team uses proven methods and durable materials suited to the Arizona sun and seasonal monsoons.\nChoosing a general contractor with local roots ensures your project is completed by people who understand the environment and take pride in building within their own community.',
+    a: 'Su Casa Builders proudly serves Sierra Vista, Hereford, and surrounding communities throughout Cochise County. Our experience in the area gives us a strong understanding of local building codes and construction standards.\nFrom framing and roofing to exterior painting and custom projects, we focus on quality workmanship, attention to detail, and using materials we trust.\nAs a local general contractor, we take pride in providing reliable service and quality results on every project.',
   },
   {
     slug: 'framing-and-windows',
