@@ -21,7 +21,9 @@
       "/services/",
       "/projects/",
       "/contact/",
-      "/service-areas/"
+      "/service-areas/",
+      "/blog/",
+      "/blog/how-to-choose-a-general-contractor-sierra-vista-az/"
     ],
     "headless": true,
     "puppeteerArgs": [
