@@ -20,7 +20,7 @@ function VideoPlayer() {
 
   return (
     <div
-      style={{ position: 'relative', width: '100%', background: '#000', cursor: playing ? 'default' : 'pointer' }}
+      style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', background: '#000', cursor: playing ? 'default' : 'pointer' }}
       onClick={!playing ? handlePlay : undefined}
     >
       {/* Video always visible — paused at frame 0 acts as the thumbnail */}
@@ -31,7 +31,7 @@ function VideoPlayer() {
         playsInline
         preload="metadata"
         onEnded={handleEnded}
-        style={{ display: 'block', width: '100%', height: 'auto' }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
 
       {/* Play button overlay — shown when not playing */}
